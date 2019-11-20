@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url("../../src/fonts/Quicksand-Regular.ttf");
+}
+@font-face {
+    font-family: "QuicksandBold";
+    src: url("../../src/fonts/Quicksand-Bold.ttf");
+    font-weight: bold;
+}
+
+html, body, #app, #root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'promixa-nova', sans-serif;
+    color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+}
+
+#maincontent {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#headerInfo {
+
+}
+
+h1.mainHeader {
+    font-size: 23px;
+    line-height: 1.25em;
+}
+
+h1 {
+    color: #222;
+    padding-bottom: .25em;
+    margin: 15px 0;
+}
+
+h1, h2, h3, h4 {
+    font: normal normal normal 2.5em/1.5em 'QuicksandBold';
+    margin-bottom: 1em;
+}
+
+.member__avatar {
+    border-radius: 50%;
+    height: 3em;
+}
+
+.member__name {
+    padding-left: 7em;
+}
+
+.ReactTable {
+    font-size: 1em;
+}
+
+/*Responsive*/
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+@media (min-width: 1440px){
+    .container {
+        width: 1400px;
+    }
+}
+
+
+/*noUISlider*/
+.nouislider_div {
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+    /*margin-top: 20px;*/
+}
+
+.nouislider {
+    position: absolute;
+    top: 30%;
+}
+
+.noUi-target {
+    border: 0;
+    border-radius: 0;
+}
+
+.noUi-handle.noUi-handle-lower .noUi-tooltip {
+    left: 2px;
+}
+
+.noUi-handle.noUi-handle-upper .noUi-tooltip {
+    left: 15px;
+}
+
+.noUi-target.noUi-horizontal .noUi-tooltip {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: -15px;
+    font-size: 12px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    transform-origin: 50% 100%;
+}
+
+@media (min-width: 768px){
+    .noUi-target.noUi-horizontal .noUi-tooltip {
+        top: -10px;
+    }
+    .noUi-handle.noUi-handle-lower .noUi-tooltip {
+        left: -2px;
+    }
+    .noUi-handle.noUi-handle-upper .noUi-tooltip {
+        left: 20px;
+    }
+}
+
+.noUi-target.noUi-horizontal .noUi-active .noUi-tooltip {
+    border-radius: 15px 15px 15px 0;
+}
+
+.noUi-target.noUi-vertical .noUi-active .noUi-tooltip {
+    border-radius: 15px 15px 15px 0;
+}
+.noUi-horizontal .noUi-active .noUi-tooltip span,
+.noUi-active .noUi-tooltip span {
+    opacity: 1;
+}
+
+.noUi-horizontal {
+    height: 1em !important;
+}
+.noUi-handle .noUi-handle-lower {
+    width: 22px;
+    height: 22px;
+}
+.noUi-handle::before , .noUi-handle::after {
+    display: none !important;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+    box-shadow: none;
+    background-color: dodgerblue;
+    border: none !important;
+    right: -10px !important;
+    top: -4px !important;
+}
+
+.noUi-connect{
+    background-color: dodgerblue !important;
+}

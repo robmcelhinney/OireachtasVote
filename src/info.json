@@ -1,0 +1,48 @@
+{
+    "dateCreated": "19/11/2019 23:43:41",
+    "currentDail": "32nd Dáil",
+    "totalVotes": 660,
+    "dailStartDate": "2016-03-10",
+    "parties": [
+        {
+            "value": "Anti-Austerity_Alliance_People_Before_Profit",
+            "label": "Anti-Austerity Alliance - People Before Profit"
+        },
+        {
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
+        },
+        {
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
+        },
+        {
+            "value": "Green_Party",
+            "label": "Green Party"
+        },
+        {
+            "value": "Independent",
+            "label": "Independent"
+        },
+        {
+            "value": "Independents_4_Change",
+            "label": "Independents 4 Change"
+        },
+        {
+            "value": "Labour_Party",
+            "label": "Labour Party"
+        },
+        {
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
+        },
+        {
+            "value": "Social_Democrats",
+            "label": "Social Democrats"
+        },
+        {
+            "value": "Solidarity_People_Before_Profit",
+            "label": "Solidarity - People Before Profit"
+        }
+    ]
+}
