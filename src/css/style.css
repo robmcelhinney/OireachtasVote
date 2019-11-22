@@ -30,9 +30,10 @@ body {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 10px;
 }
 
-#should_be {
+.should_be {
     font-size: 0.6em;
 }
 
@@ -67,6 +68,18 @@ h1, h2, h3, h4 {
 
 .ReactTable {
     font-size: 1em;
+}
+
+#footer {
+    text-align: center;
+    font-size: 0.7em;
+    color: #999;
+    text-decoration: none;
+    bottom:0;
+}
+
+#footer a:visited {
+    color: #999;
 }
 
 /*Responsive*/
@@ -176,5 +189,5 @@ h1, h2, h3, h4 {
 }
 
 .noUi-connect{
-    background-color: dodgerblue !important;
+    background-color: #2196f3 !important;
 }
