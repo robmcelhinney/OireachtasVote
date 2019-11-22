@@ -32,6 +32,10 @@ body {
     margin-left: auto;
 }
 
+#should_be {
+    font-size: 0.6em;
+}
+
 #headerInfo {
 
 }

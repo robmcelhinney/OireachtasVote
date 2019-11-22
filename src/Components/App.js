@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import data from '../members.json';
+import members from '../members.json';
 import info from '../info.json';
 import Select from 'react-select';
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -26,6 +29,8 @@ function filterCaseInsensitive(filter, row) {
 	}
 }
 
+let data = members;
+
 const App = () => {
 	const [percentLower, setPercentLower] = useState(
 		0
@@ -42,6 +47,12 @@ const App = () => {
 	const [widthHide, setWidthHide] = useState(
 		false
 	);
+	// const [excludeCeannComhairle, setExcludeCeannComhairle] = useState(
+	// 	false
+	// );
+	const [excludeTDs, setExcludeTDs] = useState(
+		false
+	);
 
 	function handlePercentRange(event, onChange) {
 		setPercentLower([event[0]]);
@@ -52,13 +63,6 @@ const App = () => {
 		setVoteLower([event[0]]);
 		setVoteHigher([event[1]]);
 		onChange(event)
-	}
-	function handlePartySelect(event, onChange) {
-		let parties = [];
-		event.forEach(
-			element =>
-				parties.push(element.label)
-		);
 	}
 
 	const party_options = info['parties'];
@@ -76,7 +80,21 @@ const App = () => {
 
 	useEffect(() => {
 		window.addEventListener("resize", resize);
-
+		// console.log("data 1: ", data);
+		// console.log("excludeTDs: ", excludeTDs);
+		if (excludeTDs) {
+			data = [];
+			members.forEach(
+				member => {
+					if (!member["office"]) {
+						data.push(member)
+					}}
+			);
+		}
+		else {
+			data = members;
+		}
+		// console.log("data 2: ", data);
 		return () => {
 			window.removeEventListener("resize", resize);
 		};
@@ -153,8 +171,8 @@ const App = () => {
 			maxWidth: partyWidth,
 			filterMethod: (filter, row) => {
 				const id = filter.pivotId || filter.id;
-				let parties = [];
-				if (filter['value']) {
+				if (filter['value'] && filter['value'].length !== 0) {
+					let parties = [];
 					filter['value'].forEach(
 						element =>
 							parties.push(element.label)
@@ -231,19 +249,43 @@ const App = () => {
 		columns.push(voteColumn);
 	}
 
+	// const handleCCChecked = () => {
+	// 	setExcludeCeannComhairle(!excludeCeannComhairle)
+	// };
+	const handleTDsChecked = () => {
+		setExcludeTDs(!excludeTDs)
+	};
+
 	return (
 		<div id={"maincontent"} className={"container"}>
 			<div id={"headerInfo"}>
-				<h1 className={"mainHeader"}>{info.currentDail} TD Voting Record</h1>
-				<p>info accurate as of {info.dateCreated}</p>
-				<p>Button exclude TDs & Taoiseach</p>
-				<p>Button exclude Ceann Comhairle</p>
+				<h1 className={"mainHeader"}>TD Voting Record - {info.currentDail}</h1>
+				<p>info <span id={"should_be"}>**should be**</span> accurate as of {info.dateCreated}</p>
+				<FormGroup row>
+					{/*<FormControlLabel*/}
+						{/*control={*/}
+							{/*<Checkbox checked={excludeCeannComhairle} onChange={handleCCChecked} value={excludeCeannComhairle} />*/}
+						{/*}*/}
+						{/*label="Exclude Ceann Comhairle"*/}
+					{/*/>*/}
+					<FormControlLabel
+						control={
+							<Checkbox checked={excludeTDs} onChange={handleTDsChecked} value={excludeTDs} />
+						}
+						label="Exclude TDs & Taoiseach"
+					/>
+				</FormGroup>
 			</div>
 			<ReactTable
 				data={data}
 				columns={columns}
 				filterable
 				className="-striped -highlight"
+				defaultSortDesc={true}
+				defaultSorted={[{
+					id: 'Percent',
+					desc: false
+				}]}
 				defaultFilterMethod={(filter, row) => filterCaseInsensitive(filter, row)}
 				defaultPageSize={15}
 				pageSizeOptions={[5, 10, 15, 20, 50, 100]}
