@@ -85,7 +85,7 @@ class App extends React.Component {
 				Any queries/requests, contact me @<a
 				href={"https://twitter.com/RMcElhinney"}>Rob McElhinney
 				</a> | Code Viewable @<a
-				href={"https://github.com/robmcelhinney/oireachtasVote"}>github</a>
+				href={"https://github.com/robmcelhinney/OireachtasVote"}>github</a>
 			</div>
 			</>
 		);
