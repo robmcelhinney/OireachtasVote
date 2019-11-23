@@ -29,56 +29,47 @@ function filterCaseInsensitive(filter, row) {
 }
 
 const Table = (props) => {
-	const [percentLower, setPercentLower] = useState(
-		0
+	const [percent, setPercent] = useState(
+		[0, 100]
 	);
-	const [percentHigher, setPercentHigher] = useState(
-		100
-	);
-	const [voteLower, setVoteLower] = useState(
-		0
-	);
-	const [voteHigher, setVoteHigher] = useState(
-		info['totalVotes']
+	const [vote, setVote] = useState(
+		[0, info['totalVotes']]
 	);
 	const [widthHide, setWidthHide] = useState(
 		false
 	);
+	const [partyWidth, setPartyWidth] = useState(
+		"250"
+	);
 
 	function handlePercentRange(event, onChange) {
-		setPercentLower([event[0]]);
-		setPercentHigher([event[1]]);
+		setPercent([event[0], event[1]]);
 		onChange(event)
 	}
 	function handleVoteRange(event, onChange) {
-		setVoteLower([event[0]]);
-		setVoteHigher([event[1]]);
+		setVote([event[0], event[1]]);
 		onChange(event)
 	}
 
 	const party_options = info['parties'];
 
-	const resize = () => {
-		let smallerWidth = (window.innerWidth <= 768);
-		if (smallerWidth !== widthHide) {
-			setWidthHide(smallerWidth);
-		}
-		if (widthHide) {
-			partyWidth = "100";
-			nameWidth = "100";
-		}
-	};
-
 	useEffect(() => {
+		const resize = () => {
+			let smallerWidth = (window.innerWidth <= 768);
+			if (smallerWidth !== widthHide) {
+				setWidthHide(smallerWidth);
+			}
+			if (widthHide) {
+				setPartyWidth("100");
+			}
+		};
+
 		window.addEventListener("resize", resize);
 
 		return () => {
 			window.removeEventListener("resize", resize);
 		};
-	}, [resize]);
-
-	let partyWidth = "250";
-	let nameWidth = "150";
+	});
 
 	const pictureColumn = {
 		id: "picture",
@@ -100,8 +91,8 @@ const Table = (props) => {
 		maxWidth: "150",
 		filterMethod: (filter, row) => {
 			const id = filter.pivotId || filter.id;
-			return (voteLower <= Number(row[id])
-				&& voteHigher >= Number(row[id]))
+			return (vote[0] <= Number(row[id])
+				&& vote[1] >= Number(row[id]))
 		},
 
 		Filter: ({ filter, onChange }) =>
@@ -109,7 +100,7 @@ const Table = (props) => {
 				<Nouislider
 					className={"nouislider"}
 					range={{ min: 0, max: info['totalVotes'] }}
-					start={[voteLower, voteHigher]}
+					start={vote}
 					connect={true}
 					step={10}
 					value={filter ? filter.value : 'all'}
@@ -132,13 +123,13 @@ const Table = (props) => {
 	const firstNameColumn = {
 		Header: "First Name",
 		accessor: "firstName",
-		maxWidth: nameWidth,
+		maxWidth: "150",
 	};
 
 	const lastNameColumn = {
 		Header: "Last Name",
 		accessor: "lastName",
-		maxWidth: nameWidth,
+		maxWidth: "150",
 	};
 
 	const columns = [
@@ -182,8 +173,8 @@ const Table = (props) => {
 			},
 			filterMethod: (filter, row) => {
 				const id = filter.pivotId || filter.id;
-				return (percentLower <= Number(row[id])
-					&& percentHigher >= Number(row[id]))
+				return (percent[0] <= Number(row[id])
+					&& percent[1] >= Number(row[id]))
 			},
 
 			Filter: ({ filter, onChange }) =>
@@ -191,7 +182,7 @@ const Table = (props) => {
 					<Nouislider
 						className={"nouislider"}
 						range={{ min: 0, max: 100 }}
-						start={[percentLower, percentHigher]}
+						start={percent}
 						connect={true}
 						step={1}
 						value={filter ? filter.value : 'all'}
