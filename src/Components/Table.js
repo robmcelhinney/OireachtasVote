@@ -6,6 +6,7 @@ import Select from 'react-select';
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
+import InputNumber from 'rc-input-number';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -42,14 +43,22 @@ const Table = (props) => {
 		"250"
 	);
 
-	function handlePercentRange(event, onChange) {
+	const handlePercentRange = (event, onChange) => {
 		setPercent([event[0], event[1]]);
 		onChange(event)
-	}
-	function handleVoteRange(event, onChange) {
+	};
+	const handlePercentInputs = (event, onChange) => {
+		// console.log("state percent: ", percent);
+		// if () {
+		//
+		// }
+		setPercent([Number(event || 0), percent[1]]);
+		onChange([Number(event || 0), percent[1]])
+	};
+	const handleVoteRange = (event, onChange) => {
 		setVote([event[0], event[1]]);
 		onChange(event)
-	}
+	};
 
 	const party_options = info['parties'];
 
@@ -132,6 +141,68 @@ const Table = (props) => {
 		maxWidth: "150",
 	};
 
+	const percentColumnSlider = {
+		Header: "Percent",
+		id: "Percent",
+		accessor: d => {
+			return d.percentVotes
+		},
+		filterMethod: (filter, row) => {
+			const id = filter.id;
+			return (percent[0] <= Number(row[id])
+				&& percent[1] >= Number(row[id]))
+		},
+		Filter: ({ filter, onChange }) =>
+			<div className={"nouislider_div"}>
+				<Nouislider
+					className={"nouislider"}
+					range={{ min: 0, max: 100 }}
+					start={percent}
+					connect={true}
+					step={1}
+					value={filter ? filter.value : ''}
+					onChange={event => handlePercentRange(event, onChange)}
+					pips={{
+						mode: "count",
+						values: 2,
+					}}
+					tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
+				/></div>,
+	};
+
+	const percentColumnOptions = {
+		Header: "Percent",
+		id: "Percent",
+		accessor: d => {
+			return d.percentVotes
+		},
+		filterMethod: (filter, row) => {
+			// console.log("filterMethod. id: ", filter.id, ". percent: ", percent);
+			console.log("filter.value: ", filter.value);
+			// console.log("filterMethod. percent[0]: ", percent[0], ". Number(row[id]): ", Number(row[id]));
+			return (Number(filter.value[0]) <= Number(row[filter.id])
+					&& Number(filter.value[1]) >= Number(row[filter.id]))
+		},
+		Filter: ({ filter, onChange }) =>
+			<div>
+				<InputNumber className={"numberInput"}
+						placeholder={percent[0]}
+						value={filter ? filter.value[0] : ''}
+						min={0} max={100}
+						onChange={(event) => handlePercentInputs(event, percent[1], onChange)}
+				/>
+				<InputNumber className={"numberInput"}
+						placeholder={percent[1]}
+						value={filter ? filter.value[1] : ''}
+						min={0} max={100}
+						onChange={(event) => handlePercentInputs(event, percent[0], onChange)}
+				/>
+			</div>
+
+
+	};
+
+
 	const columns = [
 		{
 			Header: "Party",
@@ -165,36 +236,6 @@ const Table = (props) => {
 				);
 			}
 		},
-		{
-			Header: "Percent",
-			id: "Percent",
-			accessor: d => {
-				return d.percentVotes
-			},
-			filterMethod: (filter, row) => {
-				const id = filter.pivotId || filter.id;
-				return (percent[0] <= Number(row[id])
-					&& percent[1] >= Number(row[id]))
-			},
-
-			Filter: ({ filter, onChange }) =>
-				<div className={"nouislider_div"}>
-					<Nouislider
-						className={"nouislider"}
-						range={{ min: 0, max: 100 }}
-						start={percent}
-						connect={true}
-						step={1}
-						value={filter ? filter.value : 'all'}
-						style={{width:'90%'}}
-						onChange={event => handlePercentRange(event, onChange)}
-						pips={{
-							mode: "count",
-							values: 2,
-						}}
-						tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
-					/></div>,
-		},
 	];
 
 	if (window.innerWidth <= 768) {
@@ -204,6 +245,7 @@ const Table = (props) => {
 				fullNameColumn
 			]
 		});
+		columns.push(percentColumnOptions);
 	}
 	else {
 		columns.unshift({
@@ -214,6 +256,7 @@ const Table = (props) => {
 			]
 		});
 		columns.unshift(pictureColumn);
+		columns.push(percentColumnSlider);
 		columns.push(voteColumn);
 	}
 

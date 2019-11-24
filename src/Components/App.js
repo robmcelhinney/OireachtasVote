@@ -76,9 +76,10 @@ class App extends React.Component {
 					info relevant.</p>
 				<p>If you have any ideas please let me know on
 					Twitter/Github below, i.e. should I keep TDs no longer
-					in the Dáil (Current MEPs) or should I automatically
-					remove the Ceann-Comhairle <span className={"should_be"}>
-					blame https://data.oireachtas.ie/</span></p>
+					in the Dáil (Current MEPs), how should I deal with new TDs
+					who joined during Dáil session, & should I automatically
+					remove the Ceann-Comhairle? <span className={"should_be"}>
+						blame <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a></span></p>
 			</div>
 			<div id={"footer"}
 				style={{color: 'black'}}>
