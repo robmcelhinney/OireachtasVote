@@ -21,9 +21,9 @@ def main():
     info = {}
 
     current_dail, seats = get_current_dail_info(info)
-    count = get_vote_count(BASE_URL + DAIL_SEARCH_PARAMS + current_dail)
     get_members(current_dail, seats, data)
-    get_member_percent(current_dail, count, data)
+    count, member_vote_track = get_vote_count(info)
+    get_member_percent(count, data, member_vote_track)
     get_parties(current_dail, info)
     create_json(data, info, count)
 
@@ -40,23 +40,17 @@ def create_json(data, info, count):
         json.dump(info, f, ensure_ascii=False, indent=4)
 
 
-def get_member_percent(current_dail, total_count, data):
+def get_member_percent(total_count, data, member_vote_track):
     for member in data:
         member_id = member["member_id"]
-        if "'" in member["member_id"]:
-            member_id = member_id.replace("'", "%27")
-        # print("url: ", BASE_URL + DAIL_SEARCH_PARAMS + current_dail
-        #       + MEMBER_PARAM + member_id)
-        count = get_vote_count(BASE_URL + DAIL_SEARCH_PARAMS + current_dail
-                               + MEMBER_PARAM + member_id)
-        print("MEMBER: ", member["member_id"])
-        print("count: ", count)
+        if member_id in member_vote_track:
+            count = member_vote_track[member_id]
+        else:
+            count = 0
         percent = round((count / total_count) * 100, 2)
-        print("percent: ", percent, "%")
-
+        # print("percent: ", percent, "%")
         member["votes"] = count
         member["percentVotes"] = percent
-        time.sleep(2)
 
 
 def get_current_dail_info(info):
@@ -83,7 +77,9 @@ def get_members(current_dail, seats, json_data):
         holds_office = False
         for office in result["member"]["memberships"][0][
             "membership"]["offices"]:
-            if office["office"]["dateRange"]["end"] is None and ("Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" == office["office"]["officeName"]["showAs"]):
+            if office["office"]["dateRange"]["end"] is None and (
+                    "Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" ==
+                    office["office"]["officeName"]["showAs"]):
                 holds_office = True
                 break
 
@@ -99,6 +95,7 @@ def get_members(current_dail, seats, json_data):
         member_data["party"] = result["member"]["memberships"][0][
             "membership"]["parties"][-1]["party"]["showAs"]
         member_data["office"] = holds_office
+        member_data["votes"] = 0
 
         finished_tenure = result["member"]["memberships"][0][
             "membership"]["dateRange"]["end"]
@@ -120,32 +117,42 @@ def get_parties(current_dail, info):
     info["parties"] = party_array
 
 
-def get_vote_count(url, vote_count=0):
-    page = load_page(url)
-    soup = BeautifulSoup(page.content, 'html.parser')
+def get_vote_count(info):
+    response = requests.get(
+        'https://api.oireachtas.ie/v1/divisions?chamber_type=house&chamber_id=&chamber=dail&date_start='
+        + info["dailStartDate"] + '&date_end=2099-01-01&limit=1&outcome=', headers=headers)
+    response_data = response.json()
+    total_votes = int(response_data["head"]["counts"]["resultCount"])
 
-    content_start = soup.find("div", {"id": "content-start"})
+    print("get_vote_count 2")
 
-    vote_count += len(content_start.findAll('div', class_="c-votes-list__item"))
-    if vote_count == 20:
-        try:
-            ul = content_start.find('ul', class_="c-pagination__list")
-            last_arrow = ul.findAll('a', class_="c-pagination__link -arrow")[-1]
+    member_vote_track = {}
+    response = requests.get('https://api.oireachtas.ie/v1/divisions?'
+                            'chamber_type=house&chamber_id=&chamber=dail&date_start='
+                            + info["dailStartDate"] + '&date_end=2099-01-01&limit=' +
+                            str(total_votes) + '&outcome=', headers=headers)
+    print("get_vote_count 3. received long response")
 
-            if last_arrow["title"] == "Go to last page":
-                last_arrow_url = last_arrow["href"]
-                page_count_text = last_arrow_url
+    response_data = response.json()
+    results = response_data["results"]
+    for result in results:
+        members_votes(result["division"]["tallies"], member_vote_track)
+    print("member_vote_track: ", member_vote_track)
 
-                page_param = page_count_text.find('?page=')
-                page_count_text = page_count_text[page_param:].replace("?page=", "")
-                page_param_end = page_count_text.find('&')
-                page_count = int(page_count_text[:page_param_end])
+    return total_votes, member_vote_track
 
-                vote_count *= (page_count - 1)
-                vote_count = get_vote_count(BASE_URL + last_arrow_url, vote_count)
-        except:
-            print("issue finding arrow to go to last page.")
-    return vote_count
+
+def members_votes(tallies_data, member_vote_track):
+    for voteType in ["nilVotes", "taVotes", "staonVotes"]:
+        if tallies_data[voteType]:
+            for members in tallies_data[voteType]["members"]:
+                if members['member']["memberCode"] == None:
+                    print("NONE???")
+                    print("members['member'][memberCode]: ", members['member']["memberCode"])
+                if members['member']["memberCode"] in member_vote_track:
+                    member_vote_track[members['member']["memberCode"]] += 1
+                else:
+                    member_vote_track[members['member']["memberCode"]] = 1
 
 
 def load_page(url):
