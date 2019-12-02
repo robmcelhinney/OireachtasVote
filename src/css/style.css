@@ -141,7 +141,7 @@ h1, h2, h3, h4 {
 }
 
 .nouislider {
-    position: absolute;
+    /*position: absolute;*/
     top: 30%;
 }
 
