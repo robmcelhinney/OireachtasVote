@@ -14,34 +14,75 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			excludeCabinet: false,
-			excludeTaoiseach: false,
+			excludeZeroVotes: false,
+			// excludeTaoiseach: false,
 			data: members,
 		};
 	}
 
-	handleChecked = () => {
-		this.setState({excludeCabinet: !this.state.excludeCabinet});
-		const newSelection = !this.state.excludeCabinet;
-		this.handleAlterMembers(newSelection);
+	handleCheckedCabinet = (type) => {
+		let data = this.state.data;
+		if (type === "cabinet"){
+			this.setState({excludeCabinet: !this.state.excludeCabinet});
+			const cabinetSelection = !this.state.excludeCabinet;
+			data = this.handleAlterMembers(cabinetSelection);
+			if (this.state.excludeZeroVotes) {
+				data = this.excludeZeroVotes(data);
+			}
+		}
+		else {
+			this.setState({excludeZeroVotes: !this.state.excludeZeroVotes});
+			const zeroSelection = !this.state.excludeZeroVotes;
+			data = this.handleAlterZeroVotes(zeroSelection, data);
+			if (this.state.excludeCabinet) {
+				data = this.excludeCabinet(data);
+			}
+		}
+		this.setState({data: data});
 	};
 
 	handleAlterMembers = (newSelection) => {
 		if (newSelection) {
-			let data = [];
-			members.forEach(
-				member => {
-					if (!member["office"]) {
-						data.push(member)
-					}}
-			);
-			this.setState({data: data});
+			return this.excludeCabinet(members);
 		}
 		else {
-			if (this.state.data !== members) {
-				this.setState({data: members})
-			}
+			return (this.state.data !== members) ? members : this.state.data;
 		}
 	};
+
+	handleAlterZeroVotes = (zeroSelection) => {
+		if (zeroSelection) {
+			return this.excludeZeroVotes(this.state.data);
+		}
+		else {
+			return members;
+		}
+	};
+
+
+	excludeCabinet(selection_members) {
+		let result = [];
+		selection_members.forEach(
+			member => {
+				if (!member["office"]) {
+					result.push(member)
+				}
+			}
+		);
+		return result;
+	}
+
+	excludeZeroVotes(selection_members) {
+		let result = [];
+		selection_members.forEach(
+			member => {
+				if (member["votes"] !== 0) {
+					result.push(member)
+				}
+			}
+		);
+		return result;
+	}
 
 	render() {
 		return (
@@ -54,11 +95,20 @@ class App extends React.Component {
 						<FormControlLabel
 							control={
 								<Checkbox checked={this.state.excludeCabinet}
-										  onChange={() =>
-										  this.handleChecked()}
+										  onChange={(event) =>
+										  this.handleCheckedCabinet("cabinet")}
 										  value={this.state.excludeCabinet} />
 						}
 							label="Exclude Cabinet Members"
+						/>
+						<FormControlLabel
+							control={
+								<Checkbox checked={this.state.excludeZeroVotes}
+										  onChange={() =>
+											  this.handleCheckedCabinet("zero")}
+										  value={this.state.excludeZeroVotes} />
+							}
+							label="Exclude TDs without votes"
 						/>
 						{/*<FormControlLabel*/}
 							{/*control={*/}
@@ -74,11 +124,14 @@ class App extends React.Component {
 				<Table members={this.state.data}/>
 				<p>Plan to run the web scraper at least once a week to keep the
 					info relevant.</p>
+				<p>Duplicates are from the Oireachtas API, they should
+					automatically be removed when their end is fixed.</p>
 				<p>If you have any ideas please let me know on
 					Twitter/Github below, i.e. should I keep TDs no longer
-					in the Dáil (Current MEPs) or should I automatically
-					remove the Ceann-Comhairle <span className={"should_be"}>
-					blame https://data.oireachtas.ie/</span></p>
+					in the Dáil (Current MEPs), how should I deal with new TDs
+					who joined during Dáil session, & should I automatically
+					remove the Ceann-Comhairle? <span className={"should_be"}>
+					blame <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a></span></p>
 			</div>
 			<div id={"footer"}
 				style={{color: 'black'}}>

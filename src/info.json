@@ -1,48 +1,48 @@
 {
+    "dailStartDate": "2016-03-10",
+    "currentDail": "32nd Dáil",
+    "dateCreated": "03/12/2019 19:22:19",
     "parties": [
         {
-            "value": "Anti-Austerity_Alliance_People_Before_Profit",
-            "label": "Anti-Austerity Alliance - People Before Profit"
+            "label": "Anti-Austerity Alliance - People Before Profit",
+            "value": "Anti-Austerity_Alliance_People_Before_Profit"
         },
         {
-            "value": "Fianna_Fáil",
-            "label": "Fianna Fáil"
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
         },
         {
-            "value": "Fine_Gael",
-            "label": "Fine Gael"
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
         },
         {
-            "value": "Green_Party",
-            "label": "Green Party"
+            "label": "Green Party",
+            "value": "Green_Party"
         },
         {
-            "value": "Independent",
-            "label": "Independent"
+            "label": "Independent",
+            "value": "Independent"
         },
         {
-            "value": "Independents_4_Change",
-            "label": "Independents 4 Change"
+            "label": "Independents 4 Change",
+            "value": "Independents_4_Change"
         },
         {
-            "value": "Labour_Party",
-            "label": "Labour Party"
+            "label": "Labour Party",
+            "value": "Labour_Party"
         },
         {
-            "value": "Sinn_Féin",
-            "label": "Sinn Féin"
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
         },
         {
-            "value": "Social_Democrats",
-            "label": "Social Democrats"
+            "label": "Social Democrats",
+            "value": "Social_Democrats"
         },
         {
-            "value": "Solidarity_People_Before_Profit",
-            "label": "Solidarity - People Before Profit"
+            "label": "Solidarity - People Before Profit",
+            "value": "Solidarity_People_Before_Profit"
         }
     ],
-    "dailStartDate": "2016-03-10",
-    "totalVotes": 664,
-    "dateCreated": "22/11/2019 17:56:17",
-    "currentDail": "32nd Dáil"
+    "totalVotes": 665
 }

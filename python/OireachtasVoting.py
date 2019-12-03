@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 
-from bs4 import BeautifulSoup
 import time
 import requests
 import json
 from datetime import datetime
 
-DAIL_SEARCH_PARAMS = "/en/debates/votes/?voteResultType=all&debateType=dail&datePeriod=term&term=%2Fie%2Foireachtas%2Fhouse%2Fdail%2F"
+BASE_PI_URL = "https://api.oireachtas.ie/v1/"
+
+DAIL_SEARCH_PARAMS = ("/en/debates/votes/?voteResultType=all&debateType="
+        "dail&datePeriod=term&term=%2Fie%2Foireachtas%2Fhouse%2Fdail%2F")
 
 BASE_URL = "https://www.oireachtas.ie"
 MEMBER_PARAM = "&committee=&member=%2Fie%2Foireachtas%2Fmember%2Fid%2F"
@@ -20,12 +22,12 @@ def main():
     data = []
     info = {}
 
-    current_dail, seats = get_current_dail_info(info)
-    count = get_vote_count(BASE_URL + DAIL_SEARCH_PARAMS + current_dail)
-    get_members(current_dail, seats, data)
-    get_member_percent(current_dail, count, data)
+    current_dail, num_members = get_current_dail_info(info)
+    total_count, member_vote_track = get_vote_count(info)
+    get_members(current_dail, num_members, data, info, total_count)
+    get_member_percent(total_count, data, member_vote_track)
     get_parties(current_dail, info)
-    create_json(data, info, count)
+    create_json(data, info, total_count)
 
 
 def create_json(data, info, count):
@@ -33,48 +35,53 @@ def create_json(data, info, count):
     info["totalVotes"] = count
     info["dateCreated"] = now.strftime("%d/%m/%Y %H:%M:%S")
 
-    with open('members.json', 'w', encoding='utf-8') as f:
+    with open('../src/members.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-    with open('info.json', 'w', encoding='utf-8') as f:
+    with open('../src/info.json', 'w', encoding='utf-8') as f:
         json.dump(info, f, ensure_ascii=False, indent=4)
 
 
-def get_member_percent(current_dail, total_count, data):
+def get_member_percent(total_count, data, member_vote_track):
     for member in data:
         member_id = member["member_id"]
-        if "'" in member["member_id"]:
-            member_id = member_id.replace("'", "%27")
-        # print("url: ", BASE_URL + DAIL_SEARCH_PARAMS + current_dail
-        #       + MEMBER_PARAM + member_id)
-        count = get_vote_count(BASE_URL + DAIL_SEARCH_PARAMS + current_dail
-                               + MEMBER_PARAM + member_id)
-        print("MEMBER: ", member["member_id"])
-        print("count: ", count)
-        percent = round((count / total_count) * 100, 2)
-        print("percent: ", percent, "%")
-
+        if member_id in member_vote_track:
+            count = member_vote_track[member_id]
+        else:
+            count = 0
+        if member["total_votes"] is None:
+            percent = round((count / total_count) * 100, 2)
+        else:
+            if member["total_votes"] == 0:
+                percent = 0
+            else:
+                percent = round((count / member["total_votes"]) * 100, 2)
         member["votes"] = count
         member["percentVotes"] = percent
-        time.sleep(2)
 
 
 def get_current_dail_info(info):
-    response = requests.get('https://api.oireachtas.ie/v1/houses?chamber_id=&chamber=dail&limit=50', headers=headers)
+    response = requests.get("{}houses?chamber_id=&chamber=dail&limit=50".format(BASE_PI_URL), headers=headers)
     data = response.json()
     house_number = data["results"][0]["house"]["houseNo"]
     house_name = data["results"][0]["house"]["showAs"]
-    seats = data["results"][0]["house"]["seats"]
+    # current_seats = data["results"][0]["house"]["seats"]
     house_start_date = data["results"][0]["house"]["dateRange"]['start']
     info["currentDail"] = house_name
     info["dailStartDate"] = house_start_date
-    return house_number, seats
 
-
-def get_members(current_dail, seats, json_data):
     response = requests.get(
-        'https://api.oireachtas.ie/v1/members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no='
-        + str(current_dail) + '&date_end=2099-01-01&limit=' + str(seats), headers=headers)
+        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=32&date_end=2099-01-01&limit=1".format(BASE_PI_URL), headers=headers)
+    data = response.json()
+    num_members = data["head"]["counts"]["resultCount"]
+
+    return house_number, num_members
+
+
+def get_members(current_dail, num_members, json_data, info, total_count):
+    response = requests.get(
+        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=".format(BASE_PI_URL)
+        + str(current_dail) + "&date_end=2099-01-01&limit=" + str(num_members), headers=headers)
     data = response.json()
 
     member_array = []
@@ -83,7 +90,9 @@ def get_members(current_dail, seats, json_data):
         holds_office = False
         for office in result["member"]["memberships"][0][
             "membership"]["offices"]:
-            if office["office"]["dateRange"]["end"] is None and ("Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" == office["office"]["officeName"]["showAs"]):
+            if office["office"]["dateRange"]["end"] is None and (
+                    "Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" ==
+                    office["office"]["officeName"]["showAs"]):
                 holds_office = True
                 break
 
@@ -99,6 +108,18 @@ def get_members(current_dail, seats, json_data):
         member_data["party"] = result["member"]["memberships"][0][
             "membership"]["parties"][-1]["party"]["showAs"]
         member_data["office"] = holds_office
+        member_data["votes"] = 0
+
+        start_date = result["member"]["memberships"][0]["membership"][
+                "dateRange"]["start"]
+
+        if (datetime.strptime(start_date, "%Y-%m-%d") >
+                datetime.strptime(info["dailStartDate"], "%Y-%m-%d")):
+            print("new member: ", member_data["fullName"])
+            total_votes = check_possible_votes(start_date, total_count)
+            member_data["total_votes"] = total_votes
+        else:
+            member_data["total_votes"] = None
 
         finished_tenure = result["member"]["memberships"][0][
             "membership"]["dateRange"]["end"]
@@ -107,45 +128,62 @@ def get_members(current_dail, seats, json_data):
     return member_array
 
 
+def check_possible_votes(start_date, total_count):
+    response = requests.get(
+        "{}divisions?chamber_type=house&chamber_id=&chamber=dail&"
+        "date_start={}&date_end=2099-01-01&skip={}&limit=1&outcome=".format(
+            BASE_PI_URL, start_date, total_count), headers=headers)
+    data = response.json()
+    possible_votes = data["head"]["counts"]["resultCount"]
+    return possible_votes
+
+
 def get_parties(current_dail, info):
     response = requests.get(
-        'https://api.oireachtas.ie/v1/parties?chamber_id=&chamber=dail&house_no='
+        "{}parties?chamber_id=&chamber=dail&house_no=".format(BASE_PI_URL)
         + str(current_dail) + '&limit=50', headers=headers)
     data = response.json()
 
     party_array = []
     for party in data["results"]["house"]["parties"]:
-        print('party["party"]["showAs"]: ', party["party"]["showAs"])
         party_array.append({"value": party["party"]["partyCode"], "label": party["party"]["showAs"]})
     info["parties"] = party_array
 
 
-def get_vote_count(url, vote_count=0):
-    page = load_page(url)
-    soup = BeautifulSoup(page.content, 'html.parser')
+def get_vote_count(info):
+    response = requests.get(
+        "{}divisions?chamber_type=house&chamber_id=&chamber=dail&date_start=".format(BASE_PI_URL)
+        + info["dailStartDate"] + "&date_end=2099-01-01&limit=1&outcome=", headers=headers)
+    response_data = response.json()
+    total_votes = int(response_data["head"]["counts"]["resultCount"])
 
-    content_start = soup.find("div", {"id": "content-start"})
+    member_vote_track = {}
+    response = requests.get("{}divisions?".format(BASE_PI_URL) +
+                            "chamber_type=house&chamber_id=&chamber=dail&date_start="
+                            + info["dailStartDate"] + "&date_end=2099-01-01&limit=" +
+                            str(total_votes) + "&outcome=", headers=headers)
 
-    vote_count += len(content_start.findAll('div', class_="c-votes-list__item"))
-    if vote_count == 20:
-        try:
-            ul = content_start.find('ul', class_="c-pagination__list")
-            last_arrow = ul.findAll('a', class_="c-pagination__link -arrow")[-1]
+    response_data = response.json()
+    results = response_data["results"]
+    for result in results:
+        members_votes(result["division"]["tallies"], member_vote_track)
 
-            if last_arrow["title"] == "Go to last page":
-                last_arrow_url = last_arrow["href"]
-                page_count_text = last_arrow_url
+    return total_votes, member_vote_track
 
-                page_param = page_count_text.find('?page=')
-                page_count_text = page_count_text[page_param:].replace("?page=", "")
-                page_param_end = page_count_text.find('&')
-                page_count = int(page_count_text[:page_param_end])
 
-                vote_count *= (page_count - 1)
-                vote_count = get_vote_count(BASE_URL + last_arrow_url, vote_count)
-        except:
-            print("issue finding arrow to go to last page.")
-    return vote_count
+def members_votes(tallies_data, member_vote_track):
+    for voteType in ["nilVotes", "taVotes", "staonVotes"]:
+        if tallies_data[voteType]:
+            for members in tallies_data[voteType]["members"]:
+                if members['member']["memberCode"] is None:
+                    print("Something went wrong (with Oireachtas.ie's data)"
+                          " and the memberCode is not showing but this "
+                          "is the name of the member voting: "
+                          "members['member']: ", members['member'])
+                if members['member']["memberCode"] in member_vote_track:
+                    member_vote_track[members['member']["memberCode"]] += 1
+                else:
+                    member_vote_track[members['member']["memberCode"]] = 1
 
 
 def load_page(url):

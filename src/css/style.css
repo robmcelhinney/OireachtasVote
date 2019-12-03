@@ -68,6 +68,8 @@ h1, h2, h3, h4 {
 
 .ReactTable {
     font-size: 1em;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 #footer {
@@ -82,10 +84,35 @@ h1, h2, h3, h4 {
     color: #999;
 }
 
+.numberInput{
+    width: 60px;
+}
+
+.ReactTable {
+    font-size: 0.8em;
+}
+
 /*Responsive*/
 @media (min-width: 768px){
     .container {
         width: 750px;
+    }
+    .ReactTable {
+        font-size: 0.9em;
+        padding-right: inherit;
+        padding-left: inherit;
+    }
+    .nouislider_div {
+        width: 90%;
+    }
+    .noUi-handle.noUi-handle-lower .noUi-tooltip {
+        left: 2px;
+    }
+    .noUi-handle.noUi-handle-upper .noUi-tooltip {
+        left: 15px;
+    }
+    .noUi-target {
+        right: 0;
     }
 }
 @media (min-width: 992px){
@@ -107,28 +134,29 @@ h1, h2, h3, h4 {
 
 /*noUISlider*/
 .nouislider_div {
-    width: 90%;
+    width: 75%;
     margin: 0 auto;
     height: 70px;
     /*margin-top: 20px;*/
 }
 
 .nouislider {
-    position: absolute;
+    /*position: absolute;*/
     top: 30%;
 }
 
 .noUi-target {
     border: 0;
     border-radius: 0;
+    right: 7px !important;
 }
 
 .noUi-handle.noUi-handle-lower .noUi-tooltip {
-    left: 2px;
+    left: 8px;
 }
 
 .noUi-handle.noUi-handle-upper .noUi-tooltip {
-    left: 15px;
+    left: 10px;
 }
 
 .noUi-target.noUi-horizontal .noUi-tooltip {

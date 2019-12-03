@@ -6,6 +6,8 @@ import Select from 'react-select';
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
+import InputNumber from 'rc-input-number';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -42,14 +44,18 @@ const Table = (props) => {
 		"250"
 	);
 
-	function handlePercentRange(event, onChange) {
+	const handlePercentRange = (event, onChange) => {
 		setPercent([event[0], event[1]]);
 		onChange(event)
-	}
-	function handleVoteRange(event, onChange) {
+	};
+	const handlePercentInputs = (event, onChange) => {
+		setPercent([Number(event || 0), percent[1]]);
+		onChange([Number(event || 0), percent[1]])
+	};
+	const handleVoteRange = (event, onChange) => {
 		setVote([event[0], event[1]]);
 		onChange(event)
-	}
+	};
 
 	const party_options = info['parties'];
 
@@ -71,19 +77,25 @@ const Table = (props) => {
 		};
 	});
 
+	const fallbackDefaultImage = (ev) => {
+		ev.target.src = require('../icons/user.svg')
+	};
+
 	const pictureColumn = {
 		id: "picture",
 		accessor: d => {
 			return <div><a href={"https://www.oireachtas.ie/en/members/member/"
-			+ d.member_id}><img alt={"td"}
-								className={"member__avatar"}
-								src={"https://data.oireachtas.ie/ie/oireachtas/member/id/"
-								+ d.member_id + "/image/thumb"}/></a></div>
+			+ d.member_id}>
+				<img alt={"td"}
+						className={"member__avatar"}
+						src={"https://data.oireachtas.ie/ie/oireachtas/member/id/"
+						+ d.member_id + "/image/thumb"}
+						onError={event => fallbackDefaultImage(event)}
+			/></a></div>
 		},
 		filterable: false,
 		maxWidth: "100",
 	};
-
 	const voteColumn = {
 		id: "Votes",
 		Header: "Votes",
@@ -111,18 +123,47 @@ const Table = (props) => {
 				/></div>,
 	};
 
+	const getNewTDTooltip = (total_votes, firstName, secondName="") => {
+		return <Tooltip
+			title={"New TD. Available for " + total_votes
+			+ " votes."} enterDelay={300}
+			leaveDelay={100} placement={"top"}
+		>
+			<span>
+				{firstName}* {secondName}
+			</span>
+		</Tooltip>;
+	};
+
 	const fullNameColumn = {
 		Header: "Full Name",
 		id: "fullName",
 		accessor: d => {
-			return d.firstName + " " + d.lastName
+			if (d.total_votes === null) {
+				return d.firstName + " " + d.lastName
+			}
+			else {
+				return (
+					getNewTDTooltip(d.total_votes, d.firstName, d.lastName)
+				)
+			}
 		},
 		maxWidth: "150",
 	};
 
 	const firstNameColumn = {
 		Header: "First Name",
-		accessor: "firstName",
+		id: "firstName",
+		accessor: d => {
+			if (d.total_votes === null) {
+				return d.firstName
+			}
+			else {
+				return (
+					getNewTDTooltip(d.total_votes, d.firstName)
+				)
+			}
+		},
 		maxWidth: "150",
 	};
 
@@ -131,6 +172,68 @@ const Table = (props) => {
 		accessor: "lastName",
 		maxWidth: "150",
 	};
+
+	const percentColumnSlider = {
+		Header: "Percent",
+		id: "Percent",
+		accessor: d => {
+			return d.percentVotes
+		},
+		filterMethod: (filter, row) => {
+			const id = filter.id;
+			return (percent[0] <= Number(row[id])
+				&& percent[1] >= Number(row[id]))
+		},
+		Filter: ({ filter, onChange }) =>
+			<div className={"nouislider_div"}>
+				<Nouislider
+					className={"nouislider"}
+					range={{ min: 0, max: 100 }}
+					start={percent}
+					connect={true}
+					step={1}
+					value={filter ? filter.value : ''}
+					onChange={event => handlePercentRange(event, onChange)}
+					pips={{
+						mode: "count",
+						values: 2,
+					}}
+					tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
+				/></div>,
+	};
+
+	const percentColumnOptions = {
+		Header: "Percent",
+		id: "Percent",
+		accessor: d => {
+			return d.percentVotes
+		},
+		filterMethod: (filter, row) => {
+			// console.log("filterMethod. id: ", filter.id, ". percent: ", percent);
+			console.log("filter.value: ", filter.value);
+			// console.log("filterMethod. percent[0]: ", percent[0], ". Number(row[id]): ", Number(row[id]));
+			return (Number(filter.value[0]) <= Number(row[filter.id])
+					&& Number(filter.value[1]) >= Number(row[filter.id]))
+		},
+		Filter: ({ filter, onChange }) =>
+			<div>
+				<InputNumber className={"numberInput"}
+						placeholder={percent[0]}
+						value={filter ? filter.value[0] : ''}
+						min={0} max={100}
+						onChange={(event) => handlePercentInputs(event, percent[1], onChange)}
+				/>
+				<InputNumber className={"numberInput"}
+						placeholder={percent[1]}
+						value={filter ? filter.value[1] : ''}
+						min={0} max={100}
+						onChange={(event) => handlePercentInputs(event, percent[0], onChange)}
+				/>
+			</div>
+
+
+	};
+
 
 	const columns = [
 		{
@@ -165,36 +268,6 @@ const Table = (props) => {
 				);
 			}
 		},
-		{
-			Header: "Percent",
-			id: "Percent",
-			accessor: d => {
-				return d.percentVotes
-			},
-			filterMethod: (filter, row) => {
-				const id = filter.pivotId || filter.id;
-				return (percent[0] <= Number(row[id])
-					&& percent[1] >= Number(row[id]))
-			},
-
-			Filter: ({ filter, onChange }) =>
-				<div className={"nouislider_div"}>
-					<Nouislider
-						className={"nouislider"}
-						range={{ min: 0, max: 100 }}
-						start={percent}
-						connect={true}
-						step={1}
-						value={filter ? filter.value : 'all'}
-						style={{width:'90%'}}
-						onChange={event => handlePercentRange(event, onChange)}
-						pips={{
-							mode: "count",
-							values: 2,
-						}}
-						tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
-					/></div>,
-		},
 	];
 
 	if (window.innerWidth <= 768) {
@@ -204,6 +277,7 @@ const Table = (props) => {
 				fullNameColumn
 			]
 		});
+		columns.push(percentColumnOptions);
 	}
 	else {
 		columns.unshift({
@@ -214,6 +288,7 @@ const Table = (props) => {
 			]
 		});
 		columns.unshift(pictureColumn);
+		columns.push(percentColumnSlider);
 		columns.push(voteColumn);
 	}
 
