@@ -1,25 +1,26 @@
 {
   "files": {
     "main.css": "/OireachtasVote/static/css/main.9b968d90.chunk.css",
-    "main.js": "/OireachtasVote/static/js/main.cff98eda.chunk.js",
-    "main.js.map": "/OireachtasVote/static/js/main.cff98eda.chunk.js.map",
+    "main.js": "/OireachtasVote/static/js/main.94332288.chunk.js",
+    "main.js.map": "/OireachtasVote/static/js/main.94332288.chunk.js.map",
     "runtime-main.js": "/OireachtasVote/static/js/runtime-main.282d28eb.js",
     "runtime-main.js.map": "/OireachtasVote/static/js/runtime-main.282d28eb.js.map",
     "static/css/2.bed5b423.chunk.css": "/OireachtasVote/static/css/2.bed5b423.chunk.css",
-    "static/js/2.600ef995.chunk.js": "/OireachtasVote/static/js/2.600ef995.chunk.js",
-    "static/js/2.600ef995.chunk.js.map": "/OireachtasVote/static/js/2.600ef995.chunk.js.map",
+    "static/js/2.1740160a.chunk.js": "/OireachtasVote/static/js/2.1740160a.chunk.js",
+    "static/js/2.1740160a.chunk.js.map": "/OireachtasVote/static/js/2.1740160a.chunk.js.map",
     "index.html": "/OireachtasVote/index.html",
-    "precache-manifest.35b0c8a032d02bc1205ef90d9a77e2a5.js": "/OireachtasVote/precache-manifest.35b0c8a032d02bc1205ef90d9a77e2a5.js",
+    "precache-manifest.a0ffa8e582cdc1128889de3d26f97364.js": "/OireachtasVote/precache-manifest.a0ffa8e582cdc1128889de3d26f97364.js",
     "service-worker.js": "/OireachtasVote/service-worker.js",
     "static/css/2.bed5b423.chunk.css.map": "/OireachtasVote/static/css/2.bed5b423.chunk.css.map",
     "static/css/main.9b968d90.chunk.css.map": "/OireachtasVote/static/css/main.9b968d90.chunk.css.map",
-    "static/media/style.css": "/OireachtasVote/static/media/Quicksand-Regular.9a891411.ttf"
+    "static/media/style.css": "/OireachtasVote/static/media/Quicksand-Regular.9a891411.ttf",
+    "static/media/user.svg": "/OireachtasVote/static/media/user.9bf531f6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.282d28eb.js",
     "static/css/2.bed5b423.chunk.css",
-    "static/js/2.600ef995.chunk.js",
+    "static/js/2.1740160a.chunk.js",
     "static/css/main.9b968d90.chunk.css",
-    "static/js/main.cff98eda.chunk.js"
+    "static/js/main.94332288.chunk.js"
   ]
 }
