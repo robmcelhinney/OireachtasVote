@@ -7,6 +7,7 @@ import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
 import InputNumber from 'rc-input-number';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -48,10 +49,6 @@ const Table = (props) => {
 		onChange(event)
 	};
 	const handlePercentInputs = (event, onChange) => {
-		// console.log("state percent: ", percent);
-		// if () {
-		//
-		// }
 		setPercent([Number(event || 0), percent[1]]);
 		onChange([Number(event || 0), percent[1]])
 	};
@@ -80,19 +77,25 @@ const Table = (props) => {
 		};
 	});
 
+	const fallbackDefaultImage = (ev) => {
+		ev.target.src = require('../icons/user.svg')
+	};
+
 	const pictureColumn = {
 		id: "picture",
 		accessor: d => {
 			return <div><a href={"https://www.oireachtas.ie/en/members/member/"
-			+ d.member_id}><img alt={"td"}
-								className={"member__avatar"}
-								src={"https://data.oireachtas.ie/ie/oireachtas/member/id/"
-								+ d.member_id + "/image/thumb"}/></a></div>
+			+ d.member_id}>
+				<img alt={"td"}
+						className={"member__avatar"}
+						src={"https://data.oireachtas.ie/ie/oireachtas/member/id/"
+						+ d.member_id + "/image/thumb"}
+						onError={event => fallbackDefaultImage(event)}
+			/></a></div>
 		},
 		filterable: false,
 		maxWidth: "100",
 	};
-
 	const voteColumn = {
 		id: "Votes",
 		Header: "Votes",
@@ -120,18 +123,47 @@ const Table = (props) => {
 				/></div>,
 	};
 
+	const getNewTDTooltip = (total_votes, firstName, secondName="") => {
+		return <Tooltip
+			title={"New TD. Available for " + total_votes
+			+ " votes."} enterDelay={300}
+			leaveDelay={100} placement={"top"}
+		>
+			<span>
+				{firstName}* {secondName}
+			</span>
+		</Tooltip>;
+	};
+
 	const fullNameColumn = {
 		Header: "Full Name",
 		id: "fullName",
 		accessor: d => {
-			return d.firstName + " " + d.lastName
+			if (d.total_votes === null) {
+				return d.firstName + " " + d.lastName
+			}
+			else {
+				return (
+					getNewTDTooltip(d.total_votes, d.firstName, d.lastName)
+				)
+			}
 		},
 		maxWidth: "150",
 	};
 
 	const firstNameColumn = {
 		Header: "First Name",
-		accessor: "firstName",
+		id: "firstName",
+		accessor: d => {
+			if (d.total_votes === null) {
+				return d.firstName
+			}
+			else {
+				return (
+					getNewTDTooltip(d.total_votes, d.firstName)
+				)
+			}
+		},
 		maxWidth: "150",
 	};
 

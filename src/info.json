@@ -1,7 +1,7 @@
 {
-    "dateCreated": "02/12/2019 19:18:45",
-    "totalVotes": 665,
+    "dailStartDate": "2016-03-10",
     "currentDail": "32nd Dáil",
+    "dateCreated": "03/12/2019 19:22:19",
     "parties": [
         {
             "label": "Anti-Austerity Alliance - People Before Profit",
@@ -44,5 +44,5 @@
             "value": "Solidarity_People_Before_Profit"
         }
     ],
-    "dailStartDate": "2016-03-10"
+    "totalVotes": 665
 }
