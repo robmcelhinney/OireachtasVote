@@ -5,7 +5,9 @@ https://robmcelhinney.github.io/OireachtasVote/)
 
 Attempted to make this website so that it could solely be hosted by Github, 
 no need to use external database or any server side code, a static webpage only.
-Python file uses publically available [Houses of the Oireachtas Open Data APIs](https://data.oireachtas.ie/) to make certain requests and then resorts to web scraping [oireachtas.ie](https://www.oireachtas.ie/) where necessary. The resulting info is stored in two json files that make up the site.
+Python file uses publically available [Houses of the Oireachtas Open Data APIs](https://data.oireachtas.ie/) to make request information regarding the current dail, its members, and voting records over its period. This resulting info is stored in two json files that make up the site: 
+1. members.json stores the politician's name, their party, if the have a cabinet position, and their total votes. 
+2. info.json holds info regarding the current dail, its parties, and when this python file was run.
 
 ## Install
 
