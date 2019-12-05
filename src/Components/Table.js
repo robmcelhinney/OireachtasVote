@@ -8,6 +8,7 @@ import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
 import InputNumber from 'rc-input-number';
 import Tooltip from '@material-ui/core/Tooltip';
+import NumericInput from 'react-numeric-input';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -34,6 +35,12 @@ const Table = (props) => {
 	const [percent, setPercent] = useState(
 		[0, 100]
 	);
+	const [percentOne, setPercentOne] = useState(
+		0
+	);
+	const [percentTwo, setPercentTwo] = useState(
+		100
+	);
 	const [vote, setVote] = useState(
 		[0, info['totalVotes']]
 	);
@@ -48,10 +55,7 @@ const Table = (props) => {
 		setPercent([event[0], event[1]]);
 		onChange(event)
 	};
-	const handlePercentInputs = (event, onChange) => {
-		setPercent([Number(event || 0), percent[1]]);
-		onChange([Number(event || 0), percent[1]])
-	};
+
 	const handleVoteRange = (event, onChange) => {
 		setVote([event[0], event[1]]);
 		onChange(event)
@@ -199,7 +203,8 @@ const Table = (props) => {
 						values: 2,
 					}}
 					tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
-				/></div>,
+				/>
+			</div>,
 	};
 
 	const percentColumnOptions = {
@@ -208,30 +213,43 @@ const Table = (props) => {
 		accessor: d => {
 			return d.percentVotes
 		},
+
 		filterMethod: (filter, row) => {
-			// console.log("filterMethod. id: ", filter.id, ". percent: ", percent);
-			console.log("filter.value: ", filter.value);
-			// console.log("filterMethod. percent[0]: ", percent[0], ". Number(row[id]): ", Number(row[id]));
-			return (Number(filter.value[0]) <= Number(row[filter.id])
-					&& Number(filter.value[1]) >= Number(row[filter.id]))
+			const id = filter.id;
+			console.log("filter: ", filter);
+			if (filter.value[1] === "one") {
+				return filter.value[0] <= Number(row[id])
+					&& percentTwo >= Number(row[id])
+			}
+			return percentOne <= Number(row[id])
+				&& filter.value[0] >= Number(row[id])
 		},
 		Filter: ({ filter, onChange }) =>
 			<div>
 				<InputNumber className={"numberInput"}
-						placeholder={percent[0]}
-						value={filter ? filter.value[0] : ''}
-						min={0} max={100}
-						onChange={(event) => handlePercentInputs(event, percent[1], onChange)}
+							 // placeholder={percentOne}
+							 value={percentOne}
+							 min={0} max={100}
+							 onChange={e => {
+							 	onChange([e, "one"])
+							 }}
+							 onBlur={event => {
+							 	console.log("onBlur: ", event.target.value);
+							 	setPercentOne(Number(event.target.value))
+							 }}
 				/>
 				<InputNumber className={"numberInput"}
-						placeholder={percent[1]}
-						value={filter ? filter.value[1] : ''}
-						min={0} max={100}
-						onChange={(event) => handlePercentInputs(event, percent[0], onChange)}
+							 // placeholder={percentTwo}
+							 value={percentTwo}
+							 min={0} max={100}
+							 onBlur={event => {
+								 setPercentTwo(Number(event.target.value))
+							 }}
+							 onChange={e => {
+								 onChange([e, "two"]);
+							 }}
 				/>
 			</div>
-
-
 	};
 
 
