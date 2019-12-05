@@ -8,7 +8,6 @@ import "nouislider/distribute/nouislider.css";
 import wNumb from 'wnumb';
 import InputNumber from 'rc-input-number';
 import Tooltip from '@material-ui/core/Tooltip';
-import NumericInput from 'react-numeric-input';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
@@ -34,12 +33,6 @@ function filterCaseInsensitive(filter, row) {
 const Table = (props) => {
 	const [percent, setPercent] = useState(
 		[0, 100]
-	);
-	const [percentOne, setPercentOne] = useState(
-		0
-	);
-	const [percentTwo, setPercentTwo] = useState(
-		100
 	);
 	const [vote, setVote] = useState(
 		[0, info['totalVotes']]
@@ -70,7 +63,11 @@ const Table = (props) => {
 				setWidthHide(smallerWidth);
 			}
 			if (widthHide) {
+				smallTable();
 				setPartyWidth("100");
+			}
+			else {
+				standardTable();
 			}
 		};
 
@@ -216,37 +213,46 @@ const Table = (props) => {
 
 		filterMethod: (filter, row) => {
 			const id = filter.id;
-			console.log("filter: ", filter);
 			if (filter.value[1] === "one") {
-				return filter.value[0] <= Number(row[id])
-					&& percentTwo >= Number(row[id])
+				const value = (isNaN(filter.value[0])) ? 0 : filter.value[0];
+				return value <= Number(row[id])
+					&& percent[1] >= Number(row[id])
 			}
-			return percentOne <= Number(row[id])
-				&& filter.value[0] >= Number(row[id])
+			const value = (isNaN(filter.value[0])) ? 100 : filter.value[0];
+			return percent[0] <= Number(row[id])
+				&& value >= Number(row[id])
 		},
 		Filter: ({ filter, onChange }) =>
 			<div>
 				<InputNumber className={"numberInput"}
-							 // placeholder={percentOne}
-							 value={percentOne}
+							 // placeholder={percent[0]}
+							 value={percent[0]}
 							 min={0} max={100}
 							 onChange={e => {
-							 	onChange([e, "one"])
+							 	onChange([(isNaN(e)) ? 0 : e, "one"])
 							 }}
 							 onBlur={event => {
 							 	console.log("onBlur: ", event.target.value);
-							 	setPercentOne(Number(event.target.value))
+								 let value = Number(event.target.value);
+								 if (isNaN(value)) {
+								 	value = 0;
+								 }
+								 setPercent([value, percent[1]])
 							 }}
 				/>
 				<InputNumber className={"numberInput"}
-							 // placeholder={percentTwo}
-							 value={percentTwo}
+							 // placeholder={percent[1]}
+							 value={percent[1]}
 							 min={0} max={100}
-							 onBlur={event => {
-								 setPercentTwo(Number(event.target.value))
-							 }}
 							 onChange={e => {
-								 onChange([e, "two"]);
+								 onChange([(isNaN(e)) ? 100 : e, "two"]);
+							 }}
+							 onBlur={event => {
+								 let value = Number(event.target.value);
+								 if (isNaN(value)) {
+									 value = 100;
+								 }
+								 setPercent([percent[0], value])
 							 }}
 				/>
 			</div>
@@ -288,7 +294,7 @@ const Table = (props) => {
 		},
 	];
 
-	if (window.innerWidth <= 768) {
+	const smallTable = () => {
 		columns.unshift({
 			Header: "Name",
 			columns: [
@@ -296,8 +302,8 @@ const Table = (props) => {
 			]
 		});
 		columns.push(percentColumnOptions);
-	}
-	else {
+	};
+	const standardTable = () => {
 		columns.unshift({
 			Header: "Name",
 			columns: [
@@ -308,6 +314,13 @@ const Table = (props) => {
 		columns.unshift(pictureColumn);
 		columns.push(percentColumnSlider);
 		columns.push(voteColumn);
+	};
+
+	if (window.innerWidth <= 768) {
+		smallTable()
+	}
+	else {
+		standardTable()
 	}
 
 	return (

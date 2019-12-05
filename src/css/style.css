@@ -72,6 +72,10 @@ h1, h2, h3, h4 {
     padding-left: 0 !important;
 }
 
+.ReactTable .rt-th, .ReactTable .rt-td {
+    white-space: normal !important;
+}
+
 #footer {
     text-align: center;
     font-size: 0.7em;
@@ -101,6 +105,10 @@ h1, h2, h3, h4 {
         font-size: 0.9em;
         padding-right: inherit;
         padding-left: inherit;
+        white-space: nowrap;
+    }
+    .ReactTable .rt-th, .ReactTable .rt-td {
+        white-space: nowrap;
     }
     .nouislider_div {
         width: 90%;

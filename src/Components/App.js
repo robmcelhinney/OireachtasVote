@@ -95,18 +95,20 @@ class App extends React.Component {
 						<FormControlLabel
 							control={
 								<Checkbox checked={this.state.excludeCabinet}
-										  onChange={(event) =>
-										  this.handleCheckedCabinet("cabinet")}
-										  value={this.state.excludeCabinet} />
+										  value={this.state.excludeCabinet}
+										  onChange={() =>
+										  this.handleCheckedCabinet("cabinet")
+										  } />
 						}
 							label="Exclude Cabinet Members"
 						/>
 						<FormControlLabel
 							control={
 								<Checkbox checked={this.state.excludeZeroVotes}
+										  value={this.state.excludeZeroVotes}
 										  onChange={() =>
-											  this.handleCheckedCabinet("zero")}
-										  value={this.state.excludeZeroVotes} />
+											  this.handleCheckedCabinet("zero")
+										  } />
 							}
 							label="Exclude TDs without votes"
 						/>
@@ -122,8 +124,8 @@ class App extends React.Component {
 					</FormGroup>
 				</div>
 				<Table members={this.state.data}/>
-				<p>Plan to run the web scraper at least once a week to keep the
-					info relevant.</p>
+				<p>Plan to run the web scraper around once a week to keep the
+					info relevant. Let me know if it hasn't been done in a while.</p>
 				<p>Duplicates are from the Oireachtas API, they should
 					automatically be removed when their end is fixed.</p>
 				<p>If you have any ideas please let me know on
