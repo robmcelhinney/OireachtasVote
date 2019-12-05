@@ -98,17 +98,20 @@ const Table = (props) => {
 	const pictureColumn = {
 		id: "picture",
 		accessor: d => {
-			return <div><a href={"https://www.oireachtas.ie/en/members/member/"
-			+ d.member_id}>
+			return <div>
+				<a href={"https://www.oireachtas.ie/en/members/member/"
+					+ d.member_id}>
 				<img alt={"td"}
 						className={"member__avatar"}
 						src={"https://data.oireachtas.ie/ie/oireachtas/member/id/"
 						+ d.member_id + "/image/thumb"}
 						onError={event => fallbackDefaultImage(event)}
-			/></a></div>
+				/>
+				</a>
+			</div>
 		},
 		filterable: false,
-		maxWidth: "100",
+		maxWidth: 80,
 	};
 	const voteColumn = {
 		id: "Votes",

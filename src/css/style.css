@@ -25,6 +25,10 @@ body {
     font-size: 0.9em;
 }
 
+#root{
+    width: 100%;
+}
+
 #maincontent {
     padding-right: 15px;
     padding-left: 15px;
