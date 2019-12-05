@@ -11,15 +11,28 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 function filterCaseInsensitive(filter, row) {
 	const id = filter.pivotId || filter.id;
-	if (["party", "firstName", "lastName", "fullName"].includes(id)) {
+
+	function filterLowerCaseNormalize(str) {
 		return (
-			row[id] !== undefined ?
-				String(row[id].toLowerCase()).includes(filter.value.toLowerCase())
-						|| (String(row[id].toLowerCase()).normalize('NFD')
-						.replace(/[\u0300-\u036f]/g, ""))
-						.includes(filter.value.toLowerCase())
+			str !== undefined ?
+				String(str.toLowerCase()).includes(filter.value.toLowerCase())
+				|| (String(str.toLowerCase()).normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, ""))
+					.includes(filter.value.toLowerCase())
 				: true
 		);
+	}
+
+	if (["party", "lastName"].includes(id)) {
+		return filterLowerCaseNormalize(row[id]);
+	}
+	else if (["firstName", "fullName"].includes(id)) {
+		let rowValue = row[id];
+		if (typeof(rowValue) === "object") {
+			let child = row[id].props.children.props.children;
+			rowValue = child[0] + " " + child[2];
+		}
+		return filterLowerCaseNormalize(rowValue);
 	}
 	else if (["votes", "percent"].includes(id)) {
 		return (
@@ -232,7 +245,6 @@ const Table = (props) => {
 							 	onChange([(isNaN(e)) ? 0 : e, "one"])
 							 }}
 							 onBlur={event => {
-							 	console.log("onBlur: ", event.target.value);
 								 let value = Number(event.target.value);
 								 if (isNaN(value)) {
 								 	value = 0;
