@@ -1,12 +1,13 @@
 import React from 'react';
 import 'react-table/react-table.css';
-import info from '../info.json';
 import "nouislider/distribute/nouislider.css";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import Table from './Table';
-import members from '../members.json';
+import info from '../info.json';
+import members_json from '../members.json';
+import Info from "./Info";
 
 
 class App extends React.Component {
@@ -15,9 +16,18 @@ class App extends React.Component {
 		this.state = {
 			excludeCabinet: false,
 			excludeZeroVotes: false,
-			// excludeTaoiseach: false,
-			data: members,
+			members: [],
+			data: [],
+			info: []
 		};
+	}
+
+	componentDidMount() {
+	this.setState({
+		info: info,
+		data: members_json,
+		members: members_json
+	});
 	}
 
 	handleCheckedCabinet = (type) => {
@@ -42,6 +52,7 @@ class App extends React.Component {
 	};
 
 	handleAlterMembers = (newSelection) => {
+		const { members } = this.state;
 		if (newSelection) {
 			return this.excludeCabinet(members);
 		}
@@ -51,6 +62,7 @@ class App extends React.Component {
 	};
 
 	handleAlterZeroVotes = (zeroSelection) => {
+		const { members } = this.state;
 		if (zeroSelection) {
 			return this.excludeZeroVotes(this.state.data);
 		}
@@ -85,12 +97,13 @@ class App extends React.Component {
 	}
 
 	render() {
+		const { data, info } = this.state;
 		return (
 			<>
 			<div id={"maincontent"} className={"container"}>
 				<div id={"headerInfo"}>
 					<h1 className={"mainHeader"}>TD Voting Record - {info.currentDail}</h1>
-					<p><span className={"should_be"}>**should be**</span> Accurate as of {info.dateCreated}</p>
+					<p><span className={"should_be"}>*should be*</span> Accurate as of {info.dateCreated}</p>
 					<FormGroup row>
 						<FormControlLabel
 							control={
@@ -112,18 +125,10 @@ class App extends React.Component {
 							}
 							label="Exclude TDs without votes"
 						/>
-						{/*<FormControlLabel*/}
-							{/*control={*/}
-								{/*<Checkbox checked={this.state.excludeTaoiseach}*/}
-										  {/*onChange={() =>*/}
-											  {/*this.handleChecked("taoiseach")}*/}
-										  {/*value={this.state.excludeTaoiseach} />*/}
-							{/*}*/}
-							{/*label="Exclude Taoiseach"*/}
-						{/*/>*/}
 					</FormGroup>
 				</div>
-				<Table members={this.state.data}/>
+				<Table members={data}/>
+				<Info info={info}/>
 				<p>Plan to run the web scraper around once a week to keep the
 					info relevant. Let me know if it hasn't been done in a while.</p>
 				<p>Duplicates are from the Oireachtas API, they should

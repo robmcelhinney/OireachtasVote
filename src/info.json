@@ -1,7 +1,4 @@
 {
-    "dailStartDate": "2016-03-10",
-    "currentDail": "32nd Dáil",
-    "dateCreated": "03/12/2019 19:22:19",
     "parties": [
         {
             "label": "Anti-Austerity Alliance - People Before Profit",
@@ -44,5 +41,30 @@
             "value": "Solidarity_People_Before_Profit"
         }
     ],
-    "totalVotes": 665
+    "partyMedian": {
+        "Labour Party": 58.96,
+        "Fine Gael": 78.77,
+        "Independents 4 Change": 69.81,
+        "Green Party": 56.13,
+        "Independent": 65.33,
+        "Solidarity - People Before Profit": 64.5,
+        "Sinn Féin": 82.19,
+        "Fianna Fáil": 70.52,
+        "Social Democrats": 66.51
+    },
+    "dateCreated": "09/12/2019 23:00:16",
+    "partyAverages": {
+        "Labour Party": 63.65,
+        "Fine Gael": 73.86,
+        "Independents 4 Change": 74.05,
+        "Green Party": 63.62,
+        "Independent": 63.33,
+        "Solidarity - People Before Profit": 64.15,
+        "Sinn Féin": 77.93,
+        "Fianna Fáil": 68.1,
+        "Social Democrats": 66.51
+    },
+    "dailStartDate": "2017-09-01",
+    "currentDail": "32nd Dáil",
+    "totalVotes": 424
 }

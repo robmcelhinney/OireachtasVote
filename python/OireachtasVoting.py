@@ -4,6 +4,7 @@ import time
 import requests
 import json
 from datetime import datetime
+from statistics import median
 
 BASE_PI_URL = "https://api.oireachtas.ie/v1/"
 
@@ -23,11 +24,41 @@ def main():
     info = {}
 
     current_dail, num_members = get_current_dail_info(info)
-    total_count, member_vote_track = get_vote_count(info)
-    get_members(current_dail, num_members, data, info, total_count)
-    get_member_percent(total_count, data, member_vote_track)
     get_parties(current_dail, info)
+    total_count, member_vote_track, member_vote_day_track, total_days, separate_dates = get_vote_count(info)
+    get_members(current_dail, num_members, data, info, total_count, separate_dates)
+    get_member_percent(total_count, data, member_vote_track, member_vote_day_track, total_days)
+    create_averages(data, info)
     create_json(data, info, total_count)
+
+
+def create_averages(data, info):
+    parties_votes = {}
+    for member in data:
+        if member["percentVotes"] == 0:
+            continue
+        if member['party'] in parties_votes:
+            parties_votes[member['party']].append(member["percentVotes"])
+        else:
+            parties_votes[member['party']] = [member["percentVotes"]]
+
+    parties_averages = {}
+    for party in info["parties"]:
+        party = party['label']
+        if party in parties_votes:
+            average = (sum(parties_votes[party]) /
+                    len(parties_votes[party]))
+            average = round(average, 2)
+            parties_averages[party] = average
+    parties_median = {}
+    for party in info["parties"]:
+        party = party['label']
+        if party in parties_votes:
+            median_value = median(parties_votes[party])
+            median_value = round(median_value, 2)
+            parties_median[party] = median_value
+    info["partyAverages"] = parties_averages
+    info["partyMedian"] = parties_median
 
 
 def create_json(data, info, count):
@@ -42,22 +73,29 @@ def create_json(data, info, count):
         json.dump(info, f, ensure_ascii=False, indent=4)
 
 
-def get_member_percent(total_count, data, member_vote_track):
+def get_member_percent(total_count, data, member_vote_track, member_vote_day_track, total_days):
     for member in data:
         member_id = member["member_id"]
         if member_id in member_vote_track:
             count = member_vote_track[member_id]
         else:
             count = 0
+        if member_id in member_vote_day_track:
+            day_count = member_vote_day_track[member_id]
+        else:
+            day_count = 0
         if member["total_votes"] is None:
             percent = round((count / total_count) * 100, 2)
+            percent_days = round((day_count / total_days) * 100, 2)
         else:
             if member["total_votes"] == 0:
                 percent = 0
             else:
                 percent = round((count / member["total_votes"]) * 100, 2)
+            percent_days = round((day_count / member["total_days"]) * 100, 2)
         member["votes"] = count
         member["percentVotes"] = percent
+        member["percent_days"] = percent_days
 
 
 def get_current_dail_info(info):
@@ -69,6 +107,7 @@ def get_current_dail_info(info):
     house_start_date = data["results"][0]["house"]["dateRange"]['start']
     info["currentDail"] = house_name
     info["dailStartDate"] = house_start_date
+    info["dailStartDate"] = "2017-09-01"
 
     response = requests.get(
         "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=32&date_end=2099-01-01&limit=1".format(BASE_PI_URL), headers=headers)
@@ -78,7 +117,7 @@ def get_current_dail_info(info):
     return house_number, num_members
 
 
-def get_members(current_dail, num_members, json_data, info, total_count):
+def get_members(current_dail, num_members, json_data, info, total_count, separate_dates):
     response = requests.get(
         "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=".format(BASE_PI_URL)
         + str(current_dail) + "&date_end=2099-01-01&limit=" + str(num_members), headers=headers)
@@ -115,11 +154,14 @@ def get_members(current_dail, num_members, json_data, info, total_count):
 
         if (datetime.strptime(start_date, "%Y-%m-%d") >
                 datetime.strptime(info["dailStartDate"], "%Y-%m-%d")):
-            print("new member: ", member_data["fullName"])
+            # print("new member: ", member_data["fullName"])
             total_votes = check_possible_votes(start_date, total_count)
+            total_days = check_possible_days(start_date, separate_dates)
             member_data["total_votes"] = total_votes
+            member_data["total_days"] = total_days
         else:
             member_data["total_votes"] = None
+            member_data["total_days"] = None
 
         finished_tenure = result["member"]["memberships"][0][
             "membership"]["dateRange"]["end"]
@@ -136,6 +178,17 @@ def check_possible_votes(start_date, total_count):
     data = response.json()
     possible_votes = data["head"]["counts"]["resultCount"]
     return possible_votes
+
+
+def check_possible_days(start_date, separate_dates):
+    days = 0
+    # print("start_date: ", start_date)
+    for date in separate_dates:
+        if (datetime.strptime(date, "%Y-%m-%d") >
+                datetime.strptime(start_date, "%Y-%m-%d")):
+            # print("date: ", date)
+            days += 1
+    return days
 
 
 def get_parties(current_dail, info):
@@ -158,6 +211,7 @@ def get_vote_count(info):
     total_votes = int(response_data["head"]["counts"]["resultCount"])
 
     member_vote_track = {}
+    member_vote_day_track = {}
     response = requests.get("{}divisions?".format(BASE_PI_URL) +
                             "chamber_type=house&chamber_id=&chamber=dail&date_start="
                             + info["dailStartDate"] + "&date_end=2099-01-01&limit=" +
@@ -165,13 +219,22 @@ def get_vote_count(info):
 
     response_data = response.json()
     results = response_data["results"]
+    separate_dates = []
+    total_days = 0
     for result in results:
-        members_votes(result["division"]["tallies"], member_vote_track)
+        date = datetime.strptime(result["contextDate"], '%Y-%m-%d')
+        if (result["contextDate"] not in separate_dates and
+                date.weekday() == 3):
+            separate_dates.append(result["contextDate"])
+            members_votes(result["division"]["tallies"], member_vote_track, member_vote_day_track)
+            total_days += 1
+        else:
+            members_votes(result["division"]["tallies"], member_vote_track)
 
-    return total_votes, member_vote_track
+    return total_votes, member_vote_track, member_vote_day_track, total_days, separate_dates
 
 
-def members_votes(tallies_data, member_vote_track):
+def members_votes(tallies_data, member_vote_track, member_vote_day_track=None):
     for voteType in ["nilVotes", "taVotes", "staonVotes"]:
         if tallies_data[voteType]:
             for members in tallies_data[voteType]["members"]:
@@ -184,6 +247,11 @@ def members_votes(tallies_data, member_vote_track):
                     member_vote_track[members['member']["memberCode"]] += 1
                 else:
                     member_vote_track[members['member']["memberCode"]] = 1
+                if member_vote_day_track is not None:
+                    if members['member']["memberCode"] in member_vote_day_track:
+                        member_vote_day_track[members['member']["memberCode"]] += 1
+                    else:
+                        member_vote_day_track[members['member']["memberCode"]] = 1
 
 
 def load_page(url):
