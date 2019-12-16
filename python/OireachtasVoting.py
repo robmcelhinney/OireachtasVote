@@ -107,7 +107,6 @@ def get_current_dail_info(info):
     house_start_date = data["results"][0]["house"]["dateRange"]['start']
     info["currentDail"] = house_name
     info["dailStartDate"] = house_start_date
-    info["dailStartDate"] = "2017-09-01"
 
     response = requests.get(
         "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=32&date_end=2099-01-01&limit=1".format(BASE_PI_URL), headers=headers)

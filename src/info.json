@@ -1,70 +1,70 @@
 {
+    "currentDail": "32nd Dáil",
+    "dailStartDate": "2016-03-10",
     "parties": [
         {
-            "label": "Anti-Austerity Alliance - People Before Profit",
-            "value": "Anti-Austerity_Alliance_People_Before_Profit"
+            "value": "Anti-Austerity_Alliance_People_Before_Profit",
+            "label": "Anti-Austerity Alliance - People Before Profit"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Green Party",
-            "value": "Green_Party"
+            "value": "Green_Party",
+            "label": "Green Party"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Independents 4 Change",
-            "value": "Independents_4_Change"
+            "value": "Independents_4_Change",
+            "label": "Independents 4 Change"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         },
         {
-            "label": "Social Democrats",
-            "value": "Social_Democrats"
+            "value": "Social_Democrats",
+            "label": "Social Democrats"
         },
         {
-            "label": "Solidarity - People Before Profit",
-            "value": "Solidarity_People_Before_Profit"
+            "value": "Solidarity_People_Before_Profit",
+            "label": "Solidarity - People Before Profit"
         }
     ],
-    "partyMedian": {
-        "Labour Party": 58.96,
-        "Fine Gael": 78.77,
-        "Independents 4 Change": 69.81,
-        "Green Party": 56.13,
-        "Independent": 65.33,
-        "Solidarity - People Before Profit": 64.5,
-        "Sinn Féin": 82.19,
-        "Fianna Fáil": 70.52,
-        "Social Democrats": 66.51
-    },
-    "dateCreated": "09/12/2019 23:00:16",
     "partyAverages": {
-        "Labour Party": 63.65,
-        "Fine Gael": 73.86,
-        "Independents 4 Change": 74.05,
-        "Green Party": 63.62,
-        "Independent": 63.33,
-        "Solidarity - People Before Profit": 64.15,
-        "Sinn Féin": 77.93,
-        "Fianna Fáil": 68.1,
-        "Social Democrats": 66.51
+        "Fianna Fáil": 72.04,
+        "Fine Gael": 78.62,
+        "Green Party": 69.95,
+        "Independent": 66.45,
+        "Independents 4 Change": 77.23,
+        "Labour Party": 66.85,
+        "Sinn Féin": 80.23,
+        "Social Democrats": 69.83,
+        "Solidarity - People Before Profit": 70.2
     },
-    "dailStartDate": "2017-09-01",
-    "currentDail": "32nd Dáil",
-    "totalVotes": 424
+    "partyMedian": {
+        "Fianna Fáil": 74.07,
+        "Fine Gael": 82.71,
+        "Green Party": 64.83,
+        "Independent": 67.59,
+        "Independents 4 Change": 73.69,
+        "Labour Party": 62.3,
+        "Sinn Féin": 83.39,
+        "Social Democrats": 69.83,
+        "Solidarity - People Before Profit": 67.52
+    },
+    "totalVotes": 671,
+    "dateCreated": "16/12/2019 23:47:19"
 }
