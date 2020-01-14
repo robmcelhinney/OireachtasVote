@@ -10,7 +10,7 @@
         "votes": 371,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 55.29,
+        "percentVotes": 55.04,
         "percent_days": 55.45
     },
     {
@@ -21,10 +21,10 @@
         "constituency": "Carlow-Kilkenny",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 571,
+        "votes": 574,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.1,
+        "percentVotes": 85.16,
         "percent_days": 85.15
     },
     {
@@ -35,10 +35,10 @@
         "constituency": "Dún Laoghaire",
         "party": "Fine Gael",
         "office": false,
-        "votes": 605,
+        "votes": 608,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 90.16,
+        "percentVotes": 90.21,
         "percent_days": 92.08
     },
     {
@@ -52,7 +52,7 @@
         "votes": 472,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 70.34,
+        "percentVotes": 70.03,
         "percent_days": 86.14
     },
     {
@@ -63,10 +63,10 @@
         "constituency": "Cork North-Central",
         "party": "Solidarity - People Before Profit",
         "office": false,
-        "votes": 447,
+        "votes": 450,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 66.62,
+        "percentVotes": 66.77,
         "percent_days": 76.24
     },
     {
@@ -77,10 +77,10 @@
         "constituency": "Dún Laoghaire",
         "party": "Solidarity - People Before Profit",
         "office": false,
-        "votes": 527,
+        "votes": 530,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 78.54,
+        "percentVotes": 78.64,
         "percent_days": 92.08
     },
     {
@@ -91,10 +91,10 @@
         "constituency": "Wicklow",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 582,
+        "votes": 585,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 86.74,
+        "percentVotes": 86.8,
         "percent_days": 89.11
     },
     {
@@ -105,10 +105,10 @@
         "constituency": "Kerry",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 545,
+        "votes": 548,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.22,
+        "percentVotes": 81.31,
         "percent_days": 83.17
     },
     {
@@ -119,10 +119,10 @@
         "constituency": "Louth",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 497,
+        "votes": 500,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 74.07,
+        "percentVotes": 74.18,
         "percent_days": 87.13
     },
     {
@@ -133,10 +133,10 @@
         "constituency": "Clare",
         "party": "Fine Gael",
         "office": false,
-        "votes": 455,
+        "votes": 458,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 67.81,
+        "percentVotes": 67.95,
         "percent_days": 66.34
     },
     {
@@ -147,10 +147,10 @@
         "constituency": "Dublin South-West",
         "party": "Fine Gael",
         "office": false,
-        "votes": 617,
+        "votes": 620,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 91.95,
+        "percentVotes": 91.99,
         "percent_days": 96.04
     },
     {
@@ -161,10 +161,10 @@
         "constituency": "Dublin Bay North",
         "party": "Independents 4 Change",
         "office": false,
-        "votes": 647,
+        "votes": 650,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 96.42,
+        "percentVotes": 96.44,
         "percent_days": 96.04
     },
     {
@@ -175,10 +175,10 @@
         "constituency": "Wexford",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 551,
+        "votes": 554,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 82.12,
+        "percentVotes": 82.2,
         "percent_days": 91.09
     },
     {
@@ -189,10 +189,10 @@
         "constituency": "Dublin Bay North",
         "party": "Fine Gael",
         "office": true,
-        "votes": 618,
+        "votes": 621,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 92.1,
+        "percentVotes": 92.14,
         "percent_days": 89.11
     },
     {
@@ -203,10 +203,10 @@
         "constituency": "Cork East",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 581,
+        "votes": 584,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 86.59,
+        "percentVotes": 86.65,
         "percent_days": 87.13
     },
     {
@@ -217,10 +217,10 @@
         "constituency": "Longford-Westmeath",
         "party": "Fine Gael",
         "office": false,
-        "votes": 593,
+        "votes": 596,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 88.38,
+        "percentVotes": 88.43,
         "percent_days": 93.07
     },
     {
@@ -231,10 +231,10 @@
         "constituency": "Dublin West",
         "party": "Labour Party",
         "office": false,
-        "votes": 412,
+        "votes": 415,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 61.4,
+        "percentVotes": 61.57,
         "percent_days": 75.25
     },
     {
@@ -245,10 +245,10 @@
         "constituency": "Waterford",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 570,
+        "votes": 573,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 84.95,
+        "percentVotes": 85.01,
         "percent_days": 85.15
     },
     {
@@ -262,7 +262,7 @@
         "votes": 571,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.1,
+        "percentVotes": 84.72,
         "percent_days": 87.13
     },
     {
@@ -273,10 +273,10 @@
         "constituency": "Wexford",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 4,
-        "total_votes": 6,
+        "votes": 7,
+        "total_votes": 9,
         "total_days": 2,
-        "percentVotes": 66.67,
+        "percentVotes": 77.78,
         "percent_days": 50.0
     },
     {
@@ -287,10 +287,10 @@
         "constituency": "Meath East",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 491,
+        "votes": 494,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 73.17,
+        "percentVotes": 73.29,
         "percent_days": 84.16
     },
     {
@@ -301,10 +301,10 @@
         "constituency": "Tipperary",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 505,
+        "votes": 508,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 75.26,
+        "percentVotes": 75.37,
         "percent_days": 77.23
     },
     {
@@ -315,10 +315,10 @@
         "constituency": "Mayo",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 583,
+        "votes": 586,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 86.89,
+        "percentVotes": 86.94,
         "percent_days": 94.06
     },
     {
@@ -329,10 +329,10 @@
         "constituency": "Galway East",
         "party": "Independent",
         "office": false,
-        "votes": 538,
+        "votes": 541,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.18,
+        "percentVotes": 80.27,
         "percent_days": 86.14
     },
     {
@@ -343,10 +343,10 @@
         "constituency": "Galway East",
         "party": "Fine Gael",
         "office": false,
-        "votes": 439,
+        "votes": 442,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.42,
+        "percentVotes": 65.58,
         "percent_days": 67.33
     },
     {
@@ -357,10 +357,10 @@
         "constituency": "Clare",
         "party": "Fine Gael",
         "office": false,
-        "votes": 624,
+        "votes": 627,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 93.0,
+        "percentVotes": 93.03,
         "percent_days": 94.06
     },
     {
@@ -371,10 +371,10 @@
         "constituency": "Wicklow",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 555,
+        "votes": 558,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 82.71,
+        "percentVotes": 82.79,
         "percent_days": 91.09
     },
     {
@@ -385,10 +385,10 @@
         "constituency": "Meath West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 509,
+        "votes": 512,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 75.86,
+        "percentVotes": 75.96,
         "percent_days": 87.13
     },
     {
@@ -399,10 +399,10 @@
         "constituency": "Dublin West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 523,
+        "votes": 526,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 77.94,
+        "percentVotes": 78.04,
         "percent_days": 90.1
     },
     {
@@ -416,7 +416,7 @@
         "votes": 424,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 63.19,
+        "percentVotes": 62.91,
         "percent_days": 69.31
     },
     {
@@ -430,7 +430,7 @@
         "votes": 437,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.13,
+        "percentVotes": 64.84,
         "percent_days": 73.27
     },
     {
@@ -444,7 +444,7 @@
         "votes": 541,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.63,
+        "percentVotes": 80.27,
         "percent_days": 84.16
     },
     {
@@ -455,10 +455,10 @@
         "constituency": "Limerick County",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 334,
+        "votes": 337,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 49.78,
+        "percentVotes": 50.0,
         "percent_days": 65.35
     },
     {
@@ -472,7 +472,7 @@
         "votes": 523,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 77.94,
+        "percentVotes": 77.6,
         "percent_days": 87.13
     },
     {
@@ -486,7 +486,7 @@
         "votes": 449,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 66.92,
+        "percentVotes": 66.62,
         "percent_days": 81.19
     },
     {
@@ -497,10 +497,10 @@
         "constituency": "Offaly",
         "party": "Fine Gael",
         "office": false,
-        "votes": 611,
+        "votes": 614,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 91.06,
+        "percentVotes": 91.1,
         "percent_days": 90.1
     },
     {
@@ -514,7 +514,7 @@
         "votes": 437,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.13,
+        "percentVotes": 64.84,
         "percent_days": 73.27
     },
     {
@@ -525,10 +525,10 @@
         "constituency": "Offaly",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 460,
+        "votes": 463,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 68.55,
+        "percentVotes": 68.69,
         "percent_days": 78.22
     },
     {
@@ -539,10 +539,10 @@
         "constituency": "Cork North-West",
         "party": "Fine Gael",
         "office": true,
-        "votes": 441,
+        "votes": 444,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.72,
+        "percentVotes": 65.88,
         "percent_days": 75.25
     },
     {
@@ -553,10 +553,10 @@
         "constituency": "Dublin South-West",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 479,
+        "votes": 482,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 71.39,
+        "percentVotes": 71.51,
         "percent_days": 78.22
     },
     {
@@ -567,10 +567,10 @@
         "constituency": "Waterford",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 513,
+        "votes": 516,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 76.45,
+        "percentVotes": 76.56,
         "percent_days": 79.21
     },
     {
@@ -581,10 +581,10 @@
         "constituency": "Dublin Mid-West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 568,
+        "votes": 571,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 84.65,
+        "percentVotes": 84.72,
         "percent_days": 93.07
     },
     {
@@ -595,10 +595,10 @@
         "constituency": "Wexford",
         "party": "Fine Gael",
         "office": false,
-        "votes": 575,
+        "votes": 578,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.69,
+        "percentVotes": 85.76,
         "percent_days": 90.1
     },
     {
@@ -612,7 +612,7 @@
         "votes": 486,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 72.43,
+        "percentVotes": 72.11,
         "percent_days": 73.27
     },
     {
@@ -623,10 +623,10 @@
         "constituency": "Waterford",
         "party": "Fine Gael",
         "office": false,
-        "votes": 399,
+        "votes": 402,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 59.46,
+        "percentVotes": 59.64,
         "percent_days": 71.29
     },
     {
@@ -637,10 +637,10 @@
         "constituency": "Carlow-Kilkenny",
         "party": "Fine Gael",
         "office": false,
-        "votes": 535,
+        "votes": 538,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.73,
+        "percentVotes": 79.82,
         "percent_days": 84.16
     },
     {
@@ -651,10 +651,10 @@
         "constituency": "Donegal",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 537,
+        "votes": 540,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.03,
+        "percentVotes": 80.12,
         "percent_days": 85.15
     },
     {
@@ -665,10 +665,10 @@
         "constituency": "Meath East",
         "party": "Fine Gael",
         "office": true,
-        "votes": 546,
+        "votes": 549,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.37,
+        "percentVotes": 81.45,
         "percent_days": 85.15
     },
     {
@@ -679,10 +679,10 @@
         "constituency": "Wicklow",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 436,
+        "votes": 439,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 64.98,
+        "percentVotes": 65.13,
         "percent_days": 74.26
     },
     {
@@ -693,10 +693,10 @@
         "constituency": "Dublin Central",
         "party": "Fine Gael",
         "office": true,
-        "votes": 440,
+        "votes": 443,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.57,
+        "percentVotes": 65.73,
         "percent_days": 73.27
     },
     {
@@ -707,10 +707,10 @@
         "constituency": "Clare",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 434,
+        "votes": 437,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 64.68,
+        "percentVotes": 64.84,
         "percent_days": 75.25
     },
     {
@@ -721,10 +721,10 @@
         "constituency": "Wicklow",
         "party": "Fine Gael",
         "office": false,
-        "votes": 531,
+        "votes": 534,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.14,
+        "percentVotes": 79.23,
         "percent_days": 79.21
     },
     {
@@ -735,7 +735,7 @@
         "constituency": "Kildare North",
         "party": "Fine Gael",
         "office": false,
-        "votes": 664,
+        "votes": 667,
         "total_votes": null,
         "total_days": null,
         "percentVotes": 98.96,
@@ -749,10 +749,10 @@
         "constituency": "Dublin North-West",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 569,
+        "votes": 572,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 84.8,
+        "percentVotes": 84.87,
         "percent_days": 93.07
     },
     {
@@ -766,7 +766,7 @@
         "votes": 583,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 86.89,
+        "percentVotes": 86.5,
         "percent_days": 89.11
     },
     {
@@ -777,10 +777,10 @@
         "constituency": "Dublin Fingal",
         "party": "Fine Gael",
         "office": false,
-        "votes": 573,
+        "votes": 576,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.39,
+        "percentVotes": 85.46,
         "percent_days": 85.15
     },
     {
@@ -791,10 +791,10 @@
         "constituency": "Kerry",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 468,
+        "votes": 471,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 69.75,
+        "percentVotes": 69.88,
         "percent_days": 70.3
     },
     {
@@ -805,10 +805,10 @@
         "constituency": "Roscommon-Galway",
         "party": "Independent",
         "office": false,
-        "votes": 449,
+        "votes": 452,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 66.92,
+        "percentVotes": 67.06,
         "percent_days": 67.33
     },
     {
@@ -822,7 +822,7 @@
         "votes": 537,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.03,
+        "percentVotes": 79.67,
         "percent_days": 92.08
     },
     {
@@ -833,10 +833,10 @@
         "constituency": "Laois",
         "party": "Fine Gael",
         "office": true,
-        "votes": 462,
+        "votes": 465,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 68.85,
+        "percentVotes": 68.99,
         "percent_days": 66.34
     },
     {
@@ -847,10 +847,10 @@
         "constituency": "Laois",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 402,
+        "votes": 405,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 59.91,
+        "percentVotes": 60.09,
         "percent_days": 71.29
     },
     {
@@ -861,10 +861,10 @@
         "constituency": "Carlow-Kilkenny",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 464,
+        "votes": 467,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 69.15,
+        "percentVotes": 69.29,
         "percent_days": 68.32
     },
     {
@@ -875,10 +875,10 @@
         "constituency": "Donegal",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 180,
+        "votes": 181,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 26.83,
+        "percentVotes": 26.85,
         "percent_days": 36.63
     },
     {
@@ -892,7 +892,7 @@
         "votes": 308,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 45.9,
+        "percentVotes": 45.7,
         "percent_days": 50.5
     },
     {
@@ -903,10 +903,10 @@
         "constituency": "Kerry",
         "party": "Fine Gael",
         "office": false,
-        "votes": 529,
+        "votes": 532,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 78.84,
+        "percentVotes": 78.93,
         "percent_days": 84.16
     },
     {
@@ -920,7 +920,7 @@
         "votes": 295,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 43.96,
+        "percentVotes": 43.77,
         "percent_days": 53.47
     },
     {
@@ -934,7 +934,7 @@
         "votes": 555,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 82.71,
+        "percentVotes": 82.34,
         "percent_days": 80.2
     },
     {
@@ -945,10 +945,10 @@
         "constituency": "Clare",
         "party": "Independent",
         "office": false,
-        "votes": 442,
+        "votes": 445,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.87,
+        "percentVotes": 66.02,
         "percent_days": 75.25
     },
     {
@@ -959,10 +959,10 @@
         "constituency": "Dublin Bay North",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 571,
+        "votes": 574,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.1,
+        "percentVotes": 85.16,
         "percent_days": 96.04
     },
     {
@@ -973,10 +973,10 @@
         "constituency": "Tipperary",
         "party": "Independent",
         "office": false,
-        "votes": 521,
+        "votes": 524,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 77.65,
+        "percentVotes": 77.74,
         "percent_days": 89.11
     },
     {
@@ -990,7 +990,7 @@
         "votes": 285,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 42.47,
+        "percentVotes": 42.28,
         "percent_days": 24.75
     },
     {
@@ -1004,7 +1004,7 @@
         "votes": 230,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 34.28,
+        "percentVotes": 34.12,
         "percent_days": 19.8
     },
     {
@@ -1015,10 +1015,10 @@
         "constituency": "Kildare South",
         "party": "Fine Gael",
         "office": false,
-        "votes": 560,
+        "votes": 563,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.46,
+        "percentVotes": 83.53,
         "percent_days": 84.16
     },
     {
@@ -1029,10 +1029,10 @@
         "constituency": "Wexford",
         "party": "Labour Party",
         "office": false,
-        "votes": 465,
+        "votes": 468,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 69.3,
+        "percentVotes": 69.44,
         "percent_days": 80.2
     },
     {
@@ -1043,10 +1043,10 @@
         "constituency": "Cavan-Monaghan",
         "party": "Fine Gael",
         "office": true,
-        "votes": 520,
+        "votes": 523,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 77.5,
+        "percentVotes": 77.6,
         "percent_days": 80.2
     },
     {
@@ -1057,10 +1057,10 @@
         "constituency": "Wexford",
         "party": "Fine Gael",
         "office": false,
-        "votes": 497,
+        "votes": 500,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 74.07,
+        "percentVotes": 74.18,
         "percent_days": 82.18
     },
     {
@@ -1074,7 +1074,7 @@
         "votes": 391,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 58.27,
+        "percentVotes": 58.01,
         "percent_days": 66.34
     },
     {
@@ -1088,7 +1088,7 @@
         "votes": 127,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 18.93,
+        "percentVotes": 18.84,
         "percent_days": 15.84
     },
     {
@@ -1099,10 +1099,10 @@
         "constituency": "Dublin Mid-West",
         "party": "Solidarity - People Before Profit",
         "office": false,
-        "votes": 457,
+        "votes": 460,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 68.11,
+        "percentVotes": 68.25,
         "percent_days": 86.14
     },
     {
@@ -1113,10 +1113,10 @@
         "constituency": "Sligo-Leitrim",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 557,
+        "votes": 560,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.01,
+        "percentVotes": 83.09,
         "percent_days": 84.16
     },
     {
@@ -1127,10 +1127,10 @@
         "constituency": "Galway West",
         "party": "Fine Gael",
         "office": false,
-        "votes": 619,
+        "votes": 622,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 92.25,
+        "percentVotes": 92.28,
         "percent_days": 94.06
     },
     {
@@ -1141,10 +1141,10 @@
         "constituency": "Dublin South-West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 563,
+        "votes": 566,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.9,
+        "percentVotes": 83.98,
         "percent_days": 94.06
     },
     {
@@ -1155,10 +1155,10 @@
         "constituency": "Kildare North",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 442,
+        "votes": 443,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 65.87,
+        "percentVotes": 65.73,
         "percent_days": 70.3
     },
     {
@@ -1169,10 +1169,10 @@
         "constituency": "Tipperary",
         "party": "Independent",
         "office": false,
-        "votes": 391,
+        "votes": 394,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 58.27,
+        "percentVotes": 58.46,
         "percent_days": 68.32
     },
     {
@@ -1186,7 +1186,7 @@
         "votes": 458,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 68.26,
+        "percentVotes": 67.95,
         "percent_days": 69.31
     },
     {
@@ -1200,7 +1200,7 @@
         "votes": 614,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 91.51,
+        "percentVotes": 91.1,
         "percent_days": 93.07
     },
     {
@@ -1211,10 +1211,10 @@
         "constituency": "Dublin Rathdown",
         "party": "Green Party",
         "office": false,
-        "votes": 435,
+        "votes": 438,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 64.83,
+        "percentVotes": 64.99,
         "percent_days": 76.24
     },
     {
@@ -1225,10 +1225,10 @@
         "constituency": "Cork South-Central",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 285,
+        "votes": 288,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 42.47,
+        "percentVotes": 42.73,
         "percent_days": 43.56
     },
     {
@@ -1239,10 +1239,10 @@
         "constituency": "Donegal",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 411,
+        "votes": 414,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 61.25,
+        "percentVotes": 61.42,
         "percent_days": 68.32
     },
     {
@@ -1256,7 +1256,7 @@
         "votes": 367,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 54.69,
+        "percentVotes": 54.45,
         "percent_days": 61.39
     },
     {
@@ -1270,7 +1270,7 @@
         "votes": 475,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 70.79,
+        "percentVotes": 70.47,
         "percent_days": 66.34
     },
     {
@@ -1284,7 +1284,7 @@
         "votes": 510,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 76.01,
+        "percentVotes": 75.67,
         "percent_days": 80.2
     },
     {
@@ -1298,7 +1298,7 @@
         "votes": 549,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.82,
+        "percentVotes": 81.45,
         "percent_days": 85.15
     },
     {
@@ -1309,10 +1309,10 @@
         "constituency": "Cork South-Central",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 547,
+        "votes": 550,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.52,
+        "percentVotes": 81.6,
         "percent_days": 86.14
     },
     {
@@ -1326,7 +1326,7 @@
         "votes": 404,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 60.21,
+        "percentVotes": 59.94,
         "percent_days": 76.24
     },
     {
@@ -1337,10 +1337,10 @@
         "constituency": "Donegal",
         "party": "Fine Gael",
         "office": true,
-        "votes": 538,
+        "votes": 541,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.18,
+        "percentVotes": 80.27,
         "percent_days": 79.21
     },
     {
@@ -1351,10 +1351,10 @@
         "constituency": "Sligo-Leitrim",
         "party": "Fine Gael",
         "office": false,
-        "votes": 635,
+        "votes": 638,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 94.63,
+        "percentVotes": 94.66,
         "percent_days": 93.07
     },
     {
@@ -1365,10 +1365,10 @@
         "constituency": "Dublin Bay North",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 629,
+        "votes": 632,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 93.74,
+        "percentVotes": 93.77,
         "percent_days": 95.05
     },
     {
@@ -1379,10 +1379,10 @@
         "constituency": "Dún Laoghaire",
         "party": "Fine Gael",
         "office": false,
-        "votes": 533,
+        "votes": 536,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.43,
+        "percentVotes": 79.53,
         "percent_days": 80.2
     },
     {
@@ -1396,7 +1396,7 @@
         "votes": 490,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 73.03,
+        "percentVotes": 72.7,
         "percent_days": 89.11
     },
     {
@@ -1407,10 +1407,10 @@
         "constituency": "Cork North-West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 553,
+        "votes": 556,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 82.41,
+        "percentVotes": 82.49,
         "percent_days": 89.11
     },
     {
@@ -1421,10 +1421,10 @@
         "constituency": "Cork North-West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 500,
+        "votes": 503,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 74.52,
+        "percentVotes": 74.63,
         "percent_days": 73.27
     },
     {
@@ -1435,10 +1435,10 @@
         "constituency": "Louth",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 598,
+        "votes": 601,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 89.12,
+        "percentVotes": 89.17,
         "percent_days": 91.09
     },
     {
@@ -1449,10 +1449,10 @@
         "constituency": "Kildare North",
         "party": "Social Democrats",
         "office": false,
-        "votes": 509,
+        "votes": 512,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 75.86,
+        "percentVotes": 75.96,
         "percent_days": 86.14
     },
     {
@@ -1466,7 +1466,7 @@
         "votes": 276,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 41.13,
+        "percentVotes": 40.95,
         "percent_days": 53.47
     },
     {
@@ -1477,10 +1477,10 @@
         "constituency": "Dublin Bay South",
         "party": "Fine Gael",
         "office": true,
-        "votes": 557,
+        "votes": 560,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.01,
+        "percentVotes": 83.09,
         "percent_days": 82.18
     },
     {
@@ -1491,10 +1491,10 @@
         "constituency": "Roscommon-Galway",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 478,
+        "votes": 481,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 71.24,
+        "percentVotes": 71.36,
         "percent_days": 84.16
     },
     {
@@ -1505,10 +1505,10 @@
         "constituency": "Dublin South-West",
         "party": "Solidarity - People Before Profit",
         "office": false,
-        "votes": 448,
+        "votes": 451,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 66.77,
+        "percentVotes": 66.91,
         "percent_days": 78.22
     },
     {
@@ -1519,10 +1519,10 @@
         "constituency": "Cork South-West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 582,
+        "votes": 585,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 86.74,
+        "percentVotes": 86.8,
         "percent_days": 92.08
     },
     {
@@ -1533,10 +1533,10 @@
         "constituency": "Roscommon-Galway",
         "party": "Independent",
         "office": false,
-        "votes": 432,
+        "votes": 435,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 64.38,
+        "percentVotes": 64.54,
         "percent_days": 70.3
     },
     {
@@ -1547,10 +1547,10 @@
         "constituency": "Galway West",
         "party": "Fine Gael",
         "office": false,
-        "votes": 608,
+        "votes": 611,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 90.61,
+        "percentVotes": 90.65,
         "percent_days": 91.09
     },
     {
@@ -1561,10 +1561,10 @@
         "constituency": "Limerick County",
         "party": "Fine Gael",
         "office": false,
-        "votes": 642,
+        "votes": 645,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 95.68,
+        "percentVotes": 95.7,
         "percent_days": 96.04
     },
     {
@@ -1578,7 +1578,7 @@
         "votes": 454,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 67.66,
+        "percentVotes": 67.36,
         "percent_days": 78.22
     },
     {
@@ -1589,10 +1589,10 @@
         "constituency": "Limerick City",
         "party": "Fine Gael",
         "office": false,
-        "votes": 486,
+        "votes": 489,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 72.43,
+        "percentVotes": 72.55,
         "percent_days": 74.26
     },
     {
@@ -1603,10 +1603,10 @@
         "constituency": "Dublin Fingal",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 425,
+        "votes": 428,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 63.34,
+        "percentVotes": 63.5,
         "percent_days": 76.24
     },
     {
@@ -1617,10 +1617,10 @@
         "constituency": "Dublin Fingal",
         "party": "Green Party",
         "office": false,
-        "votes": 5,
-        "total_votes": 6,
+        "votes": 8,
+        "total_votes": 9,
         "total_days": 2,
-        "percentVotes": 83.33,
+        "percentVotes": 88.89,
         "percent_days": 100.0
     },
     {
@@ -1631,10 +1631,10 @@
         "constituency": "Cork North-Central",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 473,
+        "votes": 476,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 70.49,
+        "percentVotes": 70.62,
         "percent_days": 70.3
     },
     {
@@ -1645,10 +1645,10 @@
         "constituency": "Dublin Bay South",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 525,
+        "votes": 526,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 78.24,
+        "percentVotes": 78.04,
         "percent_days": 85.15
     },
     {
@@ -1659,10 +1659,10 @@
         "constituency": "Dublin Bay South",
         "party": "Fine Gael",
         "office": false,
-        "votes": 633,
+        "votes": 636,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 94.34,
+        "percentVotes": 94.36,
         "percent_days": 97.03
     },
     {
@@ -1676,7 +1676,7 @@
         "votes": 336,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 50.07,
+        "percentVotes": 49.85,
         "percent_days": 60.4
     },
     {
@@ -1690,7 +1690,7 @@
         "votes": 512,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 76.3,
+        "percentVotes": 75.96,
         "percent_days": 80.2
     },
     {
@@ -1701,10 +1701,10 @@
         "constituency": "Louth",
         "party": "Fine Gael",
         "office": false,
-        "votes": 577,
+        "votes": 580,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.99,
+        "percentVotes": 86.05,
         "percent_days": 93.07
     },
     {
@@ -1715,10 +1715,10 @@
         "constituency": "Cork East",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 485,
+        "votes": 488,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 72.28,
+        "percentVotes": 72.4,
         "percent_days": 80.2
     },
     {
@@ -1732,7 +1732,7 @@
         "votes": 462,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 68.85,
+        "percentVotes": 68.55,
         "percent_days": 77.23
     },
     {
@@ -1746,7 +1746,7 @@
         "votes": 587,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 87.48,
+        "percentVotes": 87.09,
         "percent_days": 90.1
     },
     {
@@ -1760,7 +1760,7 @@
         "votes": 547,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.52,
+        "percentVotes": 81.16,
         "percent_days": 91.09
     },
     {
@@ -1771,10 +1771,10 @@
         "constituency": "Limerick City",
         "party": "Labour Party",
         "office": false,
-        "votes": 535,
+        "votes": 538,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.73,
+        "percentVotes": 79.82,
         "percent_days": 93.07
     },
     {
@@ -1785,10 +1785,10 @@
         "constituency": "Dublin Central",
         "party": "Independent",
         "office": false,
-        "votes": 420,
+        "votes": 423,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 62.59,
+        "percentVotes": 62.76,
         "percent_days": 69.31
     },
     {
@@ -1799,8 +1799,8 @@
         "constituency": "Cork North-Central",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 6,
-        "total_votes": 6,
+        "votes": 9,
+        "total_votes": 9,
         "total_days": 2,
         "percentVotes": 100.0,
         "percent_days": 100.0
@@ -1813,10 +1813,10 @@
         "constituency": "Longford-Westmeath",
         "party": "Labour Party",
         "office": false,
-        "votes": 418,
+        "votes": 421,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 62.3,
+        "percentVotes": 62.46,
         "percent_days": 80.2
     },
     {
@@ -1827,10 +1827,10 @@
         "constituency": "Carlow-Kilkenny",
         "party": "Fine Gael",
         "office": false,
-        "votes": 564,
+        "votes": 567,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 84.05,
+        "percentVotes": 84.12,
         "percent_days": 87.13
     },
     {
@@ -1841,10 +1841,10 @@
         "constituency": "Donegal",
         "party": "Independents 4 Change",
         "office": false,
-        "votes": 466,
+        "votes": 469,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 69.45,
+        "percentVotes": 69.58,
         "percent_days": 69.31
     },
     {
@@ -1855,10 +1855,10 @@
         "constituency": "Limerick City",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 532,
+        "votes": 535,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.28,
+        "percentVotes": 79.38,
         "percent_days": 80.2
     },
     {
@@ -1872,7 +1872,7 @@
         "votes": 492,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 73.32,
+        "percentVotes": 73.0,
         "percent_days": 81.19
     },
     {
@@ -1883,10 +1883,10 @@
         "constituency": "Mayo",
         "party": "Fine Gael",
         "office": true,
-        "votes": 563,
+        "votes": 566,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.9,
+        "percentVotes": 83.98,
         "percent_days": 88.12
     },
     {
@@ -1897,10 +1897,10 @@
         "constituency": "Dublin North-West",
         "party": "Fine Gael",
         "office": false,
-        "votes": 555,
+        "votes": 558,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 82.71,
+        "percentVotes": 82.79,
         "percent_days": 89.11
     },
     {
@@ -1914,7 +1914,7 @@
         "votes": 561,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.61,
+        "percentVotes": 83.23,
         "percent_days": 88.12
     },
     {
@@ -1925,10 +1925,10 @@
         "constituency": "Dublin Fingal",
         "party": "Labour Party",
         "office": false,
-        "votes": 533,
+        "votes": 536,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 79.43,
+        "percentVotes": 79.53,
         "percent_days": 89.11
     },
     {
@@ -1939,10 +1939,10 @@
         "constituency": "Dublin Bay South",
         "party": "Green Party",
         "office": false,
-        "votes": 414,
+        "votes": 417,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 61.7,
+        "percentVotes": 61.87,
         "percent_days": 68.32
     },
     {
@@ -1953,10 +1953,10 @@
         "constituency": "Sligo-Leitrim",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 549,
+        "votes": 552,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 81.82,
+        "percentVotes": 81.9,
         "percent_days": 81.19
     },
     {
@@ -1967,10 +1967,10 @@
         "constituency": "Cork East",
         "party": "Labour Party",
         "office": false,
-        "votes": 386,
+        "votes": 389,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 57.53,
+        "percentVotes": 57.72,
         "percent_days": 66.34
     },
     {
@@ -1981,10 +1981,10 @@
         "constituency": "Dublin North-West",
         "party": "Social Democrats",
         "office": false,
-        "votes": 428,
+        "votes": 431,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 63.79,
+        "percentVotes": 63.95,
         "percent_days": 76.24
     },
     {
@@ -1995,10 +1995,10 @@
         "constituency": "Cavan-Monaghan",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 502,
+        "votes": 505,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 74.81,
+        "percentVotes": 74.93,
         "percent_days": 83.17
     },
     {
@@ -2009,10 +2009,10 @@
         "constituency": "Dublin South-Central",
         "party": "Solidarity - People Before Profit",
         "office": false,
-        "votes": 498,
+        "votes": 501,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 74.22,
+        "percentVotes": 74.33,
         "percent_days": 83.17
     },
     {
@@ -2026,7 +2026,7 @@
         "votes": 420,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 62.59,
+        "percentVotes": 62.31,
         "percent_days": 70.3
     },
     {
@@ -2037,10 +2037,10 @@
         "constituency": "Laois",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 572,
+        "votes": 575,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 85.25,
+        "percentVotes": 85.31,
         "percent_days": 89.11
     },
     {
@@ -2054,7 +2054,7 @@
         "votes": 612,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 91.21,
+        "percentVotes": 90.8,
         "percent_days": 93.07
     },
     {
@@ -2065,10 +2065,10 @@
         "constituency": "Longford-Westmeath",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 505,
+        "votes": 508,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 75.26,
+        "percentVotes": 75.37,
         "percent_days": 82.18
     },
     {
@@ -2079,10 +2079,10 @@
         "constituency": "Meath West",
         "party": "Independent",
         "office": false,
-        "votes": 511,
+        "votes": 514,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 76.15,
+        "percentVotes": 76.26,
         "percent_days": 78.22
     },
     {
@@ -2093,10 +2093,10 @@
         "constituency": "Dublin West",
         "party": "Fine Gael",
         "office": true,
-        "votes": 259,
+        "votes": 261,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 38.6,
+        "percentVotes": 38.72,
         "percent_days": 34.65
     },
     {
@@ -2107,25 +2107,11 @@
         "constituency": "Dublin Mid-West",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 6,
-        "total_votes": 6,
+        "votes": 9,
+        "total_votes": 9,
         "total_days": 2,
         "percentVotes": 100.0,
         "percent_days": 100.0
-    },
-    {
-        "member_id": "Mark-Ward.S.2019-11-29",
-        "fullName": "Mark Ward",
-        "firstName": "Mark",
-        "lastName": "Ward",
-        "constituency": "Dublin Mid-West",
-        "party": "Sinn Féin",
-        "office": false,
-        "votes": 0,
-        "total_votes": 6,
-        "total_days": 2,
-        "percentVotes": 0.0,
-        "percent_days": 0.0
     },
     {
         "member_id": "Katherine-Zappone.S.2011-05-25",
@@ -2138,7 +2124,7 @@
         "votes": 453,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 67.51,
+        "percentVotes": 67.21,
         "percent_days": 76.24
     },
     {
@@ -2149,10 +2135,10 @@
         "constituency": "Dublin Mid-West",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 562,
+        "votes": 565,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 83.76,
+        "percentVotes": 83.83,
         "percent_days": 89.11
     },
     {
@@ -2163,10 +2149,10 @@
         "constituency": "Cavan-Monaghan",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 599,
+        "votes": 601,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 89.27,
+        "percentVotes": 89.17,
         "percent_days": 90.1
     },
     {
@@ -2177,10 +2163,10 @@
         "constituency": "Galway West",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 455,
+        "votes": 458,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 67.81,
+        "percentVotes": 67.95,
         "percent_days": 77.23
     },
     {
@@ -2208,7 +2194,7 @@
         "votes": 543,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 80.92,
+        "percentVotes": 80.56,
         "percent_days": 81.19
     },
     {
@@ -2219,10 +2205,10 @@
         "constituency": "Dublin South-Central",
         "party": "Sinn Féin",
         "office": false,
-        "votes": 590,
+        "votes": 593,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 87.93,
+        "percentVotes": 87.98,
         "percent_days": 89.11
     }
 ]

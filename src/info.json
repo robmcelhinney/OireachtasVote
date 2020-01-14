@@ -44,27 +44,27 @@
         }
     ],
     "partyAverages": {
-        "Fianna Fáil": 72.04,
-        "Fine Gael": 78.62,
-        "Green Party": 69.95,
-        "Independent": 66.45,
-        "Independents 4 Change": 77.23,
-        "Labour Party": 66.85,
+        "Fianna Fáil": 72.31,
+        "Fine Gael": 78.6,
+        "Green Party": 71.92,
+        "Independent": 66.33,
+        "Independents 4 Change": 77.11,
+        "Labour Party": 66.94,
         "Sinn Féin": 80.23,
-        "Social Democrats": 69.83,
-        "Solidarity - People Before Profit": 70.2
+        "Social Democrats": 69.95,
+        "Solidarity - People Before Profit": 70.25
     },
     "partyMedian": {
-        "Fianna Fáil": 74.07,
-        "Fine Gael": 82.71,
-        "Green Party": 64.83,
-        "Independent": 67.59,
-        "Independents 4 Change": 73.69,
-        "Labour Party": 62.3,
-        "Sinn Féin": 83.39,
-        "Social Democrats": 69.83,
-        "Solidarity - People Before Profit": 67.52
+        "Fianna Fáil": 74.63,
+        "Fine Gael": 82.56,
+        "Green Party": 64.99,
+        "Independent": 67.28,
+        "Independents 4 Change": 73.59,
+        "Labour Party": 62.46,
+        "Sinn Féin": 83.46,
+        "Social Democrats": 69.95,
+        "Solidarity - People Before Profit": 67.58
     },
-    "totalVotes": 671,
-    "dateCreated": "16/12/2019 23:47:19"
+    "totalVotes": 674,
+    "dateCreated": "14/01/2020 18:53:14"
 }
