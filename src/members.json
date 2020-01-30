@@ -154,20 +154,6 @@
         "percent_days": 96.04
     },
     {
-        "member_id": "Thomas-P-Broughan.D.1992-12-14",
-        "fullName": "Thomas P. Broughan",
-        "firstName": "Thomas P.",
-        "lastName": "Broughan",
-        "constituency": "Dublin Bay North",
-        "party": "Independents 4 Change",
-        "office": false,
-        "votes": 650,
-        "total_votes": null,
-        "total_days": null,
-        "percentVotes": 96.44,
-        "percent_days": 96.04
-    },
-    {
         "member_id": "James-Browne.D.2016-10-03",
         "fullName": "James Browne",
         "firstName": "James",
@@ -875,10 +861,10 @@
         "constituency": "Donegal",
         "party": "Fianna Fáil",
         "office": false,
-        "votes": 181,
+        "votes": 182,
         "total_votes": null,
         "total_days": null,
-        "percentVotes": 26.85,
+        "percentVotes": 27.0,
         "percent_days": 36.63
     },
     {

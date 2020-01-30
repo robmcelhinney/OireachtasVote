@@ -131,14 +131,13 @@ class App extends React.Component {
 				<Info info={info}/>
 				<p>Plan to run the web scraper around once a week to keep the
 					info relevant. Let me know if it hasn't been done in a while.</p>
-				<p>Duplicates are from the Oireachtas API, they should
-					automatically be removed when their end is fixed.</p>
+				<p>An asterick (*) next to a member's name indicates that they have not been
+				    present for the full term, hover over/click the asterick (*) for more info.</p>
 				<p>If you have any ideas please let me know on
-					Twitter/Github below, i.e. should I keep TDs no longer
-					in the Dáil (Current MEPs), how should I deal with new TDs
-					who joined during Dáil session, & should I automatically
-					remove the Ceann-Comhairle? <span className={"should_be"}>
-					blame <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a></span></p>
+					Twitter/Github below, i.e. should I keep TDs who have since left the Dáil
+					(Current MEPs), should I deal with newly elected TDs differently, & should
+					I automatically remove the Ceann-Comhairle? <span className={"should_be"}>
+					blame <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a> for that one</span></p>
 			</div>
 			<div id={"footer"}
 				style={{color: 'black'}}>
