@@ -23,7 +23,7 @@ function filterCaseInsensitive(filter, row) {
 		);
 	}
 
-	if (["party", "lastName"].includes(id)) {
+	if (["party", "lastName", "constituency"].includes(id)) {
 		return filterLowerCaseNormalize(row[id]);
 	}
 	else if (["firstName", "fullName"].includes(id)) {
@@ -54,7 +54,7 @@ const Table = (props) => {
 		false
 	);
 	const [partyWidth, setPartyWidth] = useState(
-		"250"
+		"175"
 	);
 
 	const handlePercentRange = (event, onChange) => {
@@ -68,6 +68,7 @@ const Table = (props) => {
 	};
 
 	const party_options = info['parties'];
+//	const constituency_options = info['constituencies'];
 
 	useEffect(() => {
 		const resize = () => {
@@ -187,7 +188,13 @@ const Table = (props) => {
 	const lastNameColumn = {
 		Header: "Last Name",
 		accessor: "lastName",
-		maxWidth: "150",
+		maxWidth: "120",
+	};
+
+	const constituencyColumn = {
+		Header: "Constituency",
+		accessor: "constituency",
+		maxWidth: "100",
 	};
 
 	const percentColumnSlider = {
@@ -320,13 +327,13 @@ const Table = (props) => {
 	};
 	const standardTable = () => {
 		columns.unshift({
-			Header: "Name",
 			columns: [
 				firstNameColumn,
 				lastNameColumn
 			]
 		});
 		columns.unshift(pictureColumn);
+		columns.push(constituencyColumn);
 		columns.push(percentColumnSlider);
 		columns.push(voteColumn);
 	};

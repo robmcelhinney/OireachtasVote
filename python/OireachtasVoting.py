@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 from statistics import median
 
-BASE_PI_URL = "https://api.oireachtas.ie/v1/"
+BASE_API_URL = "https://api.oireachtas.ie/v1/"
 
 DAIL_SEARCH_PARAMS = ("/en/debates/votes/?voteResultType=all&debateType="
         "dail&datePeriod=term&term=%2Fie%2Foireachtas%2Fhouse%2Fdail%2F")
@@ -25,6 +25,7 @@ def main():
 
     current_dail, num_members = get_current_dail_info(info)
     get_parties(current_dail, info)
+    get_constituencies(current_dail, info)
     total_count, member_vote_track, member_vote_day_track, total_days, separate_dates = get_vote_count(info)
     get_members(current_dail, num_members, data, info, total_count, separate_dates)
     get_member_percent(total_count, data, member_vote_track, member_vote_day_track, total_days)
@@ -99,7 +100,7 @@ def get_member_percent(total_count, data, member_vote_track, member_vote_day_tra
 
 
 def get_current_dail_info(info):
-    response = requests.get("{}houses?chamber_id=&chamber=dail&limit=50".format(BASE_PI_URL), headers=headers)
+    response = requests.get("{}houses?chamber_id=&chamber=dail&limit=50".format(BASE_API_URL), headers=headers)
     data = response.json()
     house_number = data["results"][0]["house"]["houseNo"]
     house_name = data["results"][0]["house"]["showAs"]
@@ -109,7 +110,7 @@ def get_current_dail_info(info):
     info["dailStartDate"] = house_start_date
 
     response = requests.get(
-        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=32&date_end=2099-01-01&limit=1".format(BASE_PI_URL), headers=headers)
+        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=32&date_end=2099-01-01&limit=1".format(BASE_API_URL), headers=headers)
     data = response.json()
     num_members = data["head"]["counts"]["resultCount"]
 
@@ -118,7 +119,7 @@ def get_current_dail_info(info):
 
 def get_members(current_dail, num_members, json_data, info, total_count, separate_dates):
     response = requests.get(
-        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=".format(BASE_PI_URL)
+        "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no=".format(BASE_API_URL)
         + str(current_dail) + "&date_end=2099-01-01&limit=" + str(num_members), headers=headers)
     data = response.json()
 
@@ -173,7 +174,7 @@ def check_possible_votes(start_date, total_count):
     response = requests.get(
         "{}divisions?chamber_type=house&chamber_id=&chamber=dail&"
         "date_start={}&date_end=2099-01-01&skip={}&limit=1&outcome=".format(
-            BASE_PI_URL, start_date, total_count), headers=headers)
+            BASE_API_URL, start_date, total_count), headers=headers)
     data = response.json()
     possible_votes = data["head"]["counts"]["resultCount"]
     return possible_votes
@@ -192,7 +193,7 @@ def check_possible_days(start_date, separate_dates):
 
 def get_parties(current_dail, info):
     response = requests.get(
-        "{}parties?chamber_id=&chamber=dail&house_no=".format(BASE_PI_URL)
+        "{}parties?chamber_id=&chamber=dail&house_no=".format(BASE_API_URL)
         + str(current_dail) + '&limit=50', headers=headers)
     data = response.json()
 
@@ -202,16 +203,27 @@ def get_parties(current_dail, info):
     info["parties"] = party_array
 
 
+def get_constituencies(current_dail, info):
+    response = requests.get(
+        "{}constituencies?chamber_id=&chamber=dail&house_no=".format(BASE_API_URL)
+        + str(current_dail) + '&limit=50', headers=headers)
+    data = response.json()
+
+    constituency_array = []
+    for constituency in data["results"]["house"]["constituenciesOrPanels"]:
+        constituency_array.append(constituency['constituencyOrPanel']['showAs'])
+    info["constituencies"] = constituency_array
+
 def get_vote_count(info):
     response = requests.get(
-        "{}divisions?chamber_type=house&chamber_id=&chamber=dail&date_start=".format(BASE_PI_URL)
+        "{}divisions?chamber_type=house&chamber_id=&chamber=dail&date_start=".format(BASE_API_URL)
         + info["dailStartDate"] + "&date_end=2099-01-01&limit=1&outcome=", headers=headers)
     response_data = response.json()
     total_votes = int(response_data["head"]["counts"]["resultCount"])
 
     member_vote_track = {}
     member_vote_day_track = {}
-    response = requests.get("{}divisions?".format(BASE_PI_URL) +
+    response = requests.get("{}divisions?".format(BASE_API_URL) +
                             "chamber_type=house&chamber_id=&chamber=dail&date_start="
                             + info["dailStartDate"] + "&date_end=2099-01-01&limit=" +
                             str(total_votes) + "&outcome=", headers=headers)

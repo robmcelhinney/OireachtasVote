@@ -43,6 +43,48 @@
             "label": "Solidarity - People Before Profit"
         }
     ],
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan-Monaghan",
+        "Clare",
+        "Cork East",
+        "Cork North-Central",
+        "Cork North-West",
+        "Cork South-Central",
+        "Cork South-West",
+        "Donegal",
+        "Dublin Bay North",
+        "Dublin Bay South",
+        "Dublin Central",
+        "Dublin Fingal",
+        "Dublin Mid-West",
+        "Dublin North-West",
+        "Dublin Rathdown",
+        "Dublin South-Central",
+        "Dublin South-West",
+        "Dublin West",
+        "Dún Laoghaire",
+        "Galway East",
+        "Galway West",
+        "Kerry",
+        "Kildare North",
+        "Kildare South",
+        "Laois",
+        "Limerick City",
+        "Limerick County",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo",
+        "Meath East",
+        "Meath West",
+        "Offaly",
+        "Roscommon-Galway",
+        "Sligo-Leitrim",
+        "Tipperary",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
     "partyAverages": {
         "Fianna Fáil": 72.31,
         "Fine Gael": 78.6,
@@ -66,5 +108,5 @@
         "Solidarity - People Before Profit": 67.58
     },
     "totalVotes": 674,
-    "dateCreated": "30/01/2020 18:05:16"
+    "dateCreated": "31/01/2020 12:05:09"
 }
