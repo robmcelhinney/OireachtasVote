@@ -67,10 +67,10 @@ def create_json(data, info, count):
     info["totalVotes"] = count
     info["dateCreated"] = now.strftime("%d/%m/%Y %H:%M:%S")
 
-    with open('../src/members.json', 'w', encoding='utf-8') as f:
+    with open('src/members.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-    with open('../src/info.json', 'w', encoding='utf-8') as f:
+    with open('src/info.json', 'w', encoding='utf-8') as f:
         json.dump(info, f, ensure_ascii=False, indent=4)
 
 
