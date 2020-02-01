@@ -182,7 +182,7 @@ const Table = (props) => {
 				)
 			}
 		},
-		maxWidth: "150",
+		maxWidth: "120",
 	};
 
 	const lastNameColumn = {
