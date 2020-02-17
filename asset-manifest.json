@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/OireachtasVote/static/css/main.963ce579.chunk.css",
-    "main.js": "/OireachtasVote/static/js/main.62f7cee6.chunk.js",
-    "main.js.map": "/OireachtasVote/static/js/main.62f7cee6.chunk.js.map",
+    "main.js": "/OireachtasVote/static/js/main.63192ce2.chunk.js",
+    "main.js.map": "/OireachtasVote/static/js/main.63192ce2.chunk.js.map",
     "runtime-main.js": "/OireachtasVote/static/js/runtime-main.176ddd88.js",
     "runtime-main.js.map": "/OireachtasVote/static/js/runtime-main.176ddd88.js.map",
     "static/css/2.4f4974f9.chunk.css": "/OireachtasVote/static/css/2.4f4974f9.chunk.css",
-    "static/js/2.7c6a0893.chunk.js": "/OireachtasVote/static/js/2.7c6a0893.chunk.js",
-    "static/js/2.7c6a0893.chunk.js.map": "/OireachtasVote/static/js/2.7c6a0893.chunk.js.map",
+    "static/js/2.57dc8676.chunk.js": "/OireachtasVote/static/js/2.57dc8676.chunk.js",
+    "static/js/2.57dc8676.chunk.js.map": "/OireachtasVote/static/js/2.57dc8676.chunk.js.map",
     "index.html": "/OireachtasVote/index.html",
-    "precache-manifest.70676315701f90e02f4ecfcb32af7fec.js": "/OireachtasVote/precache-manifest.70676315701f90e02f4ecfcb32af7fec.js",
+    "precache-manifest.10aa65e05e3ef1a6b5e4b9560b194922.js": "/OireachtasVote/precache-manifest.10aa65e05e3ef1a6b5e4b9560b194922.js",
     "service-worker.js": "/OireachtasVote/service-worker.js",
     "static/css/2.4f4974f9.chunk.css.map": "/OireachtasVote/static/css/2.4f4974f9.chunk.css.map",
     "static/css/main.963ce579.chunk.css.map": "/OireachtasVote/static/css/main.963ce579.chunk.css.map",
-    "static/js/2.7c6a0893.chunk.js.LICENSE.txt": "/OireachtasVote/static/js/2.7c6a0893.chunk.js.LICENSE.txt",
+    "static/js/2.57dc8676.chunk.js.LICENSE.txt": "/OireachtasVote/static/js/2.57dc8676.chunk.js.LICENSE.txt",
     "static/media/style.css": "/OireachtasVote/static/media/Quicksand-Regular.9a891411.ttf",
     "static/media/user.svg": "/OireachtasVote/static/media/user.6aad34a2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.176ddd88.js",
     "static/css/2.4f4974f9.chunk.css",
-    "static/js/2.7c6a0893.chunk.js",
+    "static/js/2.57dc8676.chunk.js",
     "static/css/main.963ce579.chunk.css",
-    "static/js/main.62f7cee6.chunk.js"
+    "static/js/main.63192ce2.chunk.js"
   ]
 }
