@@ -86,8 +86,12 @@ def get_member_percent(total_count, data, member_vote_track, member_vote_day_tra
         else:
             day_count = 0
         if member["total_votes"] is None:
-            percent = round((count / total_count) * 100, 2)
-            percent_days = round((day_count / total_days) * 100, 2)
+            percent = 0
+            if not (count == 0 or total_count == 0):
+                percent = round((count / total_count) * 100, 2)
+            percent_days = 0
+            if not (day_count == 0 or total_days == 0):
+                percent_days = round((day_count / total_days) * 100, 2)
         else:
             if member["total_votes"] == 0:
                 percent = 0
@@ -104,7 +108,6 @@ def get_current_dail_info(info):
     data = response.json()
     house_number = data["results"][0]["house"]["houseNo"]
     house_name = data["results"][0]["house"]["showAs"]
-    # current_seats = data["results"][0]["house"]["seats"]
     house_start_date = data["results"][0]["house"]["dateRange"]['start']
     info["currentDail"] = house_name
     info["dailStartDate"] = house_start_date
