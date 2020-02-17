@@ -127,6 +127,7 @@ const Table = (props) => {
 
 		Filter: ({ filter, onChange }) =>
 			<div className={"nouislider_div"} >
+				{info['totalVotes'] !== 0 &&
 				<Nouislider
 					className={"nouislider"}
 					range={{ min: 0, max: info['totalVotes'] }}
@@ -138,7 +139,9 @@ const Table = (props) => {
 
 					onChange={event => handleVoteRange(event, onChange)}
 					tooltips={[ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ]}
-				/></div>,
+				/>
+				}
+			</div>,
 	};
 
 	const getNewTDTooltip = (total_votes, firstName, secondName="") => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import 'react-table/react-table.css';
-import "nouislider/distribute/nouislider.css";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
