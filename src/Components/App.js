@@ -1,6 +1,6 @@
 import React from 'react';
 import MainPage from "./MainPage";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import FilterSession from "./FilterSession";
 import SessionSelection from "./SessionSelection";
 
@@ -8,7 +8,7 @@ import SessionSelection from "./SessionSelection";
 class App extends React.Component {
 	render() {
 		return (
-			<Router>
+			<Router basename='/'>
 				<Switch>
 					<Route path="/" exact component={MainPage}/>
 					<Route path="/session/:id" component={FilterSession}/>
