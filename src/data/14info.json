@@ -1,0 +1,81 @@
+{
+    "totalVotes": 136,
+    "dailEndDate": "1954-04-24",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Clann na Poblachta",
+            "value": "Clann_na_Poblachta"
+        },
+        {
+            "label": "Clann na Talmhan",
+            "value": "Clann_na_Talmhan"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        }
+    ],
+    "partyAverages": {},
+    "partyMedian": {},
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East",
+        "Cork North",
+        "Cork South",
+        "Cork West",
+        "Donegal East",
+        "Donegal West",
+        "Dublin County",
+        "Dublin North-Central",
+        "Dublin North-East",
+        "Dublin North-West",
+        "Dublin South-Central",
+        "Dublin South-East",
+        "Dublin South-West",
+        "Dún Laoghaire and Rathdown",
+        "Galway North",
+        "Galway South",
+        "Galway West",
+        "Kerry North",
+        "Kerry South",
+        "Kildare",
+        "Leix-Offaly",
+        "Limerick East",
+        "Limerick West",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo North",
+        "Mayo South",
+        "Meath",
+        "Monaghan",
+        "Roscommon",
+        "Sligo-Leitrim",
+        "Tipperary North",
+        "Tipperary South",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:49:12",
+    "dail": 14,
+    "dailStartDate": "1951-06-13"
+}

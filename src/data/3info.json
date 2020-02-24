@@ -1,0 +1,65 @@
+{
+    "totalVotes": 153,
+    "dailEndDate": "1923-08-09",
+    "parties": [
+        {
+            "label": "Business and Professional Group",
+            "value": "Business_and_Professional_Group"
+        },
+        {
+            "label": "Farmers Party",
+            "value": "Farmers_Party"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        },
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        }
+    ],
+    "partyAverages": {
+        "Sinn Féin": 14.25
+    },
+    "partyMedian": {
+        "Sinn Féin": 9.8
+    },
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East and North-East",
+        "Cork Mid, North, South, South East and West",
+        "Donegal",
+        "Dublin County",
+        "Dublin Mid",
+        "Dublin North-West",
+        "Dublin South",
+        "Dublin University",
+        "Galway",
+        "Kerry-Limerick West",
+        "Kildare-Wicklow",
+        "Leitrim-Roscommon-North",
+        "Leix-Offaly",
+        "Limerick-City-Limerick-East",
+        "Longford-Westmeath",
+        "Louth-Meath",
+        "Mayo North and West",
+        "Mayo South-Roscommon South",
+        "Monaghan",
+        "National University of Ireland",
+        "Sligo-Mayo-East",
+        "Tipperary Mid, North and South",
+        "Waterford–Tipperary East",
+        "Wexford"
+    ],
+    "dateCreated": "24/02/2020 13:48:00",
+    "dail": 3,
+    "dailStartDate": "1922-09-09"
+}

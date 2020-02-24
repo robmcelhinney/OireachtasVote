@@ -1,0 +1,89 @@
+{
+    "totalVotes": 57,
+    "dailEndDate": "1927-08-25",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Cumann na nGaedheal",
+            "value": "Cumann_na_nGaedheal"
+        },
+        {
+            "label": "Farmers Party",
+            "value": "Farmers_Party"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        },
+        {
+            "label": "National League Party",
+            "value": "National_League_Party"
+        },
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        }
+    ],
+    "partyAverages": {
+        "Cumann na nGaedheal": 35.09,
+        "Labour Party": 67.65,
+        "Farmers Party": 51.85,
+        "National League Party": 66.89,
+        "Fianna Fáil": 1.94,
+        "Independent": 40.79
+    },
+    "partyMedian": {
+        "Cumann na nGaedheal": 3.51,
+        "Labour Party": 82.45,
+        "Farmers Party": 68.42,
+        "National League Party": 73.69,
+        "Fianna Fáil": 1.75,
+        "Independent": 30.7
+    },
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East",
+        "Cork North",
+        "Cork West",
+        "Donegal",
+        "Dublin County",
+        "Dublin North",
+        "Dublin South",
+        "Dublin University",
+        "Galway",
+        "Kerry",
+        "Kildare",
+        "Leitrim-Sligo",
+        "Leix-Offaly",
+        "Limerick",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo North",
+        "Mayo South",
+        "Meath",
+        "Monaghan",
+        "National University of Ireland",
+        "Roscommon",
+        "Tipperary",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:48:17",
+    "dail": 5,
+    "dailStartDate": "1927-06-23"
+}

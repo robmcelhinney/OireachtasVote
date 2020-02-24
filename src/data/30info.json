@@ -1,0 +1,98 @@
+{
+    "totalVotes": 608,
+    "dailEndDate": "2011-02-01",
+    "parties": [
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Green Party",
+            "value": "Green_Party"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        },
+        {
+            "label": "Progressive Democrats",
+            "value": "Progressive_Democrats"
+        },
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        }
+    ],
+    "partyAverages": {
+        "Fianna Fáil": 84.62,
+        "Green Party": 89.97,
+        "Sinn Féin": 83.0,
+        "Fine Gael": 81.26,
+        "Labour Party": 85.65,
+        "Independent": 73.1
+    },
+    "partyMedian": {
+        "Fianna Fáil": 90.3,
+        "Green Party": 89.88,
+        "Sinn Féin": 86.68,
+        "Fine Gael": 82.81,
+        "Labour Party": 86.84,
+        "Independent": 81.86
+    },
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan-Monaghan",
+        "Clare",
+        "Cork East",
+        "Cork North-Central",
+        "Cork North-West",
+        "Cork South-Central",
+        "Cork South-West",
+        "Donegal North-East",
+        "Donegal South-West",
+        "Dublin Central",
+        "Dublin Mid-West",
+        "Dublin North",
+        "Dublin North-Central",
+        "Dublin North-East",
+        "Dublin North-West",
+        "Dublin South",
+        "Dublin South-Central",
+        "Dublin South-East",
+        "Dublin South-West",
+        "Dublin West",
+        "Dún Laoghaire",
+        "Galway East",
+        "Galway West",
+        "Kerry North",
+        "Kerry South",
+        "Kildare North",
+        "Kildare South",
+        "Laois-Offaly",
+        "Limerick East",
+        "Limerick West",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo",
+        "Meath East",
+        "Meath West",
+        "Roscommon-South-Leitrim",
+        "Sligo-North Leitrim",
+        "Tipperary North",
+        "Tipperary South",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:50:51",
+    "dail": 30,
+    "dailStartDate": "2007-06-14"
+}

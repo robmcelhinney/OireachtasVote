@@ -1,0 +1,67 @@
+{
+    "totalVotes": 110,
+    "dailEndDate": "1933-01-02",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Cumann na nGaedheal",
+            "value": "Cumann_na_nGaedheal"
+        },
+        {
+            "label": "Farmers Party",
+            "value": "Farmers_Party"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        }
+    ],
+    "partyAverages": {},
+    "partyMedian": {},
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East",
+        "Cork North",
+        "Cork West",
+        "Donegal",
+        "Dublin County",
+        "Dublin North",
+        "Dublin South",
+        "Dublin University",
+        "Galway",
+        "Kerry",
+        "Kildare",
+        "Leitrim-Sligo",
+        "Leix-Offaly",
+        "Limerick",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo North",
+        "Mayo South",
+        "Meath",
+        "Monaghan",
+        "National University of Ireland",
+        "Roscommon",
+        "Tipperary",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:48:30",
+    "dail": 7,
+    "dailStartDate": "1932-03-09"
+}

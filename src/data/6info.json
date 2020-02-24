@@ -1,0 +1,97 @@
+{
+    "totalVotes": 593,
+    "dailEndDate": "1932-01-29",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Cumann na nGaedheal",
+            "value": "Cumann_na_nGaedheal"
+        },
+        {
+            "label": "Farmers Party",
+            "value": "Farmers_Party"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Irish Worker League",
+            "value": "Irish_Worker_League"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        },
+        {
+            "label": "National League Party",
+            "value": "National_League_Party"
+        },
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        }
+    ],
+    "partyAverages": {
+        "Cumann na nGaedheal": 16.9,
+        "Labour Party": 11.56,
+        "Farmers Party": 18.25,
+        "National League Party": 15.34,
+        "Fianna Fáil": 15.34,
+        "Independent": 20.6
+    },
+    "partyMedian": {
+        "Cumann na nGaedheal": 17.88,
+        "Labour Party": 11.64,
+        "Farmers Party": 18.38,
+        "National League Party": 15.34,
+        "Fianna Fáil": 17.37,
+        "Independent": 17.54
+    },
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East",
+        "Cork North",
+        "Cork West",
+        "Donegal",
+        "Dublin County",
+        "Dublin North",
+        "Dublin South",
+        "Dublin University",
+        "Galway",
+        "Kerry",
+        "Kildare",
+        "Leitrim-Sligo",
+        "Leix-Offaly",
+        "Limerick",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo North",
+        "Mayo South",
+        "Meath",
+        "Monaghan",
+        "National University of Ireland",
+        "Roscommon",
+        "Tipperary",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:48:26",
+    "dail": 6,
+    "dailStartDate": "1927-10-11"
+}

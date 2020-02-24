@@ -1,0 +1,75 @@
+{
+    "totalVotes": 226,
+    "dailEndDate": "1981-05-21",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        }
+    ],
+    "partyAverages": {},
+    "partyMedian": {},
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan-Monaghan",
+        "Clare",
+        "Cork City",
+        "Cork Mid",
+        "Cork North East",
+        "Cork South-West",
+        "Donegal",
+        "Dublin Artane",
+        "Dublin Ballyfermot",
+        "Dublin Cabra",
+        "Dublin Clontarf",
+        "Dublin County Mid",
+        "Dublin County North",
+        "Dublin County South",
+        "Dublin County West",
+        "Dublin Finglas",
+        "Dublin North-Central",
+        "Dublin Rathmines West",
+        "Dublin South-Central",
+        "Dublin South-East",
+        "Dún Laoghaire",
+        "Galway East",
+        "Galway West",
+        "Kerry North",
+        "Kerry South",
+        "Kildare",
+        "Laois-Offaly",
+        "Limerick East",
+        "Limerick West",
+        "Longford-Westmeath",
+        "Louth",
+        "Mayo East",
+        "Mayo West",
+        "Meath",
+        "Roscommon-Leitrim",
+        "Sligo-Leitrim",
+        "Tipperary North",
+        "Tipperary South",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:49:59",
+    "dail": 21,
+    "dailStartDate": "1977-07-05"
+}

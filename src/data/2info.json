@@ -1,0 +1,48 @@
+{
+    "totalVotes": 0,
+    "dailEndDate": "1922-06-16",
+    "parties": [
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        }
+    ],
+    "partyAverages": {},
+    "partyMedian": {},
+    "constituencies": [
+        "Armagh",
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork East and North-East",
+        "Cork Mid, North, South, South East and West",
+        "Donegal",
+        "Down",
+        "Dublin County",
+        "Dublin Mid",
+        "Dublin North-West",
+        "Dublin South",
+        "Fermanagh and Tyrone",
+        "Galway",
+        "Kerry-Limerick West",
+        "Kildare-Wicklow",
+        "Leitrim-Roscommon-North",
+        "Leix-Offaly",
+        "Limerick-City-Limerick-East",
+        "Londonderry City",
+        "Longford-Westmeath",
+        "Louth-Meath",
+        "Mayo North and West",
+        "Mayo South-Roscommon South",
+        "Monaghan",
+        "National University of Ireland",
+        "Sligo-Mayo-East",
+        "Tipperary Mid, North and South",
+        "Waterford–Tipperary East",
+        "Wexford"
+    ],
+    "dateCreated": "24/02/2020 13:47:55",
+    "dail": 2,
+    "dailStartDate": "1921-08-16"
+}

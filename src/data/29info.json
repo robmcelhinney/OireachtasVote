@@ -1,0 +1,109 @@
+{
+    "totalVotes": 537,
+    "dailEndDate": "2007-04-30",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Green Party",
+            "value": "Green_Party"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        },
+        {
+            "label": "Progressive Democrats",
+            "value": "Progressive_Democrats"
+        },
+        {
+            "label": "Sinn Féin",
+            "value": "Sinn_Féin"
+        },
+        {
+            "label": "Socialist Party",
+            "value": "Socialist_Party"
+        }
+    ],
+    "partyAverages": {
+        "Fianna Fáil": 72.35,
+        "Green Party": 66.64,
+        "Sinn Féin": 71.92,
+        "Fine Gael": 58.23,
+        "Labour Party": 75.45,
+        "Independent": 54.47,
+        "Socialist Party": 68.53,
+        "Progressive Democrats": 75.07
+    },
+    "partyMedian": {
+        "Fianna Fáil": 77.75,
+        "Green Party": 68.91,
+        "Sinn Féin": 73.0,
+        "Fine Gael": 62.1,
+        "Labour Party": 77.28,
+        "Independent": 57.91,
+        "Socialist Party": 68.53,
+        "Progressive Democrats": 79.52
+    },
+    "constituencies": [
+        "Carlow-Kilkenny",
+        "Cavan-Monaghan",
+        "Clare",
+        "Cork East",
+        "Cork North-Central",
+        "Cork North-West",
+        "Cork South-Central",
+        "Cork South-West",
+        "Donegal North-East",
+        "Donegal South-West",
+        "Dublin Central",
+        "Dublin Mid-West",
+        "Dublin North",
+        "Dublin North-Central",
+        "Dublin North-East",
+        "Dublin North-West",
+        "Dublin South",
+        "Dublin South-Central",
+        "Dublin South-East",
+        "Dublin South-West",
+        "Dublin West",
+        "Dún Laoghaire",
+        "Galway East",
+        "Galway West",
+        "Kerry North",
+        "Kerry South",
+        "Kildare North",
+        "Kildare South",
+        "Laois-Offaly",
+        "Limerick East",
+        "Limerick West",
+        "Longford-Roscommon",
+        "Louth",
+        "Mayo",
+        "Meath",
+        "Sligo-Leitrim",
+        "Tipperary North",
+        "Tipperary South",
+        "Waterford",
+        "Westmeath",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:50:42",
+    "dail": 29,
+    "dailStartDate": "2002-06-06"
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import time
 import requests
 import json
 from datetime import datetime
@@ -13,22 +14,32 @@ headers = {
 }
 
 
+def get_dail_count():
+    response = requests.get("{}houses?chamber_id=&chamber=dail&limit=100".format(BASE_API_URL), headers=headers)
+    data = response.json()
+    num_members = data["head"]["counts"]["housesCount"]
+    return num_members
+
+
 def main():
-    data = []
-    info = {}
-    current_dail, num_members = get_current_dail_info(info)
-    get_parties(current_dail, info)
-    get_constituencies(current_dail, info)
-    member_show_as_code_to = get_member_show_as_to_code(current_dail,
+    dail_count = get_dail_count()
+    for dail_num in range(1, dail_count):
+        data = []
+        info = {}
+        num_members = get_current_dail_info(info, dail_num)
+        get_parties(dail_num, info)
+        get_constituencies(dail_num, info)
+        member_show_as_code_to = get_member_show_as_to_code(dail_num,
                 num_members, info)
-    (total_count, member_vote_track, member_vote_day_track, total_days,
-            separate_dates) = get_vote_count(info, member_show_as_code_to)
-    get_members(current_dail, num_members, data, info, total_count,
-            separate_dates)
-    get_member_percent(total_count, data, member_vote_track,
-            member_vote_day_track, total_days)
-    create_averages(data, info)
-    create_json(data, info, total_count)
+        (total_count, member_vote_track, member_vote_day_track, total_days,
+                separate_dates) = get_vote_count(info, member_show_as_code_to)
+        get_members(dail_num, num_members, data, info, total_count,
+                separate_dates)
+        get_member_percent(total_count, data, member_vote_track,
+                member_vote_day_track, total_days)
+        create_averages(data, info)
+        create_json(data, info, total_count)
+        time.sleep(1)
 
 
 def create_averages(data, info):
@@ -71,12 +82,8 @@ def create_json(data, info, count):
 
     with open(directory + "/" + str(info["dail"]) + 'members.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    with open('src/members.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
 
     with open(directory + "/" + str(info["dail"]) + 'info.json', 'w', encoding='utf-8') as f:
-        json.dump(info, f, ensure_ascii=False, indent=4)
-    with open('src/info.json', 'w', encoding='utf-8') as f:
         json.dump(info, f, ensure_ascii=False, indent=4)
 
 
@@ -112,24 +119,24 @@ def get_member_percent(total_count, data, member_vote_track,
         member["percent_days"] = percent_days
 
 
-def get_current_dail_info(info):
+def get_current_dail_info(info, dail_num):
     response = requests.get("{}houses?chamber_id=&chamber=dail&limit=50".format(BASE_API_URL), headers=headers)
     data = response.json()
-    house_number = data["results"][0]["house"]["houseNo"]
+    count = data["head"]["counts"]["resultCount"]
 
-    house_start_date = data["results"][0]["house"]["dateRange"]['start']
-    house_end_date = data["results"][0]["house"]["dateRange"]['end']
+    house_start_date = data["results"][count - dail_num]["house"]["dateRange"]['start']
+    house_end_date = data["results"][count - dail_num]["house"]["dateRange"]['end']
     info["dailStartDate"] = house_start_date
     info["dailEndDate"] = house_end_date or "2099-01-01"
-    info["dail"] = house_number
+    info["dail"] = dail_num
 
     response = requests.get(
             "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&"
             "house_no={}&date_end={}&limit=1".format(BASE_API_URL,
-            house_number, info["dailEndDate"]), headers=headers)
+            dail_num, info["dailEndDate"]), headers=headers)
     data = response.json()
     num_members = data["head"]["counts"]["resultCount"]
-    return house_number, num_members
+    return num_members
 
 
 def get_members(current_dail, num_members, json_data, info, total_count, separate_dates):
@@ -143,6 +150,7 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
         holds_office = False
         for office in result["member"]["memberships"][0][
             "membership"]["offices"]:
+            #TODO: this will only get the current Taoiseach.
             if office["office"]["dateRange"]["end"] is None and (
                     "Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" ==
                     office["office"]["officeName"]["showAs"]):

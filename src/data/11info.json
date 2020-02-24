@@ -1,0 +1,71 @@
+{
+    "totalVotes": 22,
+    "dailEndDate": "1944-05-10",
+    "parties": [
+        {
+            "label": "Ceann Comhairle",
+            "value": "Ceann_Comhairle"
+        },
+        {
+            "label": "Clann na Talmhan",
+            "value": "Clann_na_Talmhan"
+        },
+        {
+            "label": "Fianna Fáil",
+            "value": "Fianna_Fáil"
+        },
+        {
+            "label": "Fine Gael",
+            "value": "Fine_Gael"
+        },
+        {
+            "label": "Independent",
+            "value": "Independent"
+        },
+        {
+            "label": "Labour Party",
+            "value": "Labour_Party"
+        }
+    ],
+    "partyAverages": {},
+    "partyMedian": {},
+    "constituencies": [
+        "Athlone-Longford",
+        "Carlow-Kilkenny",
+        "Cavan",
+        "Clare",
+        "Cork Borough",
+        "Cork North",
+        "Cork South East",
+        "Cork West",
+        "Donegal East",
+        "Donegal West",
+        "Dublin County",
+        "Dublin North-East",
+        "Dublin North-West",
+        "Dublin South",
+        "Dublin Townships",
+        "Galway East",
+        "Galway West",
+        "Kerry North",
+        "Kerry South",
+        "Kilkenny",
+        "Leitrim",
+        "Leix-Offaly",
+        "Limerick",
+        "Louth",
+        "Mayo North",
+        "Mayo South",
+        "Meath-Westmeath",
+        "Monaghan",
+        "Roscommon",
+        "Sligo",
+        "Tipperary",
+        "Waterford",
+        "Wexford",
+        "Wicklow"
+    ],
+    "dateCreated": "24/02/2020 13:48:52",
+    "dail": 11,
+    "dailStartDate": "1943-07-01"
+}
