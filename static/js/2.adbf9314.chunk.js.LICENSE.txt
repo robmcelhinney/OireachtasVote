@@ -10,7 +10,7 @@ object-assign
   http://jedwatson.github.io/classnames
 */
 
-/*! nouislider - 14.1.1 - 12/15/2019 */
+/*! nouislider - 14.0.3 - 10/10/2019 */
 
 /**
  * A better abstraction over CSS.
@@ -20,7 +20,7 @@ object-assign
  * @license MIT
  */
 
-/** @license React v0.18.0
+/** @license React v0.17.0
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29,7 +29,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.12.0
+/** @license React v16.11.0
  * react-dom.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -38,7 +38,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.12.0
+/** @license React v16.11.0
  * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -47,7 +47,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.12.0
+/** @license React v16.11.0
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -58,7 +58,7 @@ object-assign
 
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.1
+ * @version 1.16.0
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
