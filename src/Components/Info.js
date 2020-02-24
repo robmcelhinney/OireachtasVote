@@ -40,8 +40,6 @@ const Info = ({info}) => {
 
 	const classes = useStyles();
 
-//	console.log("medians: ", medians);
-
 	return (
 		<Card className={classes.card}>
 			<CardContent className={classes.cardTop}>

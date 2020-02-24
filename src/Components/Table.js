@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import info from '../info.json';
 import Select from 'react-select';
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
@@ -48,7 +47,7 @@ const Table = (props) => {
 		[0, 100]
 	);
 	const [vote, setVote] = useState(
-		[0, info['totalVotes']]
+		[0, props.info['totalVotes']]
 	);
 	const [widthHide, setWidthHide] = useState(
 		false
@@ -67,8 +66,7 @@ const Table = (props) => {
 		onChange(event)
 	};
 
-	const party_options = info['parties'];
-//	const constituency_options = info['constituencies'];
+	const party_options = props.info['parties'];
 
 	useEffect(() => {
 		const resize = () => {
@@ -127,10 +125,10 @@ const Table = (props) => {
 
 		Filter: ({ filter, onChange }) =>
 			<div className={"nouislider_div"} >
-				{info['totalVotes'] !== 0 &&
+				{props.info['totalVotes'] !== 0 &&
 				<Nouislider
 					className={"nouislider"}
-					range={{ min: 0, max: info['totalVotes'] }}
+					range={{ min: 0, max: props.info['totalVotes'] }}
 					start={vote}
 					connect={true}
 					step={10}
@@ -146,7 +144,7 @@ const Table = (props) => {
 
 	const getNewTDTooltip = (total_votes, firstName, secondName="") => {
 		return <Tooltip
-			title={"New TD. Available for " + total_votes
+			title={"TD during " + total_votes
 			+ " votes."} enterDelay={300}
 			leaveDelay={100} placement={"top"}
 		>
@@ -251,34 +249,32 @@ const Table = (props) => {
 		Filter: ({ filter, onChange }) =>
 			<div>
 				<InputNumber className={"numberInput"}
-							 // placeholder={percent[0]}
-							 value={percent[0]}
-							 min={0} max={100}
-							 onChange={e => {
-							 	onChange([(isNaN(e)) ? 0 : e, "one"])
-							 }}
-							 onBlur={event => {
-								 let value = Number(event.target.value);
-								 if (isNaN(value)) {
-								 	value = 0;
-								 }
-								 setPercent([value, percent[1]])
-							 }}
+					value={percent[0]}
+					min={0} max={100}
+					onChange={e => {
+					onChange([(isNaN(e)) ? 0 : e, "one"])
+					}}
+					onBlur={event => {
+					 let value = Number(event.target.value);
+					 if (isNaN(value)) {
+						value = 0;
+					 }
+					 setPercent([value, percent[1]])
+					}}
 				/>
 				<InputNumber className={"numberInput"}
-							 // placeholder={percent[1]}
-							 value={percent[1]}
-							 min={0} max={100}
-							 onChange={e => {
-								 onChange([(isNaN(e)) ? 100 : e, "two"]);
-							 }}
-							 onBlur={event => {
-								 let value = Number(event.target.value);
-								 if (isNaN(value)) {
-									 value = 100;
-								 }
-								 setPercent([percent[0], value])
-							 }}
+					value={percent[1]}
+					min={0} max={100}
+					onChange={e => {
+					 onChange([(isNaN(e)) ? 100 : e, "two"]);
+					}}
+					onBlur={event => {
+					 let value = Number(event.target.value);
+					 if (isNaN(value)) {
+						 value = 100;
+					 }
+					 setPercent([percent[0], value])
+					}}
 				/>
 			</div>
 	};
