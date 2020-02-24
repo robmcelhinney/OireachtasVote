@@ -5,21 +5,16 @@
   "homepage": "https://robmcelhinney.github.io/OireachtasVote/",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "@material-ui/icons": "^4.5.1",
-    "material-ui": "^0.20.2",
     "moment": "^2.24.0",
-    "mui-datatables": "^2.12.4",
     "nouislider-react": "^3.3.5",
     "ordinal": "^1.0.3",
     "rc-input-number": "^4.5.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-moment": "^0.9.7",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "3.3.1",
     "react-select": "^3.0.8",
     "react-table": "^6.10.3",
-    "tsutils": "^3.17.1",
     "wnumb": "^1.2.0"
   },
   "scripts": {
@@ -48,7 +43,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.2.0"
   },
   "keywords": [],
   "author": "",
