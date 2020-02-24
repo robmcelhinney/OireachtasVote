@@ -144,7 +144,7 @@ const Table = (props) => {
 
 	const getNewTDTooltip = (total_votes, firstName, secondName="") => {
 		return <Tooltip
-			title={"TD during " + total_votes
+			title={"TD available for " + total_votes
 			+ " votes."} enterDelay={300}
 			leaveDelay={100} placement={"top"}
 		>

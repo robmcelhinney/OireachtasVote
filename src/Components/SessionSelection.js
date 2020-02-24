@@ -28,7 +28,7 @@ const SessionSelection = (props) => {
 					Check out other Dáil sessions below.
 					<div>
 					Most older Dáil sessions are missing data so they are not always correct.
-					Usually when TD's name is recorded in English but their voting record uses their name as Gaeilge.
+					(Usually when a TD's name is recorded in English but their voting record uses their name as Gaeilge or they are recorded as John P. Murphy in the voting record instead of John Patrick Murphy.)
 					</div>
 				</div>
 				<div className={"dail_session_ul"}>

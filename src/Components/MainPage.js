@@ -17,26 +17,44 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
-		if (dail_session === undefined) {
-			dail_session = current_info.dail
-		}
-		else {
-			document.title = document.title + " - " + ordinal(dail_session) +
-					" Dáil";
-		}
-
-		const info = require('../data/' + dail_session + 'info.json');
-		const members_json = require('../data/' + dail_session +
-				'members.json');
+		const [info, members] = this.getData(dail_session);
 
 		this.state = {
 			excludeCabinet: false,
 			excludeZeroVotes: false,
 			info: info,
-			data: members_json,
-			members: members_json
+			data: members,
+			members: members
 		};
 	}
+
+
+	componentDidUpdate(prevProps) {
+		if (this.props.session !== prevProps.session) {
+			const [info, members] = this.getData(this.props.session);
+			this.setState( {
+				info: info,
+				data: members,
+				members: members,
+			})
+		}
+	}
+
+
+	getData = (dail_session) => {
+		if (dail_session === undefined) {
+			dail_session = current_info.dail
+		}
+		else {
+			document.title = document.title + " - " + ordinal(dail_session) +
+				" Dáil";
+		}
+
+		const info = require('../data/' + dail_session + 'info.json');
+		const members = require('../data/' + dail_session +
+			'members.json');
+		return [info, members]
+	};
 
 	handleCheckedCabinet = (type) => {
 		let data = this.state.data;
@@ -111,6 +129,9 @@ class MainPage extends React.Component {
 		}
 		else {
 			dail_end_date = moment(info.dailEndDate).format('DD/MM/YYYY')
+		}
+		if(data === null || info === null){
+			return;
 		}
 		return (
 			<>
