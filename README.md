@@ -1,13 +1,15 @@
-# OireachtasVote | View voting percentages of TDs in the current Dáil Éireann
+# OireachtasVote | View voting percentages of TDs in Dáil Éireann
 
 Viewable at [https://robmcelhinney.github.io/OireachtasVote/](
 https://robmcelhinney.github.io/OireachtasVote/)
 
 Attempted to make this website so that it could solely be hosted by Github, 
 no need to use external database or any server side code, a static webpage only.
-Python file uses publically available [Houses of the Oireachtas Open Data APIs](https://data.oireachtas.ie/) to request information regarding the current dail, its members, and voting records over its period. This resulting info is stored in two json files that make up the site: 
+Python file uses publically available [Houses of the Oireachtas Open Data APIs](https://data.oireachtas.ie/) to request information regarding a Dáil session, its members, and voting records over its period. This resulting info is stored in two json files that make up the site: 
 1. members.json stores the politician's name, their party, if the have a cabinet position, and their total votes. 
-2. info.json holds info regarding the current dail, its parties, and when this python file was run.
+2. info.json holds info regarding the current Dáil, its parties, and when this python file was run.
+Both historical session's jsons files are stored in src/data in the format [dail_number]info.json and [dail_number]members.json.
+The current Dáil session is also stored in src/ as info.json and members.json.
 
 ## Install
 
@@ -18,7 +20,7 @@ Python file uses publically available [Houses of the Oireachtas Open Data APIs](
 
 ## Run python web scraper
 
-    $ python3 python/OireachtasVoting.py
+    $ py python/OireachtasVoting.py
 
 ## Start & watch
 
