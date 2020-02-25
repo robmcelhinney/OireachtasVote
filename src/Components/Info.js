@@ -17,7 +17,8 @@ const useStyles = makeStyles({
 		boxShadow: '0 2px 1px -1px rgba(0,0,0,0.06),0 1px 1px 0 rgba(0,0,0,0.04),0 1px 3px 0 rgba(0,0,0,0.04)',
 	},
 	cardHeader: {
-		font: 'normal normal normal 1.5em/1em \'QuicksandBold\''
+		font: 'normal normal normal 1.5em/1em \'QuicksandBold\'',
+		fontDisplay: 'swap'
 	}
 });
 
