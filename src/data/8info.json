@@ -1,38 +1,37 @@
 {
-    "totalVotes": 721,
+    "dailStartDate": "1933-02-08",
     "dailEndDate": "1937-06-14",
+    "dail": 8,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Cumann na nGaedheal",
-            "value": "Cumann_na_nGaedheal"
+            "value": "Cumann_na_nGaedheal",
+            "label": "Cumann na nGaedheal"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "National Centre Party",
-            "value": "National_Centre_Party"
+            "value": "National_Centre_Party",
+            "label": "National Centre Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -66,7 +65,22 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:48:38",
-    "dail": 8,
-    "dailStartDate": "1933-02-08"
+    "partyAverages": {
+        "Cumann na nGaedheal": 53.12,
+        "Fianna Fáil": 66.3,
+        "Fine Gael": 37.17,
+        "Independent": 44.75,
+        "Labour Party": 48.85,
+        "National Centre Party": 48.73
+    },
+    "partyMedian": {
+        "Cumann na nGaedheal": 52.98,
+        "Fianna Fáil": 74.06,
+        "Fine Gael": 37.17,
+        "Independent": 34.33,
+        "Labour Party": 46.32,
+        "National Centre Party": 48.96
+    },
+    "totalVotes": 721,
+    "dateCreated": "25/02/2020 17:58:30"
 }

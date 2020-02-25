@@ -1,34 +1,33 @@
 {
-    "totalVotes": 22,
+    "dailStartDate": "1943-07-01",
     "dailEndDate": "1944-05-10",
+    "dail": 11,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Clann na Talmhan",
-            "value": "Clann_na_Talmhan"
+            "value": "Clann_na_Talmhan",
+            "label": "Clann na Talmhan"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Athlone-Longford",
         "Carlow-Kilkenny",
@@ -65,7 +64,20 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:48:52",
-    "dail": 11,
-    "dailStartDate": "1943-07-01"
+    "partyAverages": {
+        "Clann na Talmhan": 60.8,
+        "Fianna Fáil": 86.47,
+        "Fine Gael": 59.63,
+        "Independent": 34.85,
+        "Labour Party": 73.11
+    },
+    "partyMedian": {
+        "Clann na Talmhan": 70.46,
+        "Fianna Fáil": 86.36,
+        "Fine Gael": 59.09,
+        "Independent": 31.82,
+        "Labour Party": 72.72
+    },
+    "totalVotes": 22,
+    "dateCreated": "25/02/2020 17:58:49"
 }

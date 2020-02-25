@@ -1,42 +1,41 @@
 {
-    "totalVotes": 230,
+    "dailStartDate": "1987-03-10",
     "dailEndDate": "1989-05-25",
+    "dail": 25,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Democratic Socialist Party",
-            "value": "Democratic_Socialist_Party"
+            "value": "Democratic_Socialist_Party",
+            "label": "Democratic Socialist Party"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Progressive Democrats",
-            "value": "Progressive_Democrats"
+            "value": "Progressive_Democrats",
+            "label": "Progressive Democrats"
         },
         {
-            "label": "Workers Party",
-            "value": "Workers_Party"
+            "value": "Workers_Party",
+            "label": "Workers Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -80,7 +79,24 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:50:16",
-    "dail": 25,
-    "dailStartDate": "1987-03-10"
+    "partyAverages": {
+        "Democratic Socialist Party": 70.87,
+        "Fianna Fáil": 81.83,
+        "Fine Gael": 37.11,
+        "Independent": 64.35,
+        "Labour Party": 63.21,
+        "Progressive Democrats": 56.52,
+        "Workers Party": 48.12
+    },
+    "partyMedian": {
+        "Democratic Socialist Party": 70.87,
+        "Fianna Fáil": 87.39,
+        "Fine Gael": 40.87,
+        "Independent": 64.35,
+        "Labour Party": 69.78,
+        "Progressive Democrats": 56.09,
+        "Workers Party": 67.83
+    },
+    "totalVotes": 230,
+    "dateCreated": "25/02/2020 18:00:49"
 }

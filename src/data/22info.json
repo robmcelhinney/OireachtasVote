@@ -1,38 +1,37 @@
 {
-    "totalVotes": 38,
+    "dailStartDate": "1981-06-30",
     "dailEndDate": "1982-02-27",
+    "dail": 22,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Sinn Féin the Workers Party",
-            "value": "Sinn_Féin_the_Workers_Party"
+            "value": "Sinn_Féin_the_Workers_Party",
+            "label": "Sinn Féin the Workers Party"
         },
         {
-            "label": "Socialist Labour Party",
-            "value": "Socialist_Labour_Party"
+            "value": "Socialist_Labour_Party",
+            "label": "Socialist Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -76,7 +75,20 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:50:02",
-    "dail": 22,
-    "dailStartDate": "1981-06-30"
+    "partyAverages": {
+        "Fianna Fáil": 88.37,
+        "Fine Gael": 93.67,
+        "Independent": 50.0,
+        "Labour Party": 93.68,
+        "Sinn Féin the Workers Party": 39.47
+    },
+    "partyMedian": {
+        "Fianna Fáil": 94.74,
+        "Fine Gael": 97.37,
+        "Independent": 50.0,
+        "Labour Party": 94.74,
+        "Sinn Féin the Workers Party": 39.47
+    },
+    "totalVotes": 38,
+    "dateCreated": "25/02/2020 18:00:27"
 }

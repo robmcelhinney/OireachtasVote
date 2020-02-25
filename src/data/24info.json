@@ -1,38 +1,37 @@
 {
-    "totalVotes": 317,
+    "dailStartDate": "1982-12-14",
     "dailEndDate": "1987-01-21",
+    "dail": 24,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Progressive Democrats",
-            "value": "Progressive_Democrats"
+            "value": "Progressive_Democrats",
+            "label": "Progressive Democrats"
         },
         {
-            "label": "Workers Party",
-            "value": "Workers_Party"
+            "value": "Workers_Party",
+            "label": "Workers Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -76,7 +75,18 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:50:12",
-    "dail": 24,
-    "dailStartDate": "1982-12-14"
+    "partyAverages": {
+        "Fianna Fáil": 75.24,
+        "Fine Gael": 82.26,
+        "Labour Party": 81.64,
+        "Workers Party": 36.59
+    },
+    "partyMedian": {
+        "Fianna Fáil": 84.86,
+        "Fine Gael": 87.86,
+        "Labour Party": 84.38,
+        "Workers Party": 36.59
+    },
+    "totalVotes": 317,
+    "dateCreated": "25/02/2020 18:00:42"
 }

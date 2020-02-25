@@ -1,30 +1,29 @@
 {
-    "totalVotes": 355,
+    "dailStartDate": "1938-06-30",
     "dailEndDate": "1943-05-31",
+    "dail": 10,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Athlone-Longford",
         "Carlow-Kilkenny",
@@ -61,7 +60,18 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:48:49",
-    "dail": 10,
-    "dailStartDate": "1938-06-30"
+    "partyAverages": {
+        "Fianna Fáil": 74.04,
+        "Fine Gael": 41.59,
+        "Independent": 54.8,
+        "Labour Party": 63.48
+    },
+    "partyMedian": {
+        "Fianna Fáil": 75.49,
+        "Fine Gael": 36.62,
+        "Independent": 47.04,
+        "Labour Party": 59.98
+    },
+    "totalVotes": 355,
+    "dateCreated": "25/02/2020 17:58:45"
 }

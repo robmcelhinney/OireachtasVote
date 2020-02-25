@@ -1,38 +1,37 @@
 {
-    "totalVotes": 73,
+    "dailStartDate": "1954-06-02",
     "dailEndDate": "1957-02-12",
+    "dail": 15,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Clann na Poblachta",
-            "value": "Clann_na_Poblachta"
+            "value": "Clann_na_Poblachta",
+            "label": "Clann na Poblachta"
         },
         {
-            "label": "Clann na Talmhan",
-            "value": "Clann_na_Talmhan"
+            "value": "Clann_na_Talmhan",
+            "label": "Clann na Talmhan"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -75,7 +74,22 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:49:19",
-    "dail": 15,
-    "dailStartDate": "1954-06-02"
+    "partyAverages": {
+        "Clann na Poblachta": 66.08,
+        "Clann na Talmhan": 75.0,
+        "Fianna Fáil": 77.82,
+        "Fine Gael": 87.83,
+        "Independent": 67.96,
+        "Labour Party": 78.59
+    },
+    "partyMedian": {
+        "Clann na Poblachta": 75.34,
+        "Clann na Talmhan": 86.3,
+        "Fianna Fáil": 78.08,
+        "Fine Gael": 89.72,
+        "Independent": 75.0,
+        "Labour Party": 80.13
+    },
+    "totalVotes": 73,
+    "dateCreated": "25/02/2020 17:59:24"
 }

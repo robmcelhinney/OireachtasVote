@@ -1,64 +1,49 @@
 {
-    "totalVotes": 593,
+    "dailStartDate": "1927-10-11",
     "dailEndDate": "1932-01-29",
+    "dail": 6,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Cumann na nGaedheal",
-            "value": "Cumann_na_nGaedheal"
+            "value": "Cumann_na_nGaedheal",
+            "label": "Cumann na nGaedheal"
         },
         {
-            "label": "Farmers Party",
-            "value": "Farmers_Party"
+            "value": "Farmers_Party",
+            "label": "Farmers Party"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Irish Worker League",
-            "value": "Irish_Worker_League"
+            "value": "Irish_Worker_League",
+            "label": "Irish Worker League"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "National League Party",
-            "value": "National_League_Party"
+            "value": "National_League_Party",
+            "label": "National League Party"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         }
     ],
-    "partyAverages": {
-        "Cumann na nGaedheal": 16.9,
-        "Labour Party": 11.56,
-        "Farmers Party": 18.25,
-        "National League Party": 15.34,
-        "Fianna Fáil": 15.34,
-        "Independent": 20.6
-    },
-    "partyMedian": {
-        "Cumann na nGaedheal": 17.88,
-        "Labour Party": 11.64,
-        "Farmers Party": 18.38,
-        "National League Party": 15.34,
-        "Fianna Fáil": 17.37,
-        "Independent": 17.54
-    },
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -91,7 +76,22 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:48:26",
-    "dail": 6,
-    "dailStartDate": "1927-10-11"
+    "partyAverages": {
+        "Cumann na nGaedheal": 490.52,
+        "Farmers Party": 53.19,
+        "Fianna Fáil": 57.02,
+        "Independent": 45.95,
+        "Labour Party": 44.73,
+        "National League Party": 65.7
+    },
+    "partyMedian": {
+        "Cumann na nGaedheal": 66.19,
+        "Farmers Party": 52.95,
+        "Fianna Fáil": 62.06,
+        "Independent": 48.82,
+        "Labour Party": 43.51,
+        "National League Party": 65.7
+    },
+    "totalVotes": 593,
+    "dateCreated": "25/02/2020 17:58:09"
 }

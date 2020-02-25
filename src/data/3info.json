@@ -1,34 +1,29 @@
 {
-    "totalVotes": 153,
+    "dailStartDate": "1922-09-09",
     "dailEndDate": "1923-08-09",
+    "dail": 3,
     "parties": [
         {
-            "label": "Business and Professional Group",
-            "value": "Business_and_Professional_Group"
+            "value": "Business_and_Professional_Group",
+            "label": "Business and Professional Group"
         },
         {
-            "label": "Farmers Party",
-            "value": "Farmers_Party"
+            "value": "Farmers_Party",
+            "label": "Farmers Party"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         }
     ],
-    "partyAverages": {
-        "Sinn Féin": 14.25
-    },
-    "partyMedian": {
-        "Sinn Féin": 9.8
-    },
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -59,7 +54,12 @@
         "Waterford–Tipperary East",
         "Wexford"
     ],
-    "dateCreated": "24/02/2020 13:48:00",
-    "dail": 3,
-    "dailStartDate": "1922-09-09"
+    "partyAverages": {
+        "Sinn Féin": 1.31
+    },
+    "partyMedian": {
+        "Sinn Féin": 1.31
+    },
+    "totalVotes": 153,
+    "dateCreated": "25/02/2020 17:57:25"
 }

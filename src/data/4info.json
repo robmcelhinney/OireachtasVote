@@ -1,68 +1,49 @@
 {
-    "totalVotes": 471,
+    "dailStartDate": "1923-09-19",
     "dailEndDate": "1927-05-23",
+    "dail": 4,
     "parties": [
         {
-            "label": "Business and Professional Group",
-            "value": "Business_and_Professional_Group"
+            "value": "Business_and_Professional_Group",
+            "label": "Business and Professional Group"
         },
         {
-            "label": "Cumann na nGaedheal",
-            "value": "Cumann_na_nGaedheal"
+            "value": "Cumann_na_nGaedheal",
+            "label": "Cumann na nGaedheal"
         },
         {
-            "label": "Farmers Party",
-            "value": "Farmers_Party"
+            "value": "Farmers_Party",
+            "label": "Farmers Party"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "National League Party",
-            "value": "National_League_Party"
+            "value": "National_League_Party",
+            "label": "National League Party"
         },
         {
-            "label": "Republican",
-            "value": "Republican"
+            "value": "Republican",
+            "label": "Republican"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         }
     ],
-    "partyAverages": {
-        "Business and Professional Group": 49.15,
-        "Cumann na nGaedheal": 35.17,
-        "Sinn Féin": 4.87,
-        "Farmers Party": 26.59,
-        "Fine Gael": 55.03,
-        "Labour Party": 57.49,
-        "Independent": 26.26,
-        "Republican": 2.76
-    },
-    "partyMedian": {
-        "Business and Professional Group": 49.15,
-        "Cumann na nGaedheal": 31.55,
-        "Sinn Féin": 4.87,
-        "Farmers Party": 26.86,
-        "Fine Gael": 55.03,
-        "Labour Party": 57.49,
-        "Independent": 28.1,
-        "Republican": 2.76
-    },
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -95,7 +76,18 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:48:13",
-    "dail": 4,
-    "dailStartDate": "1923-09-19"
+    "partyAverages": {
+        "Business and Professional Group": 0.21,
+        "Cumann na nGaedheal": 0.42,
+        "Independent": 0.21,
+        "Sinn Féin": 0.24
+    },
+    "partyMedian": {
+        "Business and Professional Group": 0.21,
+        "Cumann na nGaedheal": 0.42,
+        "Independent": 0.21,
+        "Sinn Féin": 0.24
+    },
+    "totalVotes": 471,
+    "dateCreated": "25/02/2020 17:57:44"
 }

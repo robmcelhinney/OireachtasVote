@@ -1,82 +1,57 @@
 {
-    "totalVotes": 959,
+    "dailStartDate": "2011-03-09",
     "dailEndDate": "2016-03-09",
+    "dail": 31,
     "parties": [
         {
-            "label": "Anti-Austerity Alliance - People Before Profit",
-            "value": "Anti-Austerity_Alliance_People_Before_Profit"
+            "value": "Anti-Austerity_Alliance_People_Before_Profit",
+            "label": "Anti-Austerity Alliance - People Before Profit"
         },
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "People Before Profit Alliance",
-            "value": "People_Before_Profit_Alliance"
+            "value": "People_Before_Profit_Alliance",
+            "label": "People Before Profit Alliance"
         },
         {
-            "label": "Renua",
-            "value": "Renua"
+            "value": "Renua",
+            "label": "Renua"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         },
         {
-            "label": "Social Democrats",
-            "value": "Social_Democrats"
+            "value": "Social_Democrats",
+            "label": "Social Democrats"
         },
         {
-            "label": "Socialist Party",
-            "value": "Socialist_Party"
+            "value": "Socialist_Party",
+            "label": "Socialist Party"
         },
         {
-            "label": "Workers and Unemployed Action",
-            "value": "Workers_and_Unemployed_Action"
+            "value": "Workers_and_Unemployed_Action",
+            "label": "Workers and Unemployed Action"
         }
     ],
-    "partyAverages": {
-        "Fianna Fáil": 61.43,
-        "Workers and Unemployed Action": 83.21,
-        "Social Democrats": 67.47,
-        "Anti-Austerity Alliance - People Before Profit": 60.98,
-        "Renua": 42.4,
-        "Sinn Féin": 77.68,
-        "Fine Gael": 71.18,
-        "Labour Party": 66.69,
-        "Independent": 67.96,
-        "Socialist Party": 52.35,
-        "People Before Profit Alliance": 75.08
-    },
-    "partyMedian": {
-        "Fianna Fáil": 60.79,
-        "Workers and Unemployed Action": 83.21,
-        "Social Democrats": 67.47,
-        "Anti-Austerity Alliance - People Before Profit": 60.98,
-        "Renua": 47.86,
-        "Sinn Féin": 78.25,
-        "Fine Gael": 73.15,
-        "Labour Party": 68.62,
-        "Independent": 72.78,
-        "Socialist Party": 52.35,
-        "People Before Profit Alliance": 75.08
-    },
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -122,7 +97,32 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:51:01",
-    "dail": 31,
-    "dailStartDate": "2011-03-09"
+    "partyAverages": {
+        "Anti-Austerity Alliance - People Before Profit": 60.98,
+        "Fianna Fáil": 62.39,
+        "Fine Gael": 71.18,
+        "Independent": 67.97,
+        "Labour Party": 68.0,
+        "People Before Profit Alliance": 75.08,
+        "Renua": 42.4,
+        "Sinn Féin": 77.68,
+        "Social Democrats": 67.47,
+        "Socialist Party": 52.35,
+        "Workers and Unemployed Action": 83.21
+    },
+    "partyMedian": {
+        "Anti-Austerity Alliance - People Before Profit": 60.98,
+        "Fianna Fáil": 61.57,
+        "Fine Gael": 73.15,
+        "Independent": 72.78,
+        "Labour Party": 68.62,
+        "People Before Profit Alliance": 75.08,
+        "Renua": 47.86,
+        "Sinn Féin": 78.25,
+        "Social Democrats": 67.47,
+        "Socialist Party": 52.35,
+        "Workers and Unemployed Action": 83.21
+    },
+    "totalVotes": 959,
+    "dateCreated": "25/02/2020 18:02:09"
 }

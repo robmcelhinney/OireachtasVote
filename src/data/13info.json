@@ -1,42 +1,41 @@
 {
-    "totalVotes": 149,
+    "dailStartDate": "1948-02-18",
     "dailEndDate": "1951-05-07",
+    "dail": 13,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Clann na Poblachta",
-            "value": "Clann_na_Poblachta"
+            "value": "Clann_na_Poblachta",
+            "label": "Clann na Poblachta"
         },
         {
-            "label": "Clann na Talmhan",
-            "value": "Clann_na_Talmhan"
+            "value": "Clann_na_Talmhan",
+            "label": "Clann na Talmhan"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "National Labour Party",
-            "value": "National_Labour_Party"
+            "value": "National_Labour_Party",
+            "label": "National Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -79,7 +78,24 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:49:05",
-    "dail": 13,
-    "dailStartDate": "1948-02-18"
+    "partyAverages": {
+        "Clann na Poblachta": 88.59,
+        "Clann na Talmhan": 92.95,
+        "Fianna Fáil": 79.38,
+        "Fine Gael": 87.6,
+        "Independent": 75.55,
+        "Labour Party": 84.23,
+        "National Labour Party": 84.97
+    },
+    "partyMedian": {
+        "Clann na Poblachta": 90.94,
+        "Clann na Talmhan": 95.63,
+        "Fianna Fáil": 82.55,
+        "Fine Gael": 93.29,
+        "Independent": 75.17,
+        "Labour Party": 83.89,
+        "National Labour Party": 83.89
+    },
+    "totalVotes": 149,
+    "dateCreated": "25/02/2020 17:59:07"
 }

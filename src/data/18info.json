@@ -1,38 +1,37 @@
 {
-    "totalVotes": 176,
+    "dailStartDate": "1965-04-21",
     "dailEndDate": "1969-05-22",
+    "dail": 18,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Clann na Poblachta",
-            "value": "Clann_na_Poblachta"
+            "value": "Clann_na_Poblachta",
+            "label": "Clann na Poblachta"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Progressive Democrats",
-            "value": "Progressive_Democrats"
+            "value": "Progressive_Democrats",
+            "label": "Progressive Democrats"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -73,7 +72,18 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:49:40",
-    "dail": 18,
-    "dailStartDate": "1965-04-21"
+    "partyAverages": {
+        "Clann na Poblachta": 6.25,
+        "Fianna Fáil": 79.24,
+        "Fine Gael": 68.13,
+        "Labour Party": 50.1
+    },
+    "partyMedian": {
+        "Clann na Poblachta": 6.25,
+        "Fianna Fáil": 85.8,
+        "Fine Gael": 73.3,
+        "Labour Party": 53.12
+    },
+    "totalVotes": 176,
+    "dateCreated": "25/02/2020 17:59:53"
 }

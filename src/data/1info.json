@@ -1,14 +1,13 @@
 {
-    "totalVotes": 0,
+    "dailStartDate": "1919-01-21",
     "dailEndDate": "1921-05-10",
+    "dail": 1,
     "parties": [
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow",
         "Cavan East",
@@ -83,7 +82,8 @@
         "Wicklow East",
         "Wicklow West"
     ],
-    "dateCreated": "24/02/2020 13:47:51",
-    "dail": 1,
-    "dailStartDate": "1919-01-21"
+    "partyAverages": {},
+    "partyMedian": {},
+    "totalVotes": 0,
+    "dateCreated": "25/02/2020 17:57:15"
 }

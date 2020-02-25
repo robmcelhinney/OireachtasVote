@@ -1,46 +1,45 @@
 {
-    "totalVotes": 177,
+    "dailStartDate": "1957-03-20",
     "dailEndDate": "1961-09-15",
+    "dail": 16,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Clann na Poblachta",
-            "value": "Clann_na_Poblachta"
+            "value": "Clann_na_Poblachta",
+            "label": "Clann na Poblachta"
         },
         {
-            "label": "Clann na Talmhan",
-            "value": "Clann_na_Talmhan"
+            "value": "Clann_na_Talmhan",
+            "label": "Clann na Talmhan"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "National Progressive Democrats",
-            "value": "National_Progressive_Democrats"
+            "value": "National_Progressive_Democrats",
+            "label": "National Progressive Democrats"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -83,7 +82,22 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:49:26",
-    "dail": 16,
-    "dailStartDate": "1957-03-20"
+    "partyAverages": {
+        "Clann na Poblachta": 38.42,
+        "Clann na Talmhan": 38.98,
+        "Fianna Fáil": 76.26,
+        "Fine Gael": 58.08,
+        "Independent": 45.98,
+        "Labour Party": 62.22
+    },
+    "partyMedian": {
+        "Clann na Poblachta": 38.42,
+        "Clann na Talmhan": 38.98,
+        "Fianna Fáil": 81.92,
+        "Fine Gael": 64.41,
+        "Independent": 40.68,
+        "Labour Party": 65.25
+    },
+    "totalVotes": 177,
+    "dateCreated": "25/02/2020 17:59:35"
 }

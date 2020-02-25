@@ -1,46 +1,45 @@
 {
-    "totalVotes": 400,
+    "dailStartDate": "1992-12-14",
     "dailEndDate": "1997-05-15",
+    "dail": 27,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Democratic Left",
-            "value": "Democratic_Left"
+            "value": "Democratic_Left",
+            "label": "Democratic Left"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Green Party",
-            "value": "Green_Party"
+            "value": "Green_Party",
+            "label": "Green Party"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Progressive Democrats",
-            "value": "Progressive_Democrats"
+            "value": "Progressive_Democrats",
+            "label": "Progressive Democrats"
         },
         {
-            "label": "Workers Party",
-            "value": "Workers_Party"
+            "value": "Workers_Party",
+            "label": "Workers Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -84,7 +83,24 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:50:29",
-    "dail": 27,
-    "dailStartDate": "1992-12-14"
+    "partyAverages": {
+        "Democratic Left": 76.56,
+        "Fianna Fáil": 69.17,
+        "Fine Gael": 68.32,
+        "Green Party": 32.5,
+        "Independent": 28.28,
+        "Labour Party": 72.19,
+        "Progressive Democrats": 66.71
+    },
+    "partyMedian": {
+        "Democratic Left": 77.88,
+        "Fianna Fáil": 73.38,
+        "Fine Gael": 74.0,
+        "Green Party": 32.5,
+        "Independent": 32.5,
+        "Labour Party": 74.88,
+        "Progressive Democrats": 64.38
+    },
+    "totalVotes": 400,
+    "dateCreated": "25/02/2020 18:01:12"
 }

@@ -186,8 +186,7 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
             member_data["total_votes"] = total_votes
             member_data["total_days"] = total_days
         # Check if members have left in middle of Dáil session.
-        elif (info["dailEndDate"] != "2099-01-01"
-                and finished_tenure is not None and
+        elif (finished_tenure is not None and
                 (datetime.strptime(finished_tenure, "%Y-%m-%d") <
                 datetime.strptime(info["dailEndDate"], "%Y-%m-%d"))):
             total_votes = check_possible_votes(total_count, info,
@@ -213,7 +212,8 @@ def get_member_show_as_to_code(current_dail, num_members, info):
     member_show_as_code_to = {}
     for result in data["results"]:
         member_code = result["member"]["memberCode"]
-        member_show_as_code_to[result["member"]["fullName"]] = member_code
+        full_name = result["member"]["fullName"]
+        member_show_as_code_to[full_name.lower()] = member_code
     return member_show_as_code_to
 
 
@@ -329,18 +329,31 @@ def members_votes(tallies_data, member_show_as_code_to, member_vote_track,
                               "showing but this is the name of the "
                               "member voting: ")
                     else:
-                        # print('members["member"]["showAs"]: ', members["member"]["showAs"])
-                        # print('member_show_as_code_to: ', member_show_as_code_to)
-                        member_name = members["member"]["showAs"].replace(
-                                ".", "")
+                        member_name = (members["member"]["showAs"]).lower()
                         if member_name in member_show_as_code_to:
                             members["member"]["memberCode"] = (
                                     member_show_as_code_to[member_name])
-                        # else:
-                        #     print("Something went wrong (with Oireachtas.ie's data)"
-                        #           " and the memberCode is not "
-                        #           "showing but this is the name of the "
-                        #           "member: ", members["member"])
+                        else:
+                            # Reorder name in case using
+                            # LastName, FirstName order.
+                            reordered_name = " ".join(member_name.split(", ")[1:]) + " " + member_name.split(", ")[0]
+                            # print("reordered_name: ", reordered_name)
+                            if reordered_name in member_show_as_code_to:
+                                members["member"]["memberCode"] = (
+                                    member_show_as_code_to[reordered_name])
+                            else:
+                                # Remove fullstops from name.
+                                # reordered_name = reordered_name.replace(".", "")
+                                reordered_name = reverse_replace(
+                                        reordered_name, ".", "", 1)
+                                if reordered_name in member_show_as_code_to:
+                                    members["member"]["memberCode"] = (
+                                        member_show_as_code_to[reordered_name])
+                                else:
+                                    print("Something went wrong (with Oireachtas.ie's data)"
+                                            " and the memberCode is not "
+                                            "showing but this is the name of the "
+                                            "member: {}".format(reordered_name))
                 if members["member"]["memberCode"] in member_vote_track:
                     member_vote_track[members["member"]["memberCode"]] += 1
                 else:
@@ -352,6 +365,11 @@ def members_votes(tallies_data, member_show_as_code_to, member_vote_track,
                     else:
                         member_vote_day_track[members["member"][
                                 "memberCode"]] = 1
+
+
+def reverse_replace(s, old, new, occurrence):
+    li = s.rsplit(old, occurrence)
+    return new.join(li)
 
 
 main()

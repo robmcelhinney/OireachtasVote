@@ -1,64 +1,45 @@
 {
-    "totalVotes": 537,
+    "dailStartDate": "2002-06-06",
     "dailEndDate": "2007-04-30",
+    "dail": 29,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Green Party",
-            "value": "Green_Party"
+            "value": "Green_Party",
+            "label": "Green Party"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         },
         {
-            "label": "Progressive Democrats",
-            "value": "Progressive_Democrats"
+            "value": "Progressive_Democrats",
+            "label": "Progressive Democrats"
         },
         {
-            "label": "Sinn Féin",
-            "value": "Sinn_Féin"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         },
         {
-            "label": "Socialist Party",
-            "value": "Socialist_Party"
+            "value": "Socialist_Party",
+            "label": "Socialist Party"
         }
     ],
-    "partyAverages": {
-        "Fianna Fáil": 72.35,
-        "Green Party": 66.64,
-        "Sinn Féin": 71.92,
-        "Fine Gael": 58.23,
-        "Labour Party": 75.45,
-        "Independent": 54.47,
-        "Socialist Party": 68.53,
-        "Progressive Democrats": 75.07
-    },
-    "partyMedian": {
-        "Fianna Fáil": 77.75,
-        "Green Party": 68.91,
-        "Sinn Féin": 73.0,
-        "Fine Gael": 62.1,
-        "Labour Party": 77.28,
-        "Independent": 57.91,
-        "Socialist Party": 68.53,
-        "Progressive Democrats": 79.52
-    },
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -103,7 +84,26 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:50:42",
-    "dail": 29,
-    "dailStartDate": "2002-06-06"
+    "partyAverages": {
+        "Fianna Fáil": 72.62,
+        "Fine Gael": 58.36,
+        "Green Party": 66.82,
+        "Independent": 54.65,
+        "Labour Party": 75.62,
+        "Progressive Democrats": 75.39,
+        "Sinn Féin": 72.03,
+        "Socialist Party": 68.72
+    },
+    "partyMedian": {
+        "Fianna Fáil": 77.93,
+        "Fine Gael": 62.29,
+        "Green Party": 69.09,
+        "Independent": 58.29,
+        "Labour Party": 77.47,
+        "Progressive Democrats": 79.88,
+        "Sinn Féin": 73.18,
+        "Socialist Party": 68.72
+    },
+    "totalVotes": 537,
+    "dateCreated": "25/02/2020 18:01:29"
 }

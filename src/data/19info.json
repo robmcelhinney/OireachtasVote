@@ -1,30 +1,29 @@
 {
-    "totalVotes": 143,
+    "dailStartDate": "1969-07-02",
     "dailEndDate": "1973-02-05",
+    "dail": 19,
     "parties": [
         {
-            "label": "Ceann Comhairle",
-            "value": "Ceann_Comhairle"
+            "value": "Ceann_Comhairle",
+            "label": "Ceann Comhairle"
         },
         {
-            "label": "Fianna Fáil",
-            "value": "Fianna_Fáil"
+            "value": "Fianna_Fáil",
+            "label": "Fianna Fáil"
         },
         {
-            "label": "Fine Gael",
-            "value": "Fine_Gael"
+            "value": "Fine_Gael",
+            "label": "Fine Gael"
         },
         {
-            "label": "Independent",
-            "value": "Independent"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "label": "Labour Party",
-            "value": "Labour_Party"
+            "value": "Labour_Party",
+            "label": "Labour Party"
         }
     ],
-    "partyAverages": {},
-    "partyMedian": {},
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan",
@@ -69,7 +68,18 @@
         "Wexford",
         "Wicklow"
     ],
-    "dateCreated": "24/02/2020 13:49:46",
-    "dail": 19,
-    "dailStartDate": "1969-07-02"
+    "partyAverages": {
+        "Fianna Fáil": 84.74,
+        "Fine Gael": 64.84,
+        "Independent": 66.15,
+        "Labour Party": 68.93
+    },
+    "partyMedian": {
+        "Fianna Fáil": 88.81,
+        "Fine Gael": 69.23,
+        "Independent": 66.15,
+        "Labour Party": 69.93
+    },
+    "totalVotes": 143,
+    "dateCreated": "25/02/2020 18:00:02"
 }

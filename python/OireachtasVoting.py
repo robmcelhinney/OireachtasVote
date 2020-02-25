@@ -121,7 +121,7 @@ def get_current_dail_info(info):
     house_end_date = data["results"][0]["house"]["dateRange"]['end']
     info["dailStartDate"] = house_start_date
     info["dailEndDate"] = house_end_date or "2099-01-01"
-    info["dail"] = house_number
+    info["dail"] = int(house_number)
 
     response = requests.get(
             "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&"
@@ -178,8 +178,7 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
             member_data["total_votes"] = total_votes
             member_data["total_days"] = total_days
         # Check if members have left in middle of Dáil session.
-        elif (info["dailEndDate"] != "2099-01-01"
-                and finished_tenure is not None and
+        elif (finished_tenure is not None and
                 (datetime.strptime(finished_tenure, "%Y-%m-%d") <
                 datetime.strptime(info["dailEndDate"], "%Y-%m-%d"))):
             total_votes = check_possible_votes(total_count, info,

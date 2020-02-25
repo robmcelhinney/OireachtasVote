@@ -1,5 +1,20 @@
 {
+    "dateCreated": "24/02/2020 15:47:23",
+    "partyAverages": {
+        "Labour Party": 100.0,
+        "Independents 4 Change": 100.0,
+        "Independent": 96.05,
+        "Green Party": 100.0,
+        "Fianna Fáil": 100.0,
+        "Sinn Féin": 100.0,
+        "Fine Gael": 100.0,
+        "Solidarity - People Before Profit": 95.0,
+        "Social Democrats": 100.0,
+        "Aontú": 25.0
+    },
     "totalVotes": 4,
+    "dailEndDate": "2099-01-01",
+    "dail": 33,
     "parties": [
         {
             "value": "Aontú",
@@ -42,34 +57,7 @@
             "label": "Solidarity - People Before Profit"
         }
     ],
-    "dail": "33",
-    "partyMedian": {
-        "Fianna Fáil": 100.0,
-        "Green Party": 100.0,
-        "Aontú": 25.0,
-        "Fine Gael": 100.0,
-        "Independents 4 Change": 100.0,
-        "Social Democrats": 100.0,
-        "Sinn Féin": 100.0,
-        "Independent": 100.0,
-        "Solidarity - People Before Profit": 100.0,
-        "Labour Party": 100.0
-    },
-    "partyAverages": {
-        "Fianna Fáil": 100.0,
-        "Green Party": 100.0,
-        "Aontú": 25.0,
-        "Fine Gael": 100.0,
-        "Independents 4 Change": 100.0,
-        "Social Democrats": 100.0,
-        "Sinn Féin": 100.0,
-        "Independent": 96.05,
-        "Solidarity - People Before Profit": 95.0,
-        "Labour Party": 100.0
-    },
     "dailStartDate": "2020-02-08",
-    "dateCreated": "24/02/2020 13:46:11",
-    "dailEndDate": "2099-01-01",
     "constituencies": [
         "Carlow-Kilkenny",
         "Cavan-Monaghan",
@@ -110,5 +98,17 @@
         "Waterford",
         "Wexford",
         "Wicklow"
-    ]
+    ],
+    "partyMedian": {
+        "Labour Party": 100.0,
+        "Independents 4 Change": 100.0,
+        "Independent": 100.0,
+        "Green Party": 100.0,
+        "Fianna Fáil": 100.0,
+        "Sinn Féin": 100.0,
+        "Fine Gael": 100.0,
+        "Solidarity - People Before Profit": 100.0,
+        "Social Democrats": 100.0,
+        "Aontú": 25.0
+    }
 }
