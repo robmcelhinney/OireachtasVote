@@ -1,6 +1,7 @@
 import React, {useContext, useState} from "react";
 import StyleObject from "../utils/StyleObject";
 import {DailContext} from "../DailContext";
+import {constituencyGreen, nonSelectedCounty, TRANSITION_SPEEDS} from "../utils/StyleConstants";
 
 
 const mapPageStyle = new StyleObject()
@@ -24,37 +25,74 @@ const ConstituencyMapComponent = (props) =>
     let { state, dispatch } = useContext(DailContext);
 
     const [hoveredConst, setHoveredConst] = useState("");
+    const [selectedConst, setSelectedConst] = useState("");
+    const [showDublinConstituencies, toggleDublinConstituencies] = useState(false);
 
-    let generateConstituencySVGs = () =>
+    let mainConstituencySVGs = [];
+    let dublinConstituenciesSVGs = [];
+
+    let generateConstituencySVG = (constituency, isDublinConstituency) =>
     {
-        const constituencies = require("../constituencies/" + state.dailNum + ".json")[state.dailNum];
-        return constituencies.map((constituency) =>
-        {
-            const constituencyStyle = new StyleObject()
-                .setFill("#3d8f3d")
-                .setOpacity(constituency.id === hoveredConst ? 0.4 : 1)
-                .setStroke("black")
-                .setCursor("pointer")
-                .getStyle();
+        const constituencyStyle = new StyleObject()
+            .setFill(selectedConst === "" || selectedConst === "dublin" && isDublinConstituency || selectedConst === constituency.id ?
+                constituencyGreen : nonSelectedCounty)
+            .setOpacity(isDublinConstituency && !showDublinConstituencies ? 0 : constituency.id === hoveredConst  ? 0.6 : 1)
+            .setStroke("black")
+            .setCursor("pointer")
+            .setTransition("opacity", TRANSITION_SPEEDS.FAST)
+            .setTransition("fill", TRANSITION_SPEEDS.FAST)
+            .getStyle();
 
-            return <g id={constituency.id}
-                      style={constituencyStyle}
-                      onMouseEnter={() => setHoveredConst(constituency.id)}
-                      onMouseLeave={() => setHoveredConst("")}
-                    >
-                        <path d={constituency.path} transform={constituency.transform}/>
-                   </g>;
-        })
+        return (<g id={constituency.id}
+                   style={constituencyStyle}
+                   onMouseEnter={() => setHoveredConst(constituency.id)}
+                   onMouseLeave={() => setHoveredConst("")}
+                   onClick={() =>
+                   {
+                       if(constituency.id === "dublin")
+                       {
+                           toggleDublinConstituencies(!showDublinConstituencies);
+                           setSelectedConst("dublin");
+                       }
+                       else
+                       {
+                           if(selectedConst !== constituency.id)
+                           {
+                               setSelectedConst(constituency.id);
+                           }
+                           else
+                           {
+                               setSelectedConst("");
+                           }
+
+                       }
+                   }}
+        >
+            <path d={constituency.path} transform={constituency.transform}/>
+        </g>);
     };
 
-    let constituencySVGs = generateConstituencySVGs();
+    const constituencies = require("../constituencies/" + state.dailNum + ".json")[state.dailNum];
+    let nonDublinConstituencies = constituencies.filter((constituency) => !constituency.id.startsWith("dublin-") && constituency.id !== "dun-laoghaire");
+    let dubConstituencies = constituencies.filter((constituency) => !nonDublinConstituencies.includes(constituency));
+    nonDublinConstituencies.forEach((constituency) =>
+    {
+        mainConstituencySVGs.push(generateConstituencySVG(constituency, false));
+    });
+
+    dubConstituencies.forEach((constituency) =>
+    {
+        dublinConstituenciesSVGs.push(generateConstituencySVG(constituency, true));
+    });
+
 
     return (
             <div style={mapPageStyle}>
                 <div style={mapContainerStyle}>
                     <span>Constituencies of Dail {state.dailNum}</span>
                     <svg style={mapStyle}>
-                        {constituencySVGs}
+                        {mainConstituencySVGs}
+                        {showDublinConstituencies || hoveredConst === "dublin" ? dublinConstituenciesSVGs : null}
                     </svg>
                 </div>
             </div>
