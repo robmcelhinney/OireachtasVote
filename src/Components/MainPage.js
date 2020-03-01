@@ -140,6 +140,7 @@ class MainPage extends React.Component {
 						<h1 className={"mainHeader"}>TD Voting Record - {ordinal(Number(info.dail))} Dáil</h1>
 						<h3 className={"subHeader"}>{moment(info.dailStartDate).format('DD/MM/YYYY')} - {dail_end_date}</h3>
 						<p>View old Dáil Sessions <Link to={"/session/"}>here</Link>.</p>
+						<Link to={"/map"}>Map View </Link>
 						<p>Total Votes during session: {info.totalVotes}</p>
 						{this.getFormGroup()}
 					</div>
