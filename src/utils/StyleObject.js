@@ -6,7 +6,7 @@ class StyleObject
     {
         this.style =
             {
-                fontFamily: "roboto"
+                fontFamily: "QuicksandBold"
             }
     }
 
