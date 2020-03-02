@@ -10,7 +10,7 @@ const ConstituencyComponent = (props) =>
 {
     let { state, dispatch } = useContext(DailContext);
 
-    let selectedConst = state.selectedConsituency;
+    let selectedConst = state.selectedConstituency;
 
     const constituencyStyle = new StyleObject()
         .setFill(selectedConst === "" || selectedConst === "dublin" && props.isDublinConst || selectedConst === props.constituency.id ?

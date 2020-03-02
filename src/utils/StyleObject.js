@@ -28,6 +28,12 @@ class StyleObject
         return this;
     }
 
+    setBackgroundColor(colour: string)
+    {
+        this.style.backgroundColor = colour;
+        return this;
+    }
+
     setDisplay(display: string)
     {
         this.style.display = display;
@@ -43,6 +49,12 @@ class StyleObject
     setFontSize(fontSize: string | number)
     {
         this.style.fontSize = fontSize;
+        return this;
+    }
+
+    setFontWeight(fontWeight: string | number)
+    {
+        this.style.fontWeight = fontWeight;
         return this;
     }
 

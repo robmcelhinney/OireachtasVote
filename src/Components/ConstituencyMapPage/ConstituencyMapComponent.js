@@ -54,7 +54,7 @@ const ConstituencyMapComponent = () =>
     return (
             <div style={mapContainerStyle}>
                 <span>Constituencies of Dail {state.dailNum}</span>
-                <svg style={mapStyle} viewBox={"0 0 800 800"}>
+                <svg style={mapStyle} viewBox={"0 0 1000 900"}>
                     {mainConstituencySVGs}
                     {showDublinConstituencies || hoveredConst === "dublin" ? dublinConstituenciesSVGs : null}
                 </svg>

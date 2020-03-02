@@ -5,15 +5,18 @@ let DailContext = React.createContext();
 let initialState = {
     dailNum: 33,
     constituencies: [],
-    selectedConstituency: ""
+    selectedConstituency: "",
+    members: []
 };
 
 let reducer = (state, action) => {
     switch (action.type) {
         case "switchDail":
             return { ...state, dailNum: action.dail };
+        case "updateMembers":
+            return { ...state, members: action.members};
         case "selectConstituency":
-            return { ...state, selectedConsituency: action.constituency};
+            return { ...state, selectedConstituency: action.constituency};
     }
 };
 
