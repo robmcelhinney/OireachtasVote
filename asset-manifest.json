@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/OireachtasVote/static/css/main.ec573051.chunk.css",
-    "main.js": "/OireachtasVote/static/js/main.fb1e6be2.chunk.js",
-    "main.js.map": "/OireachtasVote/static/js/main.fb1e6be2.chunk.js.map",
+    "main.css": "/OireachtasVote/static/css/main.10180d49.chunk.css",
+    "main.js": "/OireachtasVote/static/js/main.f0a56e20.chunk.js",
+    "main.js.map": "/OireachtasVote/static/js/main.f0a56e20.chunk.js.map",
     "runtime-main.js": "/OireachtasVote/static/js/runtime-main.71d6a7ee.js",
     "runtime-main.js.map": "/OireachtasVote/static/js/runtime-main.71d6a7ee.js.map",
     "static/css/2.1168403d.chunk.css": "/OireachtasVote/static/css/2.1168403d.chunk.css",
-    "static/js/2.cfb1ddaf.chunk.js": "/OireachtasVote/static/js/2.cfb1ddaf.chunk.js",
-    "static/js/2.cfb1ddaf.chunk.js.map": "/OireachtasVote/static/js/2.cfb1ddaf.chunk.js.map",
+    "static/js/2.1e4fa5a7.chunk.js": "/OireachtasVote/static/js/2.1e4fa5a7.chunk.js",
+    "static/js/2.1e4fa5a7.chunk.js.map": "/OireachtasVote/static/js/2.1e4fa5a7.chunk.js.map",
     "index.html": "/OireachtasVote/index.html",
-    "precache-manifest.491c5442c2269d5d48d98adfbf34eb64.js": "/OireachtasVote/precache-manifest.491c5442c2269d5d48d98adfbf34eb64.js",
+    "precache-manifest.9aa1586c1fed7875bca8698a292b52c8.js": "/OireachtasVote/precache-manifest.9aa1586c1fed7875bca8698a292b52c8.js",
     "service-worker.js": "/OireachtasVote/service-worker.js",
     "static/css/2.1168403d.chunk.css.map": "/OireachtasVote/static/css/2.1168403d.chunk.css.map",
-    "static/css/main.ec573051.chunk.css.map": "/OireachtasVote/static/css/main.ec573051.chunk.css.map",
-    "static/js/2.cfb1ddaf.chunk.js.LICENSE.txt": "/OireachtasVote/static/js/2.cfb1ddaf.chunk.js.LICENSE.txt",
+    "static/css/main.10180d49.chunk.css.map": "/OireachtasVote/static/css/main.10180d49.chunk.css.map",
+    "static/js/2.1e4fa5a7.chunk.js.LICENSE.txt": "/OireachtasVote/static/js/2.1e4fa5a7.chunk.js.LICENSE.txt",
     "static/media/style.css": "/OireachtasVote/static/media/Quicksand-Regular.9a891411.ttf",
     "static/media/user.svg": "/OireachtasVote/static/media/user.6aad34a2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.71d6a7ee.js",
     "static/css/2.1168403d.chunk.css",
-    "static/js/2.cfb1ddaf.chunk.js",
-    "static/css/main.ec573051.chunk.css",
-    "static/js/main.fb1e6be2.chunk.js"
+    "static/js/2.1e4fa5a7.chunk.js",
+    "static/css/main.10180d49.chunk.css",
+    "static/js/main.f0a56e20.chunk.js"
   ]
 }
