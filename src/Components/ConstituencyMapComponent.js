@@ -3,6 +3,7 @@ import StyleObject from "../utils/StyleObject";
 import {DailContext} from "../DailContext";
 import {constituencyGreen, nonSelectedCounty, TRANSITION_SPEEDS} 
         from "../utils/StyleConstants";
+import {DUBLIN_CONSTITS} from "../utils/Constants";
 import Table from "./Table";
 import {getData, handleCheckedConstituency, handleCheckedDublin, camelCase} 
         from "./helper";
@@ -92,8 +93,7 @@ const ConstituencyMapComponent = (props) =>
     const constituencies = require(
             "../constituencies/" + state.dailNum + ".json")[state.dailNum];
     const nonDublinConstituencies = constituencies.filter(
-            (constituency) => !constituency.id.startsWith("dublin ")
-                    && constituency.id !== "dún laoghaire");
+            (constituency) => !DUBLIN_CONSTITS.includes(constituency.id));
     nonDublinConstituencies.forEach((constituency) => {
             mainConstituencySVGs.push(
             generateConstituencySVG(constituency, false));

@@ -1,5 +1,6 @@
 import current_info from "../info";
 import ordinal from "ordinal";
+import {DUBLIN_CONSTITS} from "../utils/Constants";
 
 export const getData = (dail_session=undefined) => {
 	if (dail_session === undefined) {
@@ -37,16 +38,12 @@ export const handleCheckedDublin = (data) => {
 	let result = [];
 	data.forEach(
 		member => {
-			// console.log("constit: ", member["constituency"].toLowerCase())
 			const memberConst = member["constituency"].toLowerCase()
-			if (memberConst.startsWith("dublin") || 
-					memberConst === "dún laoghaire") {
-				// console.log("member[\"constituency\"]: ", member["constituency"].toLowerCase());
+			if (DUBLIN_CONSTITS.includes(memberConst)) {
 				result.push(member)
 			}
 		}
 	);
-	// console.log("result: ", result);
 	return result;
 };
 
@@ -57,7 +54,6 @@ export const camelCase = str => {
 		// Assign it back to the array
 		splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
 	}
-	// Directly return the joined string
 	return splitStr.join(' '); 
 }
 

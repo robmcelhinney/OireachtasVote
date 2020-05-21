@@ -58,17 +58,17 @@ h1, h2, h3, h4, h5 {
 
 h3.subHeader {
     font-size: 18px;
-    margin: 0 !important;
+    margin: 0;
 }
 
 h3.noMatch {
     font-size: 2em;
-    margin: 0 !important;
+    margin: 0;
 }
 
 .constit {
     font-size: 18px;
-    margin: 0 !important;
+    margin: 0;
     font-weight: 500;
 }
 
@@ -168,7 +168,7 @@ p {
 }
 
 #averages-exemption {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
 }
 
 /*Responsive*/
@@ -372,5 +372,5 @@ li {
 }
 
 .returnHome {
-    margin-top: 0 !important;
+    margin-top: 0;
 }
