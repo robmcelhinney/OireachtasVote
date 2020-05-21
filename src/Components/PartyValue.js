@@ -6,7 +6,7 @@ const PartyValue = ({partyName, median}) => {
 			<div className={"median-value"}>
 				{median}%
 			</div>
-			<div className={"median-name"}>
+			<div className={"median-name text-align-centre"}>
 				{partyName}
 			</div>
 		</span>
