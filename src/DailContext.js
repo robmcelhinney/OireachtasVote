@@ -11,18 +11,20 @@ let reducer = (state, action) => {
     switch (action.type) {
         case "switchDail":
             return { ...state, dailNum: action.dail };
+        default:
+            return state
     }
 };
 
 function DailContextProvider(props) {
-    let [state, dispatch] = React.useReducer(reducer, initialState);
-    let value = { state, dispatch };
+    const [state, dispatch] = React.useReducer(reducer, initialState);
+    const value = { state, dispatch };
 
     return (
         <DailContext.Provider value={value}>{props.children}</DailContext.Provider>
     );
 }
 
-let DailContextConsumer = DailContext.Consumer;
+const DailContextConsumer = DailContext.Consumer;
 
 export { DailContext, DailContextProvider, DailContextConsumer };

@@ -1,7 +1,12 @@
 import React, {useContext, useState} from "react";
 import StyleObject from "../utils/StyleObject";
 import {DailContext} from "../DailContext";
-import {constituencyGreen, nonSelectedCounty, TRANSITION_SPEEDS} from "../utils/StyleConstants";
+import {constituencyGreen, nonSelectedCounty, TRANSITION_SPEEDS} 
+        from "../utils/StyleConstants";
+import Table from "./Table";
+import {getData, handleCheckedConstituency, handleCheckedDublin, camelCase} 
+        from "./helper";
+import {Link} from "react-router-dom";
 
 
 const mapPageStyle = new StyleObject()
@@ -22,80 +27,120 @@ const mapStyle = new StyleObject()
 
 const ConstituencyMapComponent = (props) =>
 {
-    let { state, dispatch } = useContext(DailContext);
+    const { state } = useContext(DailContext);
 
     const [hoveredConst, setHoveredConst] = useState("");
     const [selectedConst, setSelectedConst] = useState("");
-    const [showDublinConstituencies, toggleDublinConstituencies] = useState(false);
+    const [showDublinConstituencies, toggleDublinConstituencies] = 
+            useState(false); 
+
+    let [info, members] = getData();
+
+    const [data, setData] = useState(members);
 
     let mainConstituencySVGs = [];
     let dublinConstituenciesSVGs = [];
 
+    const setHover = constit => {
+        if (window.innerWidth > 760) {
+            setHoveredConst(constit)            
+        }
+    }
+
     let generateConstituencySVG = (constituency, isDublinConstituency) =>
     {
         const constituencyStyle = new StyleObject()
-            .setFill(selectedConst === "" || selectedConst === "dublin" && isDublinConstituency || selectedConst === constituency.id ?
-                constituencyGreen : nonSelectedCounty)
-            .setOpacity(isDublinConstituency && !showDublinConstituencies ? 0 : constituency.id === hoveredConst  ? 0.6 : 1)
+            .setFill(selectedConst === "" || (selectedConst === "dublin" && 
+                    isDublinConstituency) || selectedConst === constituency.id 
+                    ? constituencyGreen : nonSelectedCounty)
+            .setOpacity(isDublinConstituency && !showDublinConstituencies ?
+                    0 : constituency.id === hoveredConst  ? 0.6 : 1)
             .setStroke("black")
             .setCursor("pointer")
             .setTransition("opacity", TRANSITION_SPEEDS.FAST)
             .setTransition("fill", TRANSITION_SPEEDS.FAST)
             .getStyle();
 
-        return (<g id={constituency.id}
-                   style={constituencyStyle}
-                   onMouseEnter={() => setHoveredConst(constituency.id)}
-                   onMouseLeave={() => setHoveredConst("")}
-                   onClick={() =>
-                   {
-                       if(constituency.id === "dublin")
-                       {
-                           toggleDublinConstituencies(!showDublinConstituencies);
-                           setSelectedConst("dublin");
-                       }
-                       else
-                       {
-                           if(selectedConst !== constituency.id)
-                           {
-                               setSelectedConst(constituency.id);
-                           }
-                           else
-                           {
-                               setSelectedConst("");
-                           }
-
-                       }
-                   }}
+        return (<g id={constituency.id} key={constituency.id} 
+                style={constituencyStyle}
+                onMouseEnter={() => setHover(constituency.id)}
+                onMouseLeave={() => setHover("")}
+                onClick={() => {
+                    if(constituency.id === "dublin"){
+                        toggleDublinConstituencies(!showDublinConstituencies)
+                        setSelectedConst("dublin")
+                        setData(handleCheckedDublin(members))
+                    }
+                    else
+                    {
+                        if(selectedConst !== constituency.id){
+                            setSelectedConst(constituency.id)
+                            setData(handleCheckedConstituency(members, 
+                                    constituency.id))
+                        }
+                        else{
+                            setSelectedConst("")
+                            setData(members)
+                        }
+                    }
+                }}
         >
             <path d={constituency.path} transform={constituency.transform}/>
         </g>);
     };
 
-    const constituencies = require("../constituencies/" + state.dailNum + ".json")[state.dailNum];
-    let nonDublinConstituencies = constituencies.filter((constituency) => !constituency.id.startsWith("dublin-") && constituency.id !== "dun-laoghaire");
-    let dubConstituencies = constituencies.filter((constituency) => !nonDublinConstituencies.includes(constituency));
-    nonDublinConstituencies.forEach((constituency) =>
-    {
-        mainConstituencySVGs.push(generateConstituencySVG(constituency, false));
+    const constituencies = require(
+            "../constituencies/" + state.dailNum + ".json")[state.dailNum];
+    const nonDublinConstituencies = constituencies.filter(
+            (constituency) => !constituency.id.startsWith("dublin ")
+                    && constituency.id !== "dún laoghaire");
+    nonDublinConstituencies.forEach((constituency) => {
+            mainConstituencySVGs.push(
+            generateConstituencySVG(constituency, false));
     });
 
-    dubConstituencies.forEach((constituency) =>
-    {
-        dublinConstituenciesSVGs.push(generateConstituencySVG(constituency, true));
+    const dubConstituencies = constituencies.filter(
+            (constituency) => !nonDublinConstituencies
+            .includes(constituency));
+    dubConstituencies.forEach((constituency) => {
+            dublinConstituenciesSVGs.push(generateConstituencySVG(
+            constituency, true));
     });
 
+    const currentConst = () => {
+        if (selectedConst) {
+            return (
+                <p className={"text-align-centre"}>
+                    {camelCase(selectedConst)}
+                </p>
+            )
+        }
+        return (
+            <p className={"text-align-centre"}>
+                Tap a constituency
+            </p>
+        )
+    }
 
     return (
-            <div style={mapPageStyle}>
-                <div style={mapContainerStyle}>
-                    <span>Constituencies of Dail {state.dailNum}</span>
-                    <svg style={mapStyle}>
-                        {mainConstituencySVGs}
-                        {showDublinConstituencies || hoveredConst === "dublin" ? dublinConstituenciesSVGs : null}
-                    </svg>
-                </div>
+        <div style={mapPageStyle} id={"mapTableContainer"}>
+            <div style={mapContainerStyle} id={"mapTable"}>
+                <p className={"text-align-centre constit"}>
+                    Constituencies of Dail {state.dailNum}
+                </p>
+                {currentConst()}
+                <p className={"text-align-centre returnHome"}>
+                    <Link to={"/"}>Home</Link></p>
+                <svg style={mapStyle}
+                        className={"block-auto-margin"} 
+                        id={"mapIreland"} viewBox="0 0 850 760">
+                    {mainConstituencySVGs}
+                    {showDublinConstituencies || hoveredConst === "dublin" ? 
+                            dublinConstituenciesSVGs : null}
+                </svg>
             </div>
+            <Table members={data} info={info} className={"block-auto-margin"}/>
+        </div>
     );
 };
 

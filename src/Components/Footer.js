@@ -2,7 +2,8 @@ import React from "react";
 
 function Footer() {
 	return (
-		<div id={"footer"} style={{color: 'black'}}>
+		<div id={"footer"}  className={"text-align-centre"} 
+				style={{color: 'black'}}>
 			Any queries/requests, contact me @<a
 			href={"https://twitter.com/RMcElhinney"}>Rob McElhinney
 			</a> | Code Viewable @

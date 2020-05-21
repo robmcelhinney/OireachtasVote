@@ -5,11 +5,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import Table from './Table';
 import Info from "./Info";
-import current_info from '../info.json';
 import moment from 'moment'
 import ordinal from "ordinal";
 import Footer from "./Footer";
 import {Link} from "react-router-dom";
+import {getData} from "./helper";
 
 
 class MainPage extends React.Component {
@@ -17,7 +17,7 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
-		const [info, members] = this.getData(dail_session);
+		const [info, members] = getData(dail_session);
 
 		this.state = {
 			excludeCabinet: false,
@@ -31,7 +31,7 @@ class MainPage extends React.Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.session !== prevProps.session) {
-			const [info, members] = this.getData(this.props.session);
+			const [info, members] = getData(this.props.session);
 			this.setState( {
 				info: info,
 				data: members,
@@ -39,22 +39,6 @@ class MainPage extends React.Component {
 			})
 		}
 	}
-
-
-	getData = (dail_session) => {
-		if (dail_session === undefined) {
-			dail_session = current_info.dail
-		}
-		else {
-			document.title = document.title + " - " + ordinal(dail_session) +
-				" Dáil";
-		}
-
-		const info = require('../data/' + dail_session + 'info.json');
-		const members = require('../data/' + dail_session +
-			'members.json');
-		return [info, members]
-	};
 
 	handleCheckedCabinet = (type) => {
 		let data = this.state.data;
@@ -136,11 +120,11 @@ class MainPage extends React.Component {
 		return (
 			<>
 				<div className={"maincontent container"}>
-					<div id={"headerInfo"}>
+					<div>
 						<h1 className={"mainHeader"}>TD Voting Record - {ordinal(Number(info.dail))} Dáil</h1>
 						<h3 className={"subHeader"}>{moment(info.dailStartDate).format('DD/MM/YYYY')} - {dail_end_date}</h3>
 						<p>View old Dáil Sessions <Link to={"/session/"}>here</Link>.</p>
-						<Link to={"/map"}>Map View </Link>
+						<p><Link to={"/map"}>Map View</Link></p>
 						<p>Total Votes during session: {info.totalVotes}</p>
 						{this.getFormGroup()}
 					</div>

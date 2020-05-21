@@ -22,6 +22,12 @@ class StyleObject
         return this;
     }
 
+    setScale(scale: string | number)
+    {
+        this.style.scale = scale;
+        return this;
+    }
+
     setMinHeight(height: string | number)
     {
         this.style.minHeight = height;

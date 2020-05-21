@@ -23,7 +23,7 @@ const SessionSelection = (props) => {
 	return (
 		<>
 			<div className={"maincontent container"}>
-				<div className={"sessionHeader"}>
+				<div className={"sessionHeader text-align-centre"}>
 					{noMatch()}
 					Check out other Dáil sessions below.
 					<div>
