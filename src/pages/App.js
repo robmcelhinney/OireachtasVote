@@ -1,15 +1,24 @@
 import React from 'react';
-import MainPage from "./MainPage";
+import { Helmet } from "react-helmet"
+import MainPage from "../components/MainPage";
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import FilterSession from "./FilterSession";
-import SessionSelection from "./SessionSelection";
-import ConstituencyMapComponent from "./ConstituencyMapComponent";
+import FilterSession from "../components/FilterSession";
+import SessionSelection from "../components/SessionSelection";
+import ConstituencyMapComponent from "../components/ConstituencyMapComponent";
 import {DailContextProvider} from "../DailContext";
 
 
 class App extends React.Component {
 	render() {
 		return (
+			<>
+			<div className="application">
+				<Helmet>
+					<meta charSet="utf-8" />
+					<title>Robert McElhinney</title>
+					<link rel="canonical" href="http://robmcelhinney.com/OireachtasVote/" />
+				</Helmet>
+			</div>
 			<DailContextProvider>
 				<Router basename='/'>
 					<Switch>
@@ -21,6 +30,7 @@ class App extends React.Component {
 					</Switch>
 				</Router>
 			</DailContextProvider>
+			</>
 		)
 	}
 }

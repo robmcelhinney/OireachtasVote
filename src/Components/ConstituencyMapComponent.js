@@ -11,11 +11,11 @@ import {Link} from "react-router-dom";
 
 
 const mapPageStyle = new StyleObject()
-    .setBasics("100%", "100%" , 0 ,0)
+    .setBasics("100%", "auto" , 0 ,0)
     .getStyle();
 
 const mapContainerStyle = new StyleObject()
-    .setBasics("50%", "100%", 0 , 0)
+    .setBasics("50%", "auto", 0 , 0)
     .setDisplay("flex")
     .setFlexDirection("column")
     .getStyle();
@@ -146,7 +146,9 @@ const ConstituencyMapComponent = (props) =>
                             dublinConstituenciesSVGs : null}
                 </svg>
             </div>
-            <Table members={data} info={info} className={"block-auto-margin"}/>
+            <div id={"mapReactTable"}>
+                <Table members={data} info={info} className={"block-auto-margin"}/>
+            </div>
         </div>
     );
 };

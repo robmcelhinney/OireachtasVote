@@ -30,8 +30,8 @@ body {
 }
 
 .maincontent {
-    /* padding-right: 15px;
-    padding-left: 15px; */
+    padding-right: 0.75em;
+    padding-left: 0.75em;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
@@ -105,8 +105,8 @@ h3.noMatch {
 }
 
 .ReactTable {
-    max-width: 95%;
-    min-width: 80%;
+    max-width: 100%;
+    min-width: 90%;
     margin-left: 0;
     margin-right: 0;
     font-size: 1em;
@@ -177,7 +177,6 @@ p {
         width: 750px;
     }
     .ReactTable {
-        max-width: auto;
         min-width: 50%;
         font-size: 0.9em;
         padding-right: inherit;
@@ -187,6 +186,16 @@ p {
     .ReactTable .rt-th, .ReactTable .rt-td {
         white-space: nowrap;
     }
+
+    #mapReactTable {
+        min-width: 50%;
+        font-size: 0.9em;
+        padding-right: inherit;
+        padding-left: inherit;
+        white-space: nowrap;
+    }
+
+
     .nouislider_div {
         width: 90%;
     }
@@ -378,4 +387,19 @@ li {
 
 .returnHome {
     margin-top: 0;
+}
+
+#mapReactTable {
+    height: 95vh;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mapReactTable > .ReactTable {
+    height: 90vh;
+    
 }
