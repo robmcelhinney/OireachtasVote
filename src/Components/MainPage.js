@@ -168,8 +168,8 @@ const getBottomText = () => {
 	return <>
 		<p>Plan to run the web scraper around once a week to keep the
 			info relevant. Let me know if it hasn't been done in a while.</p>
-		<p>An asterick (*) next to a member's name indicates that they have not been
-			present for the full term, hover over/click the asterick (*) for more info.</p>
+		<p>An asterisk (*) next to a member's name indicates that they have not been
+			present for the full term, hover over/click the asterisk (*) for more info.</p>
 		<p>If you have any ideas please let me know on
 			Twitter/Github below, i.e. should I deal with newly elected TDs differently, & should
 			I automatically remove the Ceann-Comhairle? <span className={"should_be"}>

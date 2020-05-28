@@ -48,7 +48,7 @@ export const handleCheckedDublin = (data) => {
 };
 
 export const camelCase = str => {
-	let splitStr = str.toLowerCase().split(' ');
+	let splitStr = str.toLowerCase().split(/[ -]+/);
 	for (let i = 0; i < splitStr.length; i++) {
 		// You do not need to check if i is larger than splitStr length, as your for does that for you
 		// Assign it back to the array
@@ -56,5 +56,3 @@ export const camelCase = str => {
 	}
 	return splitStr.join(' '); 
 }
-
-  

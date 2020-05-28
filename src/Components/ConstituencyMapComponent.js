@@ -12,7 +12,6 @@ import {Link} from "react-router-dom";
 
 const mapPageStyle = new StyleObject()
     .setBasics("100%", "100%" , 0 ,0)
-    .setPadding(15)
     .getStyle();
 
 const mapContainerStyle = new StyleObject()
@@ -44,12 +43,11 @@ const ConstituencyMapComponent = (props) =>
 
     const setHover = constit => {
         if (window.innerWidth > 760) {
-            setHoveredConst(constit)            
+            setHoveredConst(constit) 
         }
     }
 
-    let generateConstituencySVG = (constituency, isDublinConstituency) =>
-    {
+    let generateConstituencySVG = (constituency, isDublinConstituency) => {
         const constituencyStyle = new StyleObject()
             .setFill(selectedConst === "" || (selectedConst === "dublin" && 
                     isDublinConstituency) || selectedConst === constituency.id 
@@ -67,19 +65,21 @@ const ConstituencyMapComponent = (props) =>
                 onMouseEnter={() => setHover(constituency.id)}
                 onMouseLeave={() => setHover("")}
                 onClick={() => {
-                    if(constituency.id === "dublin"){
+                    if(constituency.id === "dublin") {
                         toggleDublinConstituencies(!showDublinConstituencies)
                         setSelectedConst("dublin")
                         setData(handleCheckedDublin(members))
                     }
-                    else
-                    {
+                    else {
                         if(selectedConst !== constituency.id){
                             setSelectedConst(constituency.id)
                             setData(handleCheckedConstituency(members, 
                                     constituency.id))
+                            if (!DUBLIN_CONSTITS.includes(constituency.id)) {
+                                toggleDublinConstituencies(false)
+                            }
                         }
-                        else{
+                        else {
                             setSelectedConst("")
                             setData(members)
                         }
@@ -108,7 +108,14 @@ const ConstituencyMapComponent = (props) =>
     });
 
     const currentConst = () => {
-        if (selectedConst) {
+        if (selectedConst === "northern ireland") {
+            return (
+                <p className={"text-align-centre"}>
+                    {camelCase(selectedConst)}: Since the Third Dáil (1922–1923) no members are elected in Northern Ireland.
+                </p>
+            )
+        }
+        else if (selectedConst) {
             return (
                 <p className={"text-align-centre"}>
                     {camelCase(selectedConst)}
