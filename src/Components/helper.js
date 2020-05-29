@@ -3,12 +3,15 @@ import ordinal from "ordinal";
 import {DUBLIN_CONSTITS} from "../utils/Constants";
 
 export const getData = (dail_session=undefined) => {
+	
 	if (dail_session === undefined) {
 		dail_session = current_info.dail
 	}
 	else {
-		document.title = document.title + " - " + ordinal(dail_session) +
-			" Dáil";
+		if (typeof document !== `undefined`) {
+			document.title = document.title + " - " + ordinal(dail_session) +
+				" Dáil";
+		}
 	}
 
 	const info = require('../data/' + dail_session + 'info.json');

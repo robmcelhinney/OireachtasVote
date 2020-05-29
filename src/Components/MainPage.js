@@ -7,8 +7,7 @@ import Table from './Table';
 import Info from "./Info";
 import moment from 'moment'
 import ordinal from "ordinal";
-import Footer from "./Footer";
-import {Link} from "react-router-dom";
+import { Link } from "gatsby"
 import {getData} from "./helper";
 
 
@@ -17,6 +16,9 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
+		if (typeof document !== `undefined`) {
+			document.title = "Oireacthas Vote"
+		}
 		const [info, members] = getData(dail_session);
 
 		this.state = {
@@ -133,7 +135,6 @@ class MainPage extends React.Component {
 					<p><span className={"should_be"}>*should be*</span> Accurate as of {info.dateCreated}</p>
 					{getBottomText()}
 				</div>
-				<Footer/>
 			</>
 		);
 	}

@@ -179,12 +179,15 @@ p {
     .ReactTable {
         min-width: 50%;
         font-size: 0.9em;
-        padding-right: inherit;
-        padding-left: inherit;
         white-space: nowrap;
     }
     .ReactTable .rt-th, .ReactTable .rt-td {
         white-space: nowrap;
+    }
+    
+    #mapReactTable > .ReactTable {
+        padding-right: inherit;
+        padding-left: inherit;
     }
 
     #mapReactTable {
@@ -194,7 +197,6 @@ p {
         padding-left: inherit;
         white-space: nowrap;
     }
-
 
     .nouislider_div {
         width: 90%;
@@ -367,6 +369,9 @@ li {
     #mapTable {
         max-width: 100%;
     }
+    #mapReactTable {
+        width: 95% !important;
+    }
 }
 
 #mapIreland {
@@ -397,9 +402,9 @@ li {
     font-size: 1em;
     margin-left: auto;
     margin-right: auto;
+    width: auto;
 }
 
 #mapReactTable > .ReactTable {
     height: 90vh;
-    
 }

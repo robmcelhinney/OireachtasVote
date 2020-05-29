@@ -7,7 +7,8 @@ import {DUBLIN_CONSTITS} from "../utils/Constants";
 import Table from "./Table";
 import {getData, handleCheckedConstituency, handleCheckedDublin, camelCase} 
         from "./helper";
-import {Link} from "react-router-dom";
+import { Link } from "gatsby"
+import ordinal from "ordinal";
 
 
 const mapPageStyle = new StyleObject()
@@ -25,9 +26,13 @@ const mapStyle = new StyleObject()
     .getStyle();
 
 
-const ConstituencyMapComponent = (props) =>
+const Map = (props) =>
 {
     const { state } = useContext(DailContext);
+
+    if (typeof document !== `undefined`) {
+        document.title = "Oireacthas Vote Map View"
+    }
 
     const [hoveredConst, setHoveredConst] = useState("");
     const [selectedConst, setSelectedConst] = useState("");
@@ -42,6 +47,7 @@ const ConstituencyMapComponent = (props) =>
     let dublinConstituenciesSVGs = [];
 
     const setHover = constit => {
+        if (typeof window === 'undefined') return;
         if (window.innerWidth > 760) {
             setHoveredConst(constit) 
         }
@@ -133,11 +139,12 @@ const ConstituencyMapComponent = (props) =>
         <div style={mapPageStyle} id={"mapTableContainer"}>
             <div style={mapContainerStyle} id={"mapTable"}>
                 <p className={"text-align-centre constit"}>
-                    Constituencies of Dail {state.dailNum}
+                    Constituencies of {ordinal(state.dailNum)} Dáil
                 </p>
                 {currentConst()}
                 <p className={"text-align-centre returnHome"}>
-                    <Link to={"/"}>Home</Link></p>
+                    <Link to={"/"}>Home</Link>
+                </p>
                 <svg style={mapStyle}
                         className={"block-auto-margin"} 
                         id={"mapIreland"} viewBox="0 0 850 760">
@@ -154,4 +161,4 @@ const ConstituencyMapComponent = (props) =>
 };
 
 
-export default ConstituencyMapComponent;
+export default Map;

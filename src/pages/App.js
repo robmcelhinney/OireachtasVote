@@ -1,11 +1,12 @@
 import React from 'react';
 import { Helmet } from "react-helmet"
+import { Router } from "@reach/router"
+import { DailContextProvider } from "../DailContext";
 import MainPage from "../components/MainPage";
-import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import FilterSession from "../components/FilterSession";
+import Session from "../components/FilterSession";
 import SessionSelection from "../components/SessionSelection";
-import ConstituencyMapComponent from "../components/ConstituencyMapComponent";
-import {DailContextProvider} from "../DailContext";
+import Map from "../components/Map";
+import Footer from "../components/Footer";
 
 
 class App extends React.Component {
@@ -15,21 +16,19 @@ class App extends React.Component {
 			<div className="application">
 				<Helmet>
 					<meta charSet="utf-8" />
-					<title>Robert McElhinney</title>
+					<title>Oireachtas Vote</title>
 					<link rel="canonical" href="http://robmcelhinney.com/OireachtasVote/" />
 				</Helmet>
 			</div>
 			<DailContextProvider>
-				<Router basename='/'>
-					<Switch>
-						<Route path="/" exact component={MainPage}/>
-						<Route path="/session/:id" component={FilterSession}/>
-						<Route path="/session/" component={FilterSession}/>
-						<Route path="/map" component={ConstituencyMapComponent}/>
-						<Route path="*" component={SessionSelection} status={404} />
-					</Switch>
+				<Router basepath='/'>
+					<MainPage exact path="/" />
+					<Session path="/session/:id" />
+					<Session path="/session" />
+					<Map path="/map" />
 				</Router>
 			</DailContextProvider>
+			<Footer />
 			</>
 		)
 	}

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from "gatsby"
 import info from '../info.json';
 import ordinal from "ordinal";
-import Footer from "./Footer";
 
 
 const SessionSelection = (props) => {
@@ -10,11 +9,15 @@ const SessionSelection = (props) => {
 	const linkLists = () => {
 		const dail_array = Array.from({length: info.dail}, (v, k) => k+1);
 		return dail_array.map((n) => {
-			return <li key={n}><Link to={"/session/" + n}>{ordinal(n)} Dáil </Link></li>;
+			return <li key={n}><Link to={"/session/" + n}>{ordinal(n)} Dáil</Link></li>;
 		});
 	};
 
 	const noMatch = () => {
+		console.log("props.dail_session: ", props.dail_session)
+		if (props.dail_session === null) {
+			return <h3 className={"noMatch"}>Page Not Found.</h3>;
+		}
 		if (props.dail_session !== undefined) {
 			return <h3 className={"noMatch"}>No match for <code>{props.dail_session}</code></h3>;
 		}
@@ -37,7 +40,6 @@ const SessionSelection = (props) => {
 					</ul>
 				</div>
 			</div>
-			<Footer />
 		</>
 	)
 };
