@@ -4,7 +4,6 @@ import { Router } from "@reach/router"
 import { DailContextProvider } from "../DailContext";
 import MainPage from "../components/MainPage";
 import Session from "../components/FilterSession";
-import SessionSelection from "../components/SessionSelection";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
 
