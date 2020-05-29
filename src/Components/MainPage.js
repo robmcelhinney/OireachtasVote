@@ -7,8 +7,7 @@ import Table from './Table';
 import Info from "./Info";
 import moment from 'moment'
 import ordinal from "ordinal";
-import Footer from "./Footer";
-import {Link} from "react-router-dom";
+import { Link } from "gatsby"
 import {getData} from "./helper";
 
 
@@ -17,6 +16,9 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
+		if (typeof document !== `undefined`) {
+			document.title = "Oireacthas Vote"
+		}
 		const [info, members] = getData(dail_session);
 
 		this.state = {
@@ -133,7 +135,6 @@ class MainPage extends React.Component {
 					<p><span className={"should_be"}>*should be*</span> Accurate as of {info.dateCreated}</p>
 					{getBottomText()}
 				</div>
-				<Footer/>
 			</>
 		);
 	}
@@ -168,8 +169,8 @@ const getBottomText = () => {
 	return <>
 		<p>Plan to run the web scraper around once a week to keep the
 			info relevant. Let me know if it hasn't been done in a while.</p>
-		<p>An asterick (*) next to a member's name indicates that they have not been
-			present for the full term, hover over/click the asterick (*) for more info.</p>
+		<p>An asterisk (*) next to a member's name indicates that they have not been
+			present for the full term, hover over/click the asterisk (*) for more info.</p>
 		<p>If you have any ideas please let me know on
 			Twitter/Github below, i.e. should I deal with newly elected TDs differently, & should
 			I automatically remove the Ceann-Comhairle? <span className={"should_be"}>

@@ -30,8 +30,8 @@ body {
 }
 
 .maincontent {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0.75em;
+    padding-left: 0.75em;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
@@ -105,9 +105,13 @@ h3.noMatch {
 }
 
 .ReactTable {
+    max-width: 100%;
+    min-width: 90%;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1em;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ReactTable .rt-th, .ReactTable .rt-td {
@@ -132,10 +136,6 @@ h3.noMatch {
 
 .numberInput{
     width: 60px;
-}
-
-.ReactTable {
-    font-size: 0.8em;
 }
 
 p {
@@ -177,14 +177,27 @@ p {
         width: 750px;
     }
     .ReactTable {
+        min-width: 50%;
         font-size: 0.9em;
-        padding-right: inherit;
-        padding-left: inherit;
         white-space: nowrap;
     }
     .ReactTable .rt-th, .ReactTable .rt-td {
         white-space: nowrap;
     }
+    
+    #mapReactTable > .ReactTable {
+        padding-right: inherit;
+        padding-left: inherit;
+    }
+
+    #mapReactTable {
+        min-width: 50%;
+        font-size: 0.9em;
+        padding-right: inherit;
+        padding-left: inherit;
+        white-space: nowrap;
+    }
+
     .nouislider_div {
         width: 90%;
     }
@@ -317,15 +330,17 @@ li {
 }
 
 #mapTableContainer {
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
-    /* margin-bottom: 1em; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #mapTable {
     box-sizing: border-box;
     flex: 1;
+    max-width: 50%;
     /* margin-bottom: 1em; */
 }
 
@@ -346,19 +361,23 @@ li {
     #mapTableContainer { flex-wrap: wrap;  }
     #mapTable:first-child { flex-basis: 100%; }
     #mapIreland {
-        width: 80%;
+        width: 90%;
         min-width: 80%;
         /* height: fit-content; */
         /* min-height: 80%; */
     }
+    #mapTable {
+        max-width: 100%;
+    }
+    #mapReactTable {
+        width: 95% !important;
+    }
 }
 
 #mapIreland {
-    /*width: 350px;*/
     height: 100%;
     max-width: 500px;
     margin-bottom: 3em;
-    /* display: block; */
 }
 
 .text-align-centre {
@@ -373,4 +392,19 @@ li {
 
 .returnHome {
     margin-top: 0;
+}
+
+#mapReactTable {
+    height: 95vh;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+#mapReactTable > .ReactTable {
+    height: 90vh;
 }

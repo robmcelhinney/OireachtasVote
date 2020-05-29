@@ -7,16 +7,16 @@ import {DUBLIN_CONSTITS} from "../utils/Constants";
 import Table from "./Table";
 import {getData, handleCheckedConstituency, handleCheckedDublin, camelCase} 
         from "./helper";
-import {Link} from "react-router-dom";
+import { Link } from "gatsby"
+import ordinal from "ordinal";
 
 
 const mapPageStyle = new StyleObject()
-    .setBasics("100%", "100%" , 0 ,0)
-    .setPadding(15)
+    .setBasics("100%", "auto" , 0 ,0)
     .getStyle();
 
 const mapContainerStyle = new StyleObject()
-    .setBasics("50%", "100%", 0 , 0)
+    .setBasics("50%", "auto", 0 , 0)
     .setDisplay("flex")
     .setFlexDirection("column")
     .getStyle();
@@ -26,9 +26,13 @@ const mapStyle = new StyleObject()
     .getStyle();
 
 
-const ConstituencyMapComponent = (props) =>
+const Map = (props) =>
 {
     const { state } = useContext(DailContext);
+
+    if (typeof document !== `undefined`) {
+        document.title = "Oireacthas Vote Map View"
+    }
 
     const [hoveredConst, setHoveredConst] = useState("");
     const [selectedConst, setSelectedConst] = useState("");
@@ -43,13 +47,13 @@ const ConstituencyMapComponent = (props) =>
     let dublinConstituenciesSVGs = [];
 
     const setHover = constit => {
+        if (typeof window === 'undefined') return;
         if (window.innerWidth > 760) {
-            setHoveredConst(constit)            
+            setHoveredConst(constit) 
         }
     }
 
-    let generateConstituencySVG = (constituency, isDublinConstituency) =>
-    {
+    let generateConstituencySVG = (constituency, isDublinConstituency) => {
         const constituencyStyle = new StyleObject()
             .setFill(selectedConst === "" || (selectedConst === "dublin" && 
                     isDublinConstituency) || selectedConst === constituency.id 
@@ -67,19 +71,21 @@ const ConstituencyMapComponent = (props) =>
                 onMouseEnter={() => setHover(constituency.id)}
                 onMouseLeave={() => setHover("")}
                 onClick={() => {
-                    if(constituency.id === "dublin"){
+                    if(constituency.id === "dublin") {
                         toggleDublinConstituencies(!showDublinConstituencies)
                         setSelectedConst("dublin")
                         setData(handleCheckedDublin(members))
                     }
-                    else
-                    {
+                    else {
                         if(selectedConst !== constituency.id){
                             setSelectedConst(constituency.id)
                             setData(handleCheckedConstituency(members, 
                                     constituency.id))
+                            if (!DUBLIN_CONSTITS.includes(constituency.id)) {
+                                toggleDublinConstituencies(false)
+                            }
                         }
-                        else{
+                        else {
                             setSelectedConst("")
                             setData(members)
                         }
@@ -108,7 +114,14 @@ const ConstituencyMapComponent = (props) =>
     });
 
     const currentConst = () => {
-        if (selectedConst) {
+        if (selectedConst === "northern ireland") {
+            return (
+                <p className={"text-align-centre"}>
+                    {camelCase(selectedConst)}: Since the Third Dáil (1922–1923) no members are elected in Northern Ireland.
+                </p>
+            )
+        }
+        else if (selectedConst) {
             return (
                 <p className={"text-align-centre"}>
                     {camelCase(selectedConst)}
@@ -126,11 +139,12 @@ const ConstituencyMapComponent = (props) =>
         <div style={mapPageStyle} id={"mapTableContainer"}>
             <div style={mapContainerStyle} id={"mapTable"}>
                 <p className={"text-align-centre constit"}>
-                    Constituencies of Dail {state.dailNum}
+                    Constituencies of {ordinal(state.dailNum)} Dáil
                 </p>
                 {currentConst()}
                 <p className={"text-align-centre returnHome"}>
-                    <Link to={"/"}>Home</Link></p>
+                    <Link to={"/"}>Home</Link>
+                </p>
                 <svg style={mapStyle}
                         className={"block-auto-margin"} 
                         id={"mapIreland"} viewBox="0 0 850 760">
@@ -139,10 +153,12 @@ const ConstituencyMapComponent = (props) =>
                             dublinConstituenciesSVGs : null}
                 </svg>
             </div>
-            <Table members={data} info={info} className={"block-auto-margin"}/>
+            <div id={"mapReactTable"}>
+                <Table members={data} info={info} className={"block-auto-margin"}/>
+            </div>
         </div>
     );
 };
 
 
-export default ConstituencyMapComponent;
+export default Map;

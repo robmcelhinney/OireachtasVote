@@ -5,9 +5,14 @@ import MainPage from "./MainPage";
 import SessionSelection from "./SessionSelection";
 
 
-class FilterSession extends React.Component {
+class Session extends React.Component {
 	render() {
-		let dail_session = this.props.match.params.id;
+		let dail_session = (this.props.location.pathname)
+				.replace("/session/", "")
+		if (dail_session === "/session" || dail_session === "") {
+			console.log("dail_session undefined ")
+			dail_session = undefined
+		}
 		return (
 			this.returnValidSession(dail_session)
 		);
@@ -24,4 +29,4 @@ class FilterSession extends React.Component {
 	}
 }
 
-export default FilterSession;
+export default Session;

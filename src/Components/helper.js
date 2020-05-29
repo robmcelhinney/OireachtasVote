@@ -3,12 +3,15 @@ import ordinal from "ordinal";
 import {DUBLIN_CONSTITS} from "../utils/Constants";
 
 export const getData = (dail_session=undefined) => {
+	
 	if (dail_session === undefined) {
 		dail_session = current_info.dail
 	}
 	else {
-		document.title = document.title + " - " + ordinal(dail_session) +
-			" Dáil";
+		if (typeof document !== `undefined`) {
+			document.title = document.title + " - " + ordinal(dail_session) +
+				" Dáil";
+		}
 	}
 
 	const info = require('../data/' + dail_session + 'info.json');
@@ -48,7 +51,7 @@ export const handleCheckedDublin = (data) => {
 };
 
 export const camelCase = str => {
-	let splitStr = str.toLowerCase().split(' ');
+	let splitStr = str.toLowerCase().split(/[ -]+/);
 	for (let i = 0; i < splitStr.length; i++) {
 		// You do not need to check if i is larger than splitStr length, as your for does that for you
 		// Assign it back to the array
@@ -56,5 +59,3 @@ export const camelCase = str => {
 	}
 	return splitStr.join(' '); 
 }
-
-  
