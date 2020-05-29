@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/session.js"],"names":["Home"],"mappings":"oHAAA,gGAKe,SAASA,IACtB,OAAO,kBAAC,UAAD","file":"component---src-pages-session-js-8c5eb0584e0058bca6de.js","sourcesContent":["import React from \"react\"\nimport '../css/style.css';\nimport App from './App.js';\n\n\nexport default function Home() {\n  return <App />\n}\n"],"sourceRoot":""}
