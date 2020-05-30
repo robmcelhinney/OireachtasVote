@@ -7,7 +7,7 @@ import {DUBLIN_CONSTITS} from "../utils/Constants";
 import Table from "./Table";
 import {getData, handleCheckedConstituency, handleCheckedDublin, camelCase} 
         from "./helper";
-import { Link } from "gatsby"
+import {Link} from "react-router-dom";
 import ordinal from "ordinal";
 
 
@@ -30,9 +30,7 @@ const Map = (props) =>
 {
     const { state } = useContext(DailContext);
 
-    if (typeof document !== `undefined`) {
-        document.title = "Oireacthas Vote Map View"
-    }
+    document.title = "Oireacthas Vote Map View"
 
     const [hoveredConst, setHoveredConst] = useState("");
     const [selectedConst, setSelectedConst] = useState("");
@@ -47,7 +45,6 @@ const Map = (props) =>
     let dublinConstituenciesSVGs = [];
 
     const setHover = constit => {
-        if (typeof window === 'undefined') return;
         if (window.innerWidth > 760) {
             setHoveredConst(constit) 
         }

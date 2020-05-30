@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "gatsby"
+import {Link} from 'react-router-dom'
 import info from '../info.json';
 import ordinal from "ordinal";
 
@@ -14,7 +14,6 @@ const SessionSelection = (props) => {
 	};
 
 	const noMatch = () => {
-		console.log("props.dail_session: ", props.dail_session)
 		if (props.dail_session === null) {
 			return <h3 className={"noMatch"}>Page Not Found.</h3>;
 		}

@@ -7,12 +7,7 @@ import SessionSelection from "./SessionSelection";
 
 class Session extends React.Component {
 	render() {
-		let dail_session = (this.props.location.pathname)
-				.replace("/session/", "")
-		if (dail_session === "/session" || dail_session === "") {
-			console.log("dail_session undefined ")
-			dail_session = undefined
-		}
+		let dail_session = this.props.match.params.id;
 		return (
 			this.returnValidSession(dail_session)
 		);

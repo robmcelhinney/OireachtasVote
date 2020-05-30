@@ -7,7 +7,7 @@ import Table from './Table';
 import Info from "./Info";
 import moment from 'moment'
 import ordinal from "ordinal";
-import { Link } from "gatsby"
+import {Link} from "react-router-dom";
 import {getData} from "./helper";
 
 
@@ -16,9 +16,7 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
-		if (typeof document !== `undefined`) {
-			document.title = "Oireacthas Vote"
-		}
+		document.title = "Oireacthas Vote"
 		const [info, members] = getData(dail_session);
 
 		this.state = {

@@ -5,18 +5,12 @@
   "homepage": "https://robmcelhinney.github.io/OireachtasVote/",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "gatsby": "^2.22.11",
-    "gatsby-plugin-create-client-paths": "^2.3.2",
-    "gatsby-plugin-exact-client-paths": "^0.4.1",
-    "gatsby-plugin-material-ui": "^2.1.9",
-    "gatsby-plugin-react-helmet": "^3.3.2",
     "moment": "^2.24.0",
     "nouislider-react": "^3.3.5",
     "ordinal": "^1.0.3",
     "rc-input-number": "^4.5.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-helmet": "^6.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "react-select": "^3.0.8",
@@ -24,14 +18,10 @@
     "wnumb": "^1.2.0"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -53,8 +43,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "gh-pages": "^2.2.0",
-    "prettier": "2.0.5"
+    "gh-pages": "^2.2.0"
   },
   "keywords": [],
   "author": "",

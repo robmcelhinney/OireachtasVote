@@ -8,10 +8,8 @@ export const getData = (dail_session=undefined) => {
 		dail_session = current_info.dail
 	}
 	else {
-		if (typeof document !== `undefined`) {
-			document.title = document.title + " - " + ordinal(dail_session) +
-				" Dáil";
-		}
+		document.title = document.title + " - " + ordinal(dail_session) +
+			" Dáil";
 	}
 
 	const info = require('../data/' + dail_session + 'info.json');

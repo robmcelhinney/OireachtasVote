@@ -56,14 +56,6 @@ const Table = (props) => {
 		"175"
 	);
 
-	let doc_body;
-	if (typeof document !== `undefined`) {
-		doc_body = document.body
-	}
-	else {
-		doc_body = ""
-	}
-
 	const handlePercentRange = (event, onChange) => {
 		setPercent([event[0], event[1]]);
 		onChange(event)
@@ -77,7 +69,6 @@ const Table = (props) => {
 	const party_options = props.info['parties'];
 
 	useEffect(() => {
-		if (typeof window === 'undefined') return;
 		const resize = () => {
 			let smallerWidth = (window.innerWidth <= 768);
 			if (smallerWidth !== widthHide) {
@@ -315,7 +306,7 @@ const Table = (props) => {
 						options={party_options}
 						className="basic-multi-select"
 						classNamePrefix="select"
-						menuPortalTarget={doc_body}
+						menuPortalTarget={document.body}
 						onChange={event => onChange(event)}
 						value={filter ? filter.value : 'all'}
 					/>
@@ -346,7 +337,7 @@ const Table = (props) => {
 		columns.push(voteColumn);
 	};
 
-	if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+	if (window.innerWidth <= 768) {
 		smallTable()
 	}
 	else {
