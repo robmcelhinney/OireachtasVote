@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "085d0956fd1e102ff9f05be4f99f7f40",
+    "revision": "02d02d9efac0dc2034b2938472ba5031",
     "url": "/OireachtasVote/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OireachtasVote/static/css/2.1168403d.chunk.css"
   },
   {
-    "revision": "bd8766e176aca4f7edeb",
+    "revision": "2f5b778ed83b4a2736c1",
     "url": "/OireachtasVote/static/css/main.047407e0.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OireachtasVote/static/js/2.6e91c149.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bd8766e176aca4f7edeb",
-    "url": "/OireachtasVote/static/js/main.c85c716b.chunk.js"
+    "revision": "2f5b778ed83b4a2736c1",
+    "url": "/OireachtasVote/static/js/main.dadafbe8.chunk.js"
   },
   {
     "revision": "4dbdf2ee7933bb0daa1e",
