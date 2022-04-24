@@ -7,6 +7,8 @@ from statistics import median
 import os
 
 BASE_API_URL = "https://api.oireachtas.ie/v1/"
+CHAMBER_DAIL = "chamber=dail"
+Y_M_D_format = "%Y-%m-%d"
 
 headers = {
     'Content-type': 'application/json',
@@ -59,6 +61,9 @@ def create_averages(data, info):
     info["partyAverages"] = parties_averages
     info["partyMedian"] = parties_median
 
+    # sort values
+    info["partyMedian"] = {k: v for k, v in sorted(info["partyMedian"].items(), key=lambda item: item[1])}
+    info["partyAverages"] = {k: v for k, v in sorted(info["partyAverages"].items(), key=lambda item: item[1])}
 
 def create_json(data, info, count):
     now = datetime.now()
@@ -92,7 +97,7 @@ def get_member_percent(total_count, data, member_vote_track,
             day_count = member_vote_day_track[member_id]
         else:
             day_count = 0
-        if member["total_votes"] is None:
+        if not member["total_votes"]:
             percent = 0
             if not (count == 0 or total_count == 0):
                 percent = round((count / total_count) * 100, 2)
@@ -113,7 +118,7 @@ def get_member_percent(total_count, data, member_vote_track,
 
 
 def get_current_dail_info(info):
-    response = requests.get("{}houses?chamber_id=&chamber=dail&limit=50".format(BASE_API_URL), headers=headers)
+    response = requests.get("{}houses?{}&limit=50".format(BASE_API_URL, CHAMBER_DAIL), headers=headers)
     data = response.json()
     house_number = data["results"][0]["house"]["houseNo"]
 
@@ -124,9 +129,9 @@ def get_current_dail_info(info):
     info["dail"] = int(house_number)
 
     response = requests.get(
-            "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&"
-            "house_no={}&date_end={}&limit=1".format(BASE_API_URL,
-            house_number, info["dailEndDate"]), headers=headers)
+            "{}members?date_start=1900-01-01&{}&"
+            "house_no={}&date_end={}&limit=1".format(BASE_API_URL, 
+            CHAMBER_DAIL, house_number, info["dailEndDate"]), headers=headers)
     data = response.json()
     num_members = data["head"]["counts"]["resultCount"]
     return house_number, num_members
@@ -134,16 +139,17 @@ def get_current_dail_info(info):
 
 def get_members(current_dail, num_members, json_data, info, total_count, separate_dates):
     response = requests.get(
-            "{}members?date_start=1900-01-01&chamber_id=&chamber=dail&house_no={}&"
-            "date_end={}&limit={}".format(BASE_API_URL, str(current_dail),
-            info["dailEndDate"], str(num_members)), headers=headers)
+            "{}members?date_start=1900-01-01&{}&house_no={}&"
+            "date_end={}&limit={}".format(BASE_API_URL, CHAMBER_DAIL,
+            str(current_dail), info["dailEndDate"], str(num_members)), 
+            headers=headers)
     data = response.json()
 
     for result in data["results"]:
         holds_office = False
         for office in result["member"]["memberships"][0][
             "membership"]["offices"]:
-            if office["office"]["dateRange"]["end"] is None and (
+            if not office["office"]["dateRange"]["end"] and (
                     "Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" ==
                     office["office"]["officeName"]["showAs"]):
                 holds_office = True
@@ -170,8 +176,8 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
                 "membership"]["dateRange"]["end"]
 
         # Check if members have joined in middle of Dáil session.
-        if (datetime.strptime(start_date, "%Y-%m-%d") >
-                datetime.strptime(info["dailStartDate"], "%Y-%m-%d")):
+        if (datetime.strptime(start_date, Y_M_D_format) >
+                datetime.strptime(info["dailStartDate"], Y_M_D_format)):
             # print("new member: ", member_data["fullName"])
             total_votes = check_possible_votes(total_count, info, start_date)
             total_days = check_possible_days_start(separate_dates, start_date)
@@ -179,8 +185,8 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
             member_data["total_days"] = total_days
         # Check if members have left in middle of Dáil session.
         elif (finished_tenure is not None and
-                (datetime.strptime(finished_tenure, "%Y-%m-%d") <
-                datetime.strptime(info["dailEndDate"], "%Y-%m-%d"))):
+                (datetime.strptime(finished_tenure, Y_M_D_format) <
+                datetime.strptime(info["dailEndDate"], Y_M_D_format))):
             total_votes = check_possible_votes(total_count, info,
                     end_date=finished_tenure)
             total_days = check_possible_days_end(separate_dates,
@@ -196,10 +202,10 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
 
 def get_member_show_as_to_code(current_dail, num_members, info):
     response = requests.get(
-            "{}members?date_start=1900-01-01&chamber_id=&chamber=dail"
+            "{}members?date_start=1900-01-01&{}"
             "&house_no={}&date_end={}&limit={}".format(BASE_API_URL,
-            str(current_dail), info["dailEndDate"], str(num_members)),
-            headers=headers)
+            CHAMBER_DAIL, str(current_dail), info["dailEndDate"], 
+            str(num_members)), headers=headers)
     data = response.json()
     member_show_as_code_to = {}
     for result in data["results"]:
@@ -209,14 +215,14 @@ def get_member_show_as_to_code(current_dail, num_members, info):
 
 
 def check_possible_votes(total_count, info, start_date=None, end_date=None):
-    if start_date is None:
+    if not start_date:
         start_date = info["dailStartDate"]
-    if end_date is None:
+    if not end_date:
         end_date = info["dailEndDate"]
     response = requests.get(
-            "{}divisions?chamber_type=house&chamber_id=&chamber=dail&"
+            "{}divisions?chamber_type=house&{}&"
             "date_start={}&date_end={}&skip={}&limit=1&outcome=".format(
-            BASE_API_URL, start_date, end_date, total_count),
+            BASE_API_URL, CHAMBER_DAIL, start_date, end_date, total_count),
             headers=headers)
     data = response.json()
     possible_votes = data["head"]["counts"]["resultCount"]
@@ -226,8 +232,8 @@ def check_possible_votes(total_count, info, start_date=None, end_date=None):
 def check_possible_days_start(separate_dates, start_date):
     days = 0
     for date in separate_dates:
-        if (datetime.strptime(date, "%Y-%m-%d") >
-                datetime.strptime(start_date, "%Y-%m-%d")):
+        if (datetime.strptime(date, Y_M_D_format) >
+                datetime.strptime(start_date, Y_M_D_format)):
             days += 1
     return days
 
@@ -235,16 +241,16 @@ def check_possible_days_start(separate_dates, start_date):
 def check_possible_days_end(separate_dates, end_date):
     days = 0
     for date in separate_dates:
-        if (datetime.strptime(date, "%Y-%m-%d") <
-                datetime.strptime(end_date, "%Y-%m-%d")):
+        if (datetime.strptime(date, Y_M_D_format) <
+                datetime.strptime(end_date, Y_M_D_format)):
             days += 1
     return days
 
 
 def get_parties(current_dail, info):
     response = requests.get(
-        "{}parties?chamber_id=&chamber=dail&house_no=".format(BASE_API_URL)
-        + str(current_dail) + '&limit=50', headers=headers)
+        "{}parties?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
+        + str(current_dail) + '&limit=100', headers=headers)
     data = response.json()
 
     party_array = []
@@ -255,8 +261,8 @@ def get_parties(current_dail, info):
 
 def get_constituencies(current_dail, info):
     response = requests.get(
-        "{}constituencies?chamber_id=&chamber=dail&house_no=".format(BASE_API_URL)
-        + str(current_dail) + '&limit=50', headers=headers)
+        "{}constituencies?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
+        + str(current_dail) + '&limit=100', headers=headers)
     data = response.json()
 
     constituency_array = []
@@ -267,26 +273,27 @@ def get_constituencies(current_dail, info):
 
 def get_vote_count(info, member_show_as_code_to):
     response = requests.get(
-        "{}divisions?chamber_type=house&chamber_id=&chamber=dail&"
+        "{}divisions?chamber_type=house&{}&"
         "date_start={}&date_end={}&limit=1&outcome=".format(BASE_API_URL,
-        info["dailStartDate"], info["dailEndDate"]), headers=headers)
+        CHAMBER_DAIL, info["dailStartDate"], info["dailEndDate"]), 
+        headers=headers)
     response_data = response.json()
     total_votes = int(response_data["head"]["counts"]["resultCount"])
 
     member_vote_track = {}
     member_vote_day_track = {}
+    print('vote count')
     print('info["dailStartDate"]: ', info["dailStartDate"])
     print('info["dail"]: ', info["dail"])
     print('total_votes: ', total_votes)
-    print("{}divisions?".format(BASE_API_URL) +
-            "chamber_type=house&chamber_id=&chamber=dail&"
-            "date_start=" + info["dailStartDate"] +
-            "&date_end=" + info["dailEndDate"] + "&limit=" +
-            str(total_votes) + "&outcome=")
-    response = requests.get("{}divisions?chamber_type=house&chamber_id="
-            "&chamber=dail&date_start={}&date_end={}&limit={}&outcome=".
-            format(BASE_API_URL, info["dailStartDate"], info["dailEndDate"],
-            str(total_votes)), headers=headers)
+    print("url: {}divisions?chamber_type=house&{}&"
+            "date_start={}&date_end={}&limit={}"
+            "&outcome=".format(BASE_API_URL, CHAMBER_DAIL, 
+            info["dailStartDate"], info["dailEndDate"], str(total_votes)))
+    response = requests.get("{}divisions?chamber_type=house"
+            "&{}&date_start={}&date_end={}&limit={}&outcome=".
+            format(BASE_API_URL, CHAMBER_DAIL, info["dailStartDate"], 
+            info["dailEndDate"], str(total_votes)), headers=headers)
 
     response_data = response.json()
     results = response_data["results"]
@@ -313,10 +320,10 @@ def members_votes(tallies_data, member_show_as_code_to, member_vote_track,
     for voteType in ["nilVotes", "taVotes", "staonVotes"]:
         if tallies_data[voteType]:
             for members in tallies_data[voteType]["members"]:
-                if members["member"]["memberCode"] is None:
-                    if members["member"] is None:
-                        print("Something went wrong (with Oireachtas.ie's data)"
-                              " and the memberCode && member are not "
+                if not members["member"]["memberCode"]:
+                    if not members["member"]:
+                        print("Something went wrong (with Oireachtas.ie's data) "
+                              "and the memberCode && member are not "
                               "showing but this is the name of the "
                               "member voting: ")
                     else:

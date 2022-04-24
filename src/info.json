@@ -40,8 +40,8 @@
             "label": "Social Democrats"
         },
         {
-            "value": "Solidarity_People_Before_Profit",
-            "label": "Solidarity - People Before Profit"
+            "value": "People_Before_Profit_Solidarity",
+            "label": "People Before Profit-Solidarity"
         }
     ],
     "constituencies": [
@@ -86,29 +86,29 @@
         "Wicklow"
     ],
     "partyAverages": {
-        "Aontú": 66.67,
-        "Fianna Fáil": 52.03,
-        "Fine Gael": 53.57,
-        "Green Party": 54.17,
-        "Independent": 51.31,
-        "Independents 4 Change": 33.33,
-        "Labour Party": 55.55,
-        "Sinn Féin": 52.48,
-        "Social Democrats": 54.16,
-        "Solidarity - People Before Profit": 55.0
+        "Independents 4 Change": 54.85,
+        "Independent": 59.36,
+        "Aontú": 61.82,
+        "People Before Profit-Solidarity": 67.58,
+        "Labour Party": 71.5,
+        "Fine Gael": 74.24,
+        "Social Democrats": 74.55,
+        "Sinn Féin": 75.28,
+        "Fianna Fáil": 75.72,
+        "Green Party": 78.21
     },
     "partyMedian": {
-        "Aontú": 66.67,
-        "Fianna Fáil": 41.67,
-        "Fine Gael": 41.67,
-        "Green Party": 41.67,
-        "Independent": 41.67,
-        "Independents 4 Change": 33.33,
-        "Labour Party": 45.84,
-        "Sinn Féin": 41.67,
-        "Social Democrats": 45.84,
-        "Solidarity - People Before Profit": 50.0
+        "Independents 4 Change": 54.85,
+        "Independent": 58.48,
+        "Aontú": 61.82,
+        "People Before Profit-Solidarity": 69.39,
+        "Labour Party": 71.52,
+        "Fine Gael": 75.15,
+        "Social Democrats": 76.66,
+        "Sinn Féin": 77.88,
+        "Fianna Fáil": 80.0,
+        "Green Party": 81.06
     },
-    "totalVotes": 12,
-    "dateCreated": "28/05/2020 19:11:47"
+    "totalVotes": 330,
+    "dateCreated": "24/04/2022 17:44:01"
 }
