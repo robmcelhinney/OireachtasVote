@@ -5,7 +5,7 @@
   "homepage": "https://robmcelhinney.github.io/OireachtasVote/",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nouislider-react": "^3.3.5",
     "ordinal": "^1.0.3",
     "rc-input-number": "^4.5.1",
