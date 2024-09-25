@@ -5,6 +5,7 @@ import json
 from datetime import datetime
 from statistics import median
 import os
+import logging
 
 BASE_API_URL = "https://api.oireachtas.ie/v1/"
 CHAMBER_DAIL = "chamber=dail"
@@ -14,11 +15,27 @@ headers = {
     'Content-type': 'application/json',
 }
 
+# Set up logging
+logger = logging.getLogger(__name__)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+
+if os.environ.get('LOG_LEVEL') == 'debug':
+    ch.setLevel(logging.DEBUG)
+    logger.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+
+logger.addHandler(ch)
+
 
 def main():
     data = []
     info = {}
     current_dail, num_members = get_current_dail_info(info)
+    logger.debug("Current Dáil info: {}".format(current_dail))
     get_parties(current_dail, info)
     get_constituencies(current_dail, info)
     member_show_as_code_to = get_member_show_as_to_code(current_dail,
@@ -32,6 +49,18 @@ def main():
     create_averages(data, info)
     create_json(data, info, total_count)
 
+def make_request(url):
+    try:
+        response = requests.get(url, headers=headers)
+        if response.status_code != 200:
+            logger.warning("Status code not 200, response was: {}".format(response.text))
+            return None
+        data = response.json()
+        logger.debug("request successfully completed")
+        return data
+    except Exception as e:
+        logger.error("Error in request to Oireachtas API: {}".format(e))
+        return None
 
 def create_averages(data, info):
     parties_votes = {}
@@ -118,8 +147,7 @@ def get_member_percent(total_count, data, member_vote_track,
 
 
 def get_current_dail_info(info):
-    response = requests.get("{}houses?{}&limit=50".format(BASE_API_URL, CHAMBER_DAIL), headers=headers)
-    data = response.json()
+    data = make_request("{}houses?{}&limit=50".format(BASE_API_URL, CHAMBER_DAIL))
     house_number = data["results"][0]["house"]["houseNo"]
 
     house_start_date = data["results"][0]["house"]["dateRange"]['start']
@@ -128,22 +156,18 @@ def get_current_dail_info(info):
     info["dailEndDate"] = house_end_date or "2099-01-01"
     info["dail"] = int(house_number)
 
-    response = requests.get(
-            "{}members?date_start=1900-01-01&{}&"
-            "house_no={}&date_end={}&limit=1".format(BASE_API_URL, 
-            CHAMBER_DAIL, house_number, info["dailEndDate"]), headers=headers)
-    data = response.json()
+    
+    data = make_request("{}members?date_start=1900-01-01&{}&"
+                "house_no={}&date_end={}&limit=1".format(BASE_API_URL, 
+                CHAMBER_DAIL, house_number, info["dailEndDate"]))
     num_members = data["head"]["counts"]["resultCount"]
     return house_number, num_members
 
 
 def get_members(current_dail, num_members, json_data, info, total_count, separate_dates):
-    response = requests.get(
-            "{}members?date_start=1900-01-01&{}&house_no={}&"
+    data = make_request("{}members?date_start=1900-01-01&{}&house_no={}&"
             "date_end={}&limit={}".format(BASE_API_URL, CHAMBER_DAIL,
-            str(current_dail), info["dailEndDate"], str(num_members)), 
-            headers=headers)
-    data = response.json()
+            str(current_dail), info["dailEndDate"], str(num_members)))
 
     for result in data["results"]:
         holds_office = False
@@ -178,7 +202,7 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
         # Check if members have joined in middle of Dáil session.
         if (datetime.strptime(start_date, Y_M_D_format) >
                 datetime.strptime(info["dailStartDate"], Y_M_D_format)):
-            # print("new member: ", member_data["fullName"])
+            # logger.debug("new member: ", member_data["fullName"])
             total_votes = check_possible_votes(total_count, info, start_date)
             total_days = check_possible_days_start(separate_dates, start_date)
             member_data["total_votes"] = total_votes
@@ -201,12 +225,10 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
 
 
 def get_member_show_as_to_code(current_dail, num_members, info):
-    response = requests.get(
-            "{}members?date_start=1900-01-01&{}"
+    data = make_request("{}members?date_start=1900-01-01&{}"
             "&house_no={}&date_end={}&limit={}".format(BASE_API_URL,
             CHAMBER_DAIL, str(current_dail), info["dailEndDate"], 
-            str(num_members)), headers=headers)
-    data = response.json()
+            str(num_members)))
     member_show_as_code_to = {}
     for result in data["results"]:
         member_code = result["member"]["memberCode"]
@@ -219,12 +241,9 @@ def check_possible_votes(total_count, info, start_date=None, end_date=None):
         start_date = info["dailStartDate"]
     if not end_date:
         end_date = info["dailEndDate"]
-    response = requests.get(
-            "{}divisions?chamber_type=house&{}&"
+    data = make_request("{}divisions?chamber_type=house&{}&"
             "date_start={}&date_end={}&skip={}&limit=1&outcome=".format(
-            BASE_API_URL, CHAMBER_DAIL, start_date, end_date, total_count),
-            headers=headers)
-    data = response.json()
+            BASE_API_URL, CHAMBER_DAIL, start_date, end_date, total_count))
     possible_votes = data["head"]["counts"]["resultCount"]
     return possible_votes
 
@@ -248,10 +267,8 @@ def check_possible_days_end(separate_dates, end_date):
 
 
 def get_parties(current_dail, info):
-    response = requests.get(
-        "{}parties?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
-        + str(current_dail) + '&limit=100', headers=headers)
-    data = response.json()
+    data = make_request("{}parties?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
+        + str(current_dail) + '&limit=100')
 
     party_array = []
     for party in data["results"]["house"]["parties"]:
@@ -260,10 +277,8 @@ def get_parties(current_dail, info):
 
 
 def get_constituencies(current_dail, info):
-    response = requests.get(
-        "{}constituencies?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
-        + str(current_dail) + '&limit=100', headers=headers)
-    data = response.json()
+    data = make_request("{}constituencies?{}&house_no=".format(BASE_API_URL, CHAMBER_DAIL)
+        + str(current_dail) + '&limit=100')
 
     constituency_array = []
     for constituency in data["results"]["house"]["constituenciesOrPanels"]:
@@ -272,31 +287,26 @@ def get_constituencies(current_dail, info):
 
 
 def get_vote_count(info, member_show_as_code_to):
-    response = requests.get(
-        "{}divisions?chamber_type=house&{}&"
+    data = make_request("{}divisions?chamber_type=house&{}&"
         "date_start={}&date_end={}&limit=1&outcome=".format(BASE_API_URL,
-        CHAMBER_DAIL, info["dailStartDate"], info["dailEndDate"]), 
-        headers=headers)
-    response_data = response.json()
-    total_votes = int(response_data["head"]["counts"]["resultCount"])
+        CHAMBER_DAIL, info["dailStartDate"], info["dailEndDate"]))
+    total_votes = int(data["head"]["counts"]["resultCount"])
 
     member_vote_track = {}
     member_vote_day_track = {}
-    print('vote count')
-    print('info["dailStartDate"]: ', info["dailStartDate"])
-    print('info["dail"]: ', info["dail"])
-    print('total_votes: ', total_votes)
-    print("url: {}divisions?chamber_type=house&{}&"
+    logger.info('vote count')
+    logger.info('info["dailStartDate"]: {}'.format(str(info["dailStartDate"])))
+    logger.info('info["dail"]: {}'.format(str(info["dail"])))
+    logger.info('total_votes: {}'.format(str(total_votes)))
+    logger.debug("url: {}divisions?chamber_type=house&{}&"
             "date_start={}&date_end={}&limit={}"
             "&outcome=".format(BASE_API_URL, CHAMBER_DAIL, 
             info["dailStartDate"], info["dailEndDate"], str(total_votes)))
-    response = requests.get("{}divisions?chamber_type=house"
+    data = make_request("{}divisions?chamber_type=house"
             "&{}&date_start={}&date_end={}&limit={}&outcome=".
             format(BASE_API_URL, CHAMBER_DAIL, info["dailStartDate"], 
-            info["dailEndDate"], str(total_votes)), headers=headers)
-
-    response_data = response.json()
-    results = response_data["results"]
+            info["dailEndDate"], str(total_votes)))
+    results = data["results"]
     separate_dates = []
     total_days = 0
     for result in results:
@@ -322,20 +332,20 @@ def members_votes(tallies_data, member_show_as_code_to, member_vote_track,
             for members in tallies_data[voteType]["members"]:
                 if not members["member"]["memberCode"]:
                     if not members["member"]:
-                        print("Something went wrong (with Oireachtas.ie's data) "
+                        logger.error("Something went wrong (with Oireachtas.ie's data) "
                               "and the memberCode && member are not "
                               "showing but this is the name of the "
                               "member voting: ")
                     else:
-                        # print('members["member"]["showAs"]: ', members["member"]["showAs"])
-                        # print('member_show_as_code_to: ', member_show_as_code_to)
+                        logger.debug('members["member"]["showAs"]: ', members["member"]["showAs"])
+                        logger.debug('member_show_as_code_to: ', member_show_as_code_to)
                         member_name = members["member"]["showAs"].replace(
                                 ".", "")
                         if member_name in member_show_as_code_to:
                             members["member"]["memberCode"] = (
                                     member_show_as_code_to[member_name])
                         # else:
-                        #     print("Something went wrong (with Oireachtas.ie's data)"
+                        #     logger.debug("Something went wrong (with Oireachtas.ie's data)"
                         #           " and the memberCode is not "
                         #           "showing but this is the name of the "
                         #           "member: ", members["member"])
