@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/OireachtasVote/precache-manifest.4bda9db059b971cce5c797f20c39b72c.js"
+  "/OireachtasVote/precache-manifest.c376ef5dc4d931da6382d4211680276a.js"
 );
 
 self.addEventListener('message', (event) => {
