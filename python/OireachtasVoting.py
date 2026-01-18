@@ -271,7 +271,7 @@ def get_parties(current_dail, info):
         + str(current_dail) + '&limit=100')
 
     party_array = []
-    for party in data["results"]["house"]["parties"]:
+    for party in data["results"]:
         party_array.append({"value": party["party"]["partyCode"], "label": party["party"]["showAs"]})
     info["parties"] = party_array
 
@@ -281,7 +281,7 @@ def get_constituencies(current_dail, info):
         + str(current_dail) + '&limit=100')
 
     constituency_array = []
-    for constituency in data["results"]["house"]["constituenciesOrPanels"]:
+    for constituency in data["results"]:
         constituency_array.append(constituency['constituencyOrPanel']['showAs'])
     info["constituencies"] = constituency_array
 

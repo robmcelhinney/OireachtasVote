@@ -4,12 +4,20 @@
     "dail": 33,
     "parties": [
         {
-            "value": "Aontú",
-            "label": "Aontú"
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
         },
         {
             "value": "Fianna_Fáil",
             "label": "Fianna Fáil"
+        },
+        {
+            "value": "People_Before_Profit_Solidarity",
+            "label": "People Before Profit-Solidarity"
+        },
+        {
+            "value": "Independents_4_Change",
+            "label": "Independents 4 Change"
         },
         {
             "value": "Fine_Gael",
@@ -20,95 +28,87 @@
             "label": "Green Party"
         },
         {
-            "value": "Independent",
-            "label": "Independent"
-        },
-        {
-            "value": "Independents_4_Change",
-            "label": "Independents 4 Change"
-        },
-        {
-            "value": "Labour_Party",
-            "label": "Labour Party"
-        },
-        {
-            "value": "Sinn_Féin",
-            "label": "Sinn Féin"
+            "value": "Aontú",
+            "label": "Aontú"
         },
         {
             "value": "Social_Democrats",
             "label": "Social Democrats"
         },
         {
-            "value": "People_Before_Profit_Solidarity",
-            "label": "People Before Profit-Solidarity"
+            "value": "Labour_Party",
+            "label": "Labour Party"
+        },
+        {
+            "value": "Independent",
+            "label": "Independent"
         }
     ],
     "constituencies": [
+        "Kerry",
+        "Dublin South-West",
+        "Dublin North-West",
+        "Dublin Bay South",
+        "Wicklow",
         "Carlow-Kilkenny",
-        "Cavan-Monaghan",
-        "Clare",
-        "Cork East",
+        "Dublin West",
         "Cork North-Central",
         "Cork North-West",
-        "Cork South-Central",
         "Cork South-West",
+        "Limerick County",
+        "Cork South-Central",
+        "Kildare South",
+        "Roscommon-Galway",
+        "Galway West",
+        "Meath West",
         "Donegal",
-        "Dublin Bay North",
-        "Dublin Bay South",
+        "Galway East",
+        "Dublin South-Central",
+        "Cork East",
         "Dublin Central",
+        "Mayo",
+        "Limerick City",
+        "Dublin Bay North",
         "Dublin Fingal",
         "Dublin Mid-West",
-        "Dublin North-West",
-        "Dublin Rathdown",
-        "Dublin South-Central",
-        "Dublin South-West",
-        "Dublin West",
-        "Dún Laoghaire",
-        "Galway East",
-        "Galway West",
-        "Kerry",
-        "Kildare North",
-        "Kildare South",
-        "Laois-Offaly",
-        "Limerick City",
-        "Limerick County",
-        "Longford-Westmeath",
         "Louth",
-        "Mayo",
-        "Meath East",
-        "Meath West",
-        "Roscommon-Galway",
-        "Sligo-Leitrim",
-        "Tipperary",
+        "Cavan-Monaghan",
+        "Dublin Rathdown",
+        "Clare",
+        "Laois-Offaly",
         "Waterford",
-        "Wexford",
-        "Wicklow"
+        "Tipperary",
+        "Kildare North",
+        "Longford-Westmeath",
+        "Meath East",
+        "Dún Laoghaire",
+        "Sligo-Leitrim",
+        "Wexford"
     ],
     "partyAverages": {
-        "Independents 4 Change": 54.85,
-        "Independent": 59.36,
-        "Aontú": 61.82,
-        "People Before Profit-Solidarity": 67.58,
-        "Labour Party": 71.5,
-        "Fine Gael": 74.24,
-        "Social Democrats": 74.55,
-        "Sinn Féin": 75.28,
-        "Fianna Fáil": 75.72,
-        "Green Party": 78.21
+        "Independent": 58.09,
+        "Independents 4 Change": 60.61,
+        "Aontú": 63.42,
+        "People Before Profit-Solidarity": 69.91,
+        "Labour Party": 74.1,
+        "Fine Gael": 79.78,
+        "Social Democrats": 82.04,
+        "Sinn Féin": 82.37,
+        "Fianna Fáil": 82.85,
+        "Green Party": 83.99
     },
     "partyMedian": {
-        "Independents 4 Change": 54.85,
-        "Independent": 58.48,
-        "Aontú": 61.82,
-        "People Before Profit-Solidarity": 69.39,
-        "Labour Party": 71.52,
-        "Fine Gael": 75.15,
-        "Social Democrats": 76.66,
-        "Sinn Féin": 77.88,
-        "Fianna Fáil": 80.0,
-        "Green Party": 81.06
+        "Independent": 59.28,
+        "Independents 4 Change": 60.61,
+        "Aontú": 63.42,
+        "People Before Profit-Solidarity": 72.63,
+        "Labour Party": 77.84,
+        "Social Democrats": 82.38,
+        "Fine Gael": 83.04,
+        "Sinn Féin": 84.44,
+        "Fianna Fáil": 85.84,
+        "Green Party": 87.59
     },
-    "totalVotes": 330,
-    "dateCreated": "24/04/2022 17:44:01"
+    "totalVotes": 749,
+    "dateCreated": "25/09/2024 22:16:39"
 }
