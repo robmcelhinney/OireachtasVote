@@ -1,27 +1,16 @@
 {
   "files": {
-    "main.css": "/OireachtasVote/static/css/main.bb4f76a5.chunk.css",
-    "main.js": "/OireachtasVote/static/js/main.635f6e33.chunk.js",
-    "main.js.map": "/OireachtasVote/static/js/main.635f6e33.chunk.js.map",
-    "runtime-main.js": "/OireachtasVote/static/js/runtime-main.5838e0e9.js",
-    "runtime-main.js.map": "/OireachtasVote/static/js/runtime-main.5838e0e9.js.map",
-    "static/css/2.0f68107e.chunk.css": "/OireachtasVote/static/css/2.0f68107e.chunk.css",
-    "static/js/2.16f14df6.chunk.js": "/OireachtasVote/static/js/2.16f14df6.chunk.js",
-    "static/js/2.16f14df6.chunk.js.map": "/OireachtasVote/static/js/2.16f14df6.chunk.js.map",
+    "main.css": "/OireachtasVote/static/css/main.46507471.css",
+    "main.js": "/OireachtasVote/static/js/main.0975f940.js",
+    "static/media/Quicksand-Regular.ttf": "/OireachtasVote/static/media/Quicksand-Regular.0c90050c5b4004bebb47.ttf",
+    "static/media/Quicksand-Bold.ttf": "/OireachtasVote/static/media/Quicksand-Bold.a74fd3ab44577c26c4be.ttf",
+    "static/media/user.svg": "/OireachtasVote/static/media/user.c152e17427fcec3a85c48f29c304640b.svg",
     "index.html": "/OireachtasVote/index.html",
-    "precache-manifest.d83f20cad6cc4bade0b9e2965e05d3a8.js": "/OireachtasVote/precache-manifest.d83f20cad6cc4bade0b9e2965e05d3a8.js",
-    "service-worker.js": "/OireachtasVote/service-worker.js",
-    "static/css/2.0f68107e.chunk.css.map": "/OireachtasVote/static/css/2.0f68107e.chunk.css.map",
-    "static/css/main.bb4f76a5.chunk.css.map": "/OireachtasVote/static/css/main.bb4f76a5.chunk.css.map",
-    "static/js/2.16f14df6.chunk.js.LICENSE.txt": "/OireachtasVote/static/js/2.16f14df6.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/OireachtasVote/static/media/Quicksand-Regular.9a891411.ttf",
-    "static/media/user.svg": "/OireachtasVote/static/media/user.6aad34a2.svg"
+    "main.46507471.css.map": "/OireachtasVote/static/css/main.46507471.css.map",
+    "main.0975f940.js.map": "/OireachtasVote/static/js/main.0975f940.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.5838e0e9.js",
-    "static/css/2.0f68107e.chunk.css",
-    "static/js/2.16f14df6.chunk.js",
-    "static/css/main.bb4f76a5.chunk.css",
-    "static/js/main.635f6e33.chunk.js"
+    "static/css/main.46507471.css",
+    "static/js/main.0975f940.js"
   ]
 }
