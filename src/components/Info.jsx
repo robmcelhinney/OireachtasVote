@@ -10,15 +10,18 @@ const useStyles = makeStyles({
 	card: {
 		minWidth: 275,
 		marginTop: 20,
-		color: '#5d5d5d',
+		color: 'var(--text-soft)',
+		backgroundColor: 'var(--surface)',
+		border: '1px solid var(--border)',
 	},
 	cardTop: {
-		backgroundColor: 'whitesmoke',
-		boxShadow: '0 2px 1px -1px rgba(0,0,0,0.06),0 1px 1px 0 rgba(0,0,0,0.04),0 1px 3px 0 rgba(0,0,0,0.04)',
+		backgroundColor: 'var(--surface-soft)',
+		boxShadow: 'inset 0 -1px 0 var(--border)',
 	},
 	cardHeader: {
 		font: 'normal normal normal 1.5em/1em \'QuicksandBold\'',
-		fontDisplay: 'swap'
+		fontDisplay: 'swap',
+		color: 'var(--text)'
 	}
 });
 

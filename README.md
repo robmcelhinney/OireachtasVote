@@ -1,39 +1,87 @@
-# OireachtasVote | View voting percentages of TDs in Dáil Éireann
+# Oireachtas Vote
 
-Viewable at [https://robmcelhinney.github.io/OireachtasVote/](
-https://robmcelhinney.github.io/OireachtasVote/)
+Interactive voting dashboard for TDs in Dail Eireann, built as a static React + Vite app and deployed to GitHub Pages.
 
-Attempted to make this website so that it could solely be hosted by Github, 
-no need to use external database or any server side code, a static webpage only.
-Python file uses publically available [Houses of the Oireachtas Open Data APIs](https://data.oireachtas.ie/) to request information regarding a Dáil session, its members, and voting records over its period. This resulting info is stored in two json files that make up the site: 
-1. members.json stores the politician's name, their party, if the have a cabinet position, and their total votes. 
-2. info.json holds info regarding the current Dáil, its parties, and when this python file was run.
-Both historical session's jsons files are stored in src/data in the format [dail_number]info.json and [dail_number]members.json.
-The current Dáil session is also stored in src/ as info.json and members.json.
+Live site: [https://robmcelhinney.github.io/OireachtasVote/](https://robmcelhinney.github.io/OireachtasVote/)
 
-## Install
+## What It Does
 
-    $ git clone git@github.com:robmcelhinney/OireachtasVote.git
-    $ cd OireachtasVote
-    $ npm install
-    
+- Browse current and historic Dail sessions.
+- Filter and sort TD voting records in a modern data table.
+- Switch between `Input` and `Slider` range filtering for `Percent` and `Votes`.
+- Explore constituencies on an SVG map of Ireland.
+- Click `Dublin` to open the Dublin-specific inset map for finer constituency selection.
 
-## Run python web scraper
+## Data Source
 
-    $ py python/OireachtasVoting.py
+Data is collected from the official Oireachtas Open Data API:
 
-## Start & watch
+- [https://data.oireachtas.ie/](https://data.oireachtas.ie/)
 
-    $ npm start
+The Python scripts generate static JSON used by the frontend, so no backend database is required.
 
-## Simple build for production
+## Tech Stack
 
-    $ npm run build
-    
+- React
+- React Router
+- Vite
+- GitHub Pages (static deploy)
 
-## Future plans
-Find a way to detect the Ceann-comhairle and remove member from the list.
-Add a map of Ireland, allowing the user to select a constituency which only returns their selected members in the table. (May add routing for this)
+## Project Structure
 
-## Any ideas?
-Let me know. Should I do the same for the senate?
+- `src/info.json`, `src/members.json`: current Dail snapshot used by the homepage.
+- `src/data/*info.json`, `src/data/*members.json`: historical Dail session data.
+- `src/constituencies/33.json`: constituency SVG paths (includes Dublin detail map geometry).
+- `python/OireachtasVoting.py`: current-session data builder.
+- `python/OireachtasVotingHistory.py`: historical data builder.
+
+## Getting Started
+
+```bash
+git clone git@github.com:robmcelhinney/OireachtasVote.git
+cd OireachtasVote
+npm install
+```
+
+## Development
+
+Run the app locally with Vite:
+
+```bash
+npm run dev
+```
+
+## Build And Preview
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploy (GitHub Pages)
+
+```bash
+npm run deploy
+```
+
+This runs `predeploy` (`npm run build`) and publishes `dist/` to GitHub Pages.
+
+## Refreshing The Data
+
+Generate/update JSON from the Oireachtas API:
+
+```bash
+python3 python/OireachtasVoting.py
+python3 python/OireachtasVotingHistory.py
+```
+
+Then run a fresh build:
+
+```bash
+npm run build
+```
+
+## Notes
+
+- This project is static-first by design: fast to host, simple to maintain, no runtime server dependency.
+- If you update generated JSON, commit those files so the deployed site reflects the latest dataset.

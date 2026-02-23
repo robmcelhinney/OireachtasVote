@@ -25,13 +25,13 @@ const SessionSelection = (props) => {
 	return (
 		<>
 			<div className={"maincontent container"}>
-				<div className={"sessionHeader text-align-centre"}>
+				<div className={"sessionHeader text-align-centre sessionIntro"}>
 					{noMatch()}
 					Check out other Dáil sessions below.
-					<div>
-					Most older Dáil sessions are missing data so they are not always correct.
-					(Usually when a TD's name is recorded in English but their voting record uses their name as Gaeilge or they are recorded as John P. Murphy in the voting record instead of John Patrick Murphy.)
-					</div>
+					<p className={"sessionDisclaimer"}>
+						Most older Dáil sessions are missing data so they are not always correct.
+						(Usually when a TD&apos;s name is recorded in English but their voting record uses their name as Gaeilge or they are recorded as John P. Murphy in the voting record instead of John Patrick Murphy.)
+					</p>
 				</div>
 				<div className={"dail_session_ul"}>
 					<ul className={"dail_session_list"}>

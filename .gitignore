@@ -26,5 +26,6 @@ yarn-error.log*
 /.idea
 .idea
 .cache
+dist
 
 update_dail_site.sh

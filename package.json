@@ -5,28 +5,19 @@
   "homepage": "https://robmcelhinney.github.io/OireachtasVote/",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
-    "moment": "^2.29.4",
-    "nouislider-react": "^3.3.5",
     "ordinal": "^1.0.3",
-    "rc-input-number": "^4.5.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^5.0.1",
-    "react-select": "^3.0.8",
-    "react-table": "^6.10.3",
-    "wnumb": "^1.2.0"
+    "react-select": "^3.0.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
+    "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "deploy": "gh-pages -d dist",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "browserslist": {
     "production": [
@@ -43,7 +34,8 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "vite": "^7.1.9"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-table/react-table.css';
 import current_info from '../info.json';
 import MainPage from "./MainPage";
 import SessionSelection from "./SessionSelection";

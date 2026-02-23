@@ -1,15 +1,20 @@
 import React from 'react';
-import 'react-table/react-table.css';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import Table from './Table';
 import Info from "./Info";
-import moment from 'moment'
 import ordinal from "ordinal";
 import {Link} from "react-router-dom";
 import {getData} from "./helper";
 
+const formatDate = (dateString) => {
+	const date = new Date(dateString);
+	if (Number.isNaN(date.getTime())) {
+		return dateString;
+	}
+	return date.toLocaleDateString("en-IE");
+};
 
 class MainPage extends React.Component {
 
@@ -17,27 +22,46 @@ class MainPage extends React.Component {
 		super(props);
 		let dail_session = props.session;
 		document.title = "Oireacthas Vote"
-		const [info, members] = getData(dail_session);
+		this._isMounted = false;
+		this._loadSeq = 0;
 
 		this.state = {
 			excludeCabinet: false,
 			excludeZeroVotes: false,
-			info: info,
-			data: members,
-			members: members
+			info: null,
+			data: null,
+			members: null
 		};
+		this.loadData(dail_session);
 	}
 
+	loadData = async (session) => {
+		const seq = ++this._loadSeq;
+		const [info, members] = await getData(session);
+		if (!this._isMounted || seq !== this._loadSeq) {
+			return;
+		}
+		this.setState({
+			info: info,
+			data: members,
+			members: members,
+			excludeCabinet: false,
+			excludeZeroVotes: false,
+		});
+	};
+
+	componentDidMount() {
+		this._isMounted = true;
+	}
 
 	componentDidUpdate(prevProps) {
 		if (this.props.session !== prevProps.session) {
-			const [info, members] = getData(this.props.session);
-			this.setState( {
-				info: info,
-				data: members,
-				members: members,
-			})
+			this.loadData(this.props.session);
 		}
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
 	}
 
 	handleCheckedCabinet = (type) => {
@@ -107,31 +131,30 @@ class MainPage extends React.Component {
 
 	render() {
 		const { data, info } = this.state;
+		if(data === null || info === null){
+			return <div className={"maincontent container"}>Ag lódáil...</div>;
+		}
 		let dail_end_date;
 		if (info.dailEndDate === "2099-01-01") {
 			dail_end_date = "Present"
 		}
 		else {
-			dail_end_date = moment(info.dailEndDate).format('DD/MM/YYYY')
-		}
-		if(data === null || info === null){
-			return;
+			dail_end_date = formatDate(info.dailEndDate)
 		}
 		return (
 			<>
 				<div className={"maincontent container"}>
-					<div>
+					<div className={"mainHero"}>
 						<h1 className={"mainHeader"}>TD Voting Record - {ordinal(Number(info.dail))} Dáil</h1>
-						<h3 className={"subHeader"}>{moment(info.dailStartDate).format('DD/MM/YYYY')} - {dail_end_date}</h3>
-						<p>View old Dáil Sessions <Link to={"/session/"}>here</Link>.</p>
-						<p><Link to={"/map"}>Map View</Link></p>
-						<p>Total Votes during session: {info.totalVotes}</p>
-						{this.getFormGroup()}
+						<h3 className={"subHeader"}>{formatDate(info.dailStartDate)} - {dail_end_date}</h3>
+						<p className={"sessionStat"}>Data source: <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a></p>
+						<p className={"sessionStat"}>Total Votes during session: <strong>{info.totalVotes}</strong></p>
+						<div className={"filterRow"}>{this.getFormGroup()}</div>
 					</div>
 					<Table members={data} info={info}/>
+					<p>An asterisk (*) next to a member&apos;s name indicates that they have not been present for the full term, hover over/click the asterisk (*) for more info.</p>
 					<Info info={info}/>
 					<p><span className={"should_be"}>*should be*</span> Accurate as of {info.dateCreated}</p>
-					{getBottomText()}
 				</div>
 			</>
 		);
@@ -162,18 +185,5 @@ class MainPage extends React.Component {
 		</FormGroup>;
 	}
 }
-
-const getBottomText = () => {
-	return <>
-		<p>Plan to run the web scraper around once a week to keep the
-			info relevant. Let me know if it hasn't been done in a while.</p>
-		<p>An asterisk (*) next to a member's name indicates that they have not been
-			present for the full term, hover over/click the asterisk (*) for more info.</p>
-		<p>If you have any ideas please let me know on
-			Twitter/Github below, i.e. should I deal with newly elected TDs differently, & should
-			I automatically remove the Ceann-Comhairle? <span className={"should_be"}>
-				blame <a href="https://data.oireachtas.ie/">data.oireachtas.ie</a> for that one</span></p>
-	</>
-};
 
 export default MainPage;

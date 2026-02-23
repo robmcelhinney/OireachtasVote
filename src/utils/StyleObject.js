@@ -1,6 +1,5 @@
 class StyleObject
 {
-    style: Object;
 
     constructor()
     {
@@ -10,97 +9,97 @@ class StyleObject
             }
     }
 
-    setWidth(width: string | number)
+    setWidth(width)
     {
         this.style.width = width;
         return this;
     }
 
-    setHeight(height: string | number)
+    setHeight(height)
     {
         this.style.height = height;
         return this;
     }
 
-    setScale(scale: string | number)
+    setScale(scale)
     {
         this.style.scale = scale;
         return this;
     }
 
-    setMinHeight(height: string | number)
+    setMinHeight(height)
     {
         this.style.minHeight = height;
         return this;
     }
 
-    setDisplay(display: string)
+    setDisplay(display)
     {
         this.style.display = display;
         return this;
     }
 
-    setFlexDirection(direction: string)
+    setFlexDirection(direction)
     {
         this.style.flexDirection = direction;
         return this;
     }
 
-    setFontSize(fontSize: string | number)
+    setFontSize(fontSize)
     {
         this.style.fontSize = fontSize;
         return this;
     }
 
-    setMargin(margin: string | number)
+    setMargin(margin)
     {
         this.style.margin = margin;
         return this;
     }
 
-    setMarginBottom(marginBottom: string | number)
+    setMarginBottom(marginBottom)
     {
         this.style.marginBottom = marginBottom;
         return this;
     }
 
-    setMarginTop(marginTop: string | number)
+    setMarginTop(marginTop)
     {
         this.style.marginTop = marginTop;
         return this;
     }
 
-    setMarginLeft(marginLeft: string | number)
+    setMarginLeft(marginLeft)
     {
         this.style.marginLeft = marginLeft;
         return this;
     }
 
-    setMarginRight(marginRight: string | number)
+    setMarginRight(marginRight)
     {
         this.style.marginRight = marginRight;
         return this;
     }
 
-    setPadding(padding: string | number)
+    setPadding(padding)
     {
         this.style.padding = padding;
         return this;
     }
 
-    setPaddingTop(paddingTop: string | number)
+    setPaddingTop(paddingTop)
     {
         this.style.paddingTop = paddingTop;
         return this;
     }
 
-    setPaddingBottom(paddingBottom: string | number)
+    setPaddingBottom(paddingBottom)
     {
         this.style.paddingBottom = paddingBottom;
         return this;
     }
 
-    setBasics(width: string | number, height: string | number, left: string | number, top: string | number)
+    setBasics(width, height, left, top)
     {
         this.style.width = width;
         this.style.height = height;
@@ -109,115 +108,115 @@ class StyleObject
         return this;
     }
 
-    setPosition(position: string)
+    setPosition(position)
     {
         this.style.position = position;
         return this;
     }
 
-    setTop(top: string | number)
+    setTop(top)
     {
         this.style.top = top;
         return this;
     }
 
-    setBottom(bottom: string | number)
+    setBottom(bottom)
     {
         this.style.bottom = bottom;
         return this;
     }
 
-    setLeft(left: string | number)
+    setLeft(left)
     {
         this.style.left = left;
         return this;
     }
 
-    setRight(right: string | number)
+    setRight(right)
     {
         this.style.right = right;
         return this;
     }
 
-    setBorder(border: string)
+    setBorder(border)
     {
         this.style.border = border;
         return this;
     }
 
-    setBorderRadius(radius: string | number)
+    setBorderRadius(radius)
     {
         this.style.borderRadius = radius;
         return this;
     }
 
-    setBorderTop(borderTop: string)
+    setBorderTop(borderTop)
     {
         this.style.borderTop = borderTop;
         return this;
     }
 
-    setBoxShadow(boxShadow: string)
+    setBoxShadow(boxShadow)
     {
         this.style.boxShadow = boxShadow;
         return this;
     }
 
-    setOverflow(overflow: string)
+    setOverflow(overflow)
     {
         this.style.overflow = overflow;
         return this;
     }
 
-    setOverflowX(overflowX: string)
+    setOverflowX(overflowX)
     {
         this.style.overflowX = overflowX;
         return this;
     }
 
-    setOverflowY(overflowY: string)
+    setOverflowY(overflowY)
     {
         this.style.overflowY = overflowY;
         return this;
     }
 
-    setWhiteSpace(whitespace: string)
+    setWhiteSpace(whitespace)
     {
         this.style.whiteSpace = whitespace;
         return this;
     }
 
-    setTextOverflow(overflow: string)
+    setTextOverflow(overflow)
     {
         this.style.textOverflow = overflow;
         return this;
     }
 
-    setOpacity(opacity: number)
+    setOpacity(opacity)
     {
         this.style.opacity = opacity;
         return this;
     }
 
-    setAlignItems(align: string)
+    setAlignItems(align)
     {
         this.style.alignItems = align;
         return this;
     }
 
-    setJustifyContent(justify: string)
+    setJustifyContent(justify)
     {
         this.style.justifyContent = justify;
         return this;
     }
 
-    setColor(color: string)
+    setColor(color)
     {
         this.style.color = color;
         return this;
     }
 
-    setTransition(property: string, duration: number)
+    setTransition(property, duration)
     {
         if(this.style.transition !== undefined)
         {
@@ -230,25 +229,25 @@ class StyleObject
         return this;
     }
 
-    setFill(fill: string)
+    setFill(fill)
     {
         this.style.fill = fill;
         return this;
     }
 
-    setStroke(colour: string)
+    setStroke(colour)
     {
         this.style.stroke = colour;
         return this;
     }
 
-    setCursor(cursor: string)
+    setCursor(cursor)
     {
         this.style.cursor = cursor;
         return this;
     }
 
-    getStyle(): Object
+    getStyle()
     {
         return this.style;
     }

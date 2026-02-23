@@ -2,7 +2,10 @@ import current_info from "../info";
 import ordinal from "ordinal";
 import {DUBLIN_CONSTITS} from "../utils/Constants";
 
-export const getData = (dail_session=undefined) => {
+const infoModules = import.meta.glob("../data/*info.json");
+const memberModules = import.meta.glob("../data/*members.json");
+
+export const getData = async (dail_session=undefined) => {
 	
 	if (dail_session === undefined) {
 		dail_session = current_info.dail
@@ -12,9 +15,17 @@ export const getData = (dail_session=undefined) => {
 			" Dáil";
 	}
 
-	const info = require('../data/' + dail_session + 'info.json');
-	const members = require('../data/' + dail_session +
-		'members.json');
+	const infoPath = `../data/${dail_session}info.json`;
+	const membersPath = `../data/${dail_session}members.json`;
+	const infoLoader = infoModules[infoPath];
+	const membersLoader = memberModules[membersPath];
+	if (!infoLoader || !membersLoader) {
+		return [null, null];
+	}
+	const infoModule = await infoLoader();
+	const membersModule = await membersLoader();
+	const info = infoModule.default || infoModule;
+	const members = membersModule.default || membersModule;
 	return [info, members]
 };
 
