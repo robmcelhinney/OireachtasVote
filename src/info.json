@@ -4,24 +4,16 @@
     "dail": 34,
     "parties": [
         {
-            "value": "Independent_Ireland",
-            "label": "Independent Ireland"
+            "value": "100%_RDR",
+            "label": "100% RDR"
         },
         {
-            "value": "Sinn_Féin",
-            "label": "Sinn Féin"
+            "value": "Aontú",
+            "label": "Aontú"
         },
         {
             "value": "Fianna_Fáil",
             "label": "Fianna Fáil"
-        },
-        {
-            "value": "People_Before_Profit_Solidarity",
-            "label": "People Before Profit-Solidarity"
-        },
-        {
-            "value": "100%_RDR",
-            "label": "100% RDR"
         },
         {
             "value": "Fine_Gael",
@@ -32,20 +24,28 @@
             "label": "Green Party"
         },
         {
-            "value": "Aontú",
-            "label": "Aontú"
+            "value": "Independent",
+            "label": "Independent"
         },
         {
-            "value": "Social_Democrats",
-            "label": "Social Democrats"
+            "value": "Independent_Ireland",
+            "label": "Independent Ireland"
         },
         {
             "value": "Labour_Party",
             "label": "Labour Party"
         },
         {
-            "value": "Independent",
-            "label": "Independent"
+            "value": "People_Before_Profit_Solidarity",
+            "label": "People Before Profit-Solidarity"
+        },
+        {
+            "value": "Sinn_Féin",
+            "label": "Sinn Féin"
+        },
+        {
+            "value": "Social_Democrats",
+            "label": "Social Democrats"
         }
     ],
     "constituencies": [
@@ -94,31 +94,31 @@
         "Wexford"
     ],
     "partyAverages": {
-        "People Before Profit-Solidarity": 63.71,
-        "Independent Ireland": 72.89,
-        "Green Party": 78.97,
-        "Independent": 79.47,
-        "Social Democrats": 82.5,
-        "Aontú": 84.11,
-        "100% RDR": 85.98,
-        "Fianna Fáil": 88.02,
-        "Fine Gael": 88.27,
-        "Labour Party": 90.19,
-        "Sinn Féin": 90.65
+        "Independent Ireland": 69.36,
+        "People Before Profit-Solidarity": 69.73,
+        "100% RDR": 71.81,
+        "Independent": 77.7,
+        "Green Party": 79.23,
+        "Aontú": 84.87,
+        "Social Democrats": 84.89,
+        "Fianna Fáil": 86.78,
+        "Fine Gael": 88.17,
+        "Labour Party": 88.51,
+        "Sinn Féin": 89.96
     },
     "partyMedian": {
-        "Independent Ireland": 71.72,
-        "Green Party": 78.97,
-        "Independent": 81.31,
-        "People Before Profit-Solidarity": 84.11,
-        "Aontú": 84.11,
-        "100% RDR": 85.98,
-        "Social Democrats": 90.19,
-        "Labour Party": 91.59,
-        "Fianna Fáil": 91.83,
-        "Sinn Féin": 92.99,
-        "Fine Gael": 93.46
+        "Independent Ireland": 67.36,
+        "100% RDR": 71.81,
+        "Green Party": 79.23,
+        "Independent": 80.42,
+        "People Before Profit-Solidarity": 83.98,
+        "Aontú": 84.87,
+        "Labour Party": 88.72,
+        "Social Democrats": 90.66,
+        "Fianna Fáil": 91.39,
+        "Fine Gael": 93.18,
+        "Sinn Féin": 93.47
     },
-    "totalVotes": 214,
-    "dateCreated": "18/01/2026 20:28:55"
+    "totalVotes": 337,
+    "dateCreated": "31/05/2026 12:54:01"
 }

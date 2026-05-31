@@ -321,6 +321,23 @@ h3.noMatch {
     padding-left: 7em;
 }
 
+.memberNameText {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.12em;
+}
+
+.memberNameMarker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: super;
+    font-size: 0.82em;
+}
+
 .tableShell {
     width: 100%;
     border: 1px solid var(--border);

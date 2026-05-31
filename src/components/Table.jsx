@@ -74,6 +74,33 @@ const TextFilter = ({ value, onChange, placeholder = "Filter..." }) => (
   <input type="text" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} />
 );
 
+const NameMarker = ({ symbol, title }) => (
+  <Tooltip title={title} enterDelay={300} leaveDelay={100} placement="top">
+    <span className="memberNameMarker" aria-label={title}>
+      {symbol}
+    </span>
+  </Tooltip>
+);
+
+const NameText = ({ value, tooltip, children }) => {
+  const content = (
+    <span className="memberNameText">
+      {value}
+      {children}
+    </span>
+  );
+
+  if (!tooltip) {
+    return content;
+  }
+
+  return (
+    <Tooltip title={tooltip} enterDelay={300} leaveDelay={100} placement="top">
+      <span>{content}</span>
+    </Tooltip>
+  );
+};
+
 const Table = ({ members, info }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showFilters, setShowFilters] = useState(window.innerWidth > 768);
@@ -103,16 +130,7 @@ const Table = ({ members, info }) => {
     setShowFilters(!isMobile);
   }, [isMobile]);
 
-  const getNewTDTooltip = useCallback(
-    (totalVotes, firstName, secondName = "") => (
-      <Tooltip title={`TD available for ${totalVotes} votes.`} enterDelay={300} leaveDelay={100} placement="top">
-        <span>
-          {firstName}* {secondName}
-        </span>
-      </Tooltip>
-    ),
-    []
-  );
+  const getVoteTooltip = useCallback((totalVotes) => `TD available for ${totalVotes} votes.`, []);
 
   const partyOptions = useMemo(() => {
     const fromInfo = (info.parties || []).map((party) => ({ label: party.label, value: party.label }));
@@ -202,6 +220,12 @@ const Table = ({ members, info }) => {
     if (sortBy.key !== key) return "↕";
     return sortBy.dir === "asc" ? "▲" : "▼";
   };
+
+  const renderVoteMarker = (member) =>
+    member.total_votes === null ? null : <NameMarker symbol="†" title={getVoteTooltip(member.total_votes)} />;
+
+  const renderCeannMarker = (member) =>
+    member.ceannComhairle || member.party === "Ceann Comhairle" ? <NameMarker symbol="*" title="Ceann Comhairle" /> : null;
 
   const headers = isMobile
     ? [
@@ -340,9 +364,13 @@ const Table = ({ members, info }) => {
               {isMobile ? (
                 <>
                   <td className="stickyCol">
-                    {member.total_votes === null
-                      ? `${member.firstName} ${member.lastName}`
-                      : getNewTDTooltip(member.total_votes, member.firstName, member.lastName)}
+                    <NameText
+                      value={`${member.firstName} ${member.lastName}`}
+                      tooltip={member.total_votes === null ? null : getVoteTooltip(member.total_votes)}
+                    >
+                      {renderVoteMarker(member)}
+                      {renderCeannMarker(member)}
+                    </NameText>
                   </td>
                   <td>{member.party}</td>
                   <td>{member.percentVotes}%</td>
@@ -362,9 +390,15 @@ const Table = ({ members, info }) => {
                     </a>
                   </td>
                   <td>
-                    {member.total_votes === null ? member.firstName : getNewTDTooltip(member.total_votes, member.firstName)}
+                    <NameText value={member.firstName} tooltip={member.total_votes === null ? null : getVoteTooltip(member.total_votes)}>
+                      {renderVoteMarker(member)}
+                    </NameText>
                   </td>
-                  <td>{member.lastName}</td>
+                  <td>
+                    <NameText value={member.lastName}>
+                      {renderCeannMarker(member)}
+                    </NameText>
+                  </td>
                   <td>{member.party}</td>
                   <td>{member.constituency}</td>
                   <td>{member.percentVotes}%</td>

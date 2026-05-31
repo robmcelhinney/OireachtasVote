@@ -152,7 +152,7 @@ class MainPage extends React.Component {
 						<div className={"filterRow"}>{this.getFormGroup()}</div>
 					</div>
 					<Table members={data} info={info}/>
-					<p>An asterisk (*) next to a member&apos;s name indicates that they have not been present for the full term, hover over/click the asterisk (*) for more info.</p>
+					<p>An asterisk (*) next to a member&apos;s name indicates the Ceann Comhairle. A dagger (†) marks a TD who was not present for the full term, and you can hover over the symbol for more info.</p>
 					<Info info={info}/>
 					<p><span className={"should_be"}>*should be*</span> Accurate as of {info.dateCreated}</p>
 				</div>

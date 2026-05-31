@@ -148,13 +148,17 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
 
     for result in data["results"]:
         holds_office = False
+        holds_ceann_comhairle = False
         for office in result["member"]["memberships"][0][
             "membership"]["offices"]:
             #TODO: this will only get the current Taoiseach.
+            office_name = office["office"]["officeName"]["showAs"]
             if office["office"]["dateRange"]["end"] is None and (
-                    "Minister for " in office["office"]["officeName"]["showAs"] or "Taoiseach" ==
-                    office["office"]["officeName"]["showAs"]):
+                    "Minister for " in office_name or "Taoiseach" == office_name):
                 holds_office = True
+            if "Ceann Comhairle" in office_name:
+                holds_ceann_comhairle = True
+            if holds_office and holds_ceann_comhairle:
                 break
 
         member_code = result["member"]["memberCode"]
@@ -170,6 +174,7 @@ def get_members(current_dail, num_members, json_data, info, total_count, separat
         member_data["party"] = result["member"]["memberships"][0][
                 "membership"]["parties"][-1]["party"]["showAs"]
         member_data["office"] = holds_office
+        member_data["ceannComhairle"] = holds_ceann_comhairle
         member_data["votes"] = 0
 
         start_date = result["member"]["memberships"][0]["membership"][
