@@ -87,6 +87,16 @@ body {
     width: 100%;
 }
 
+.appShell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.appMain {
+    flex: 1 0 auto;
+}
+
 .siteHeader {
     width: 100%;
     background: rgba(255, 255, 255, 0.92);
@@ -679,7 +689,28 @@ h3.noMatch {
     color: var(--text-soft);
     text-decoration: none;
     margin-top: auto;
-    padding: 10px 12px 18px;
+    padding: 18px 12px 22px;
+}
+
+.footerCard {
+    width: min(720px, 96vw);
+    margin: 0 auto;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.footerTitle {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.footerText {
+    margin: 0;
+    color: var(--text-soft);
 }
 
 #footer a,
@@ -976,6 +1007,10 @@ li:hover {
 :root[data-theme="dark"] .maincontent {
     background: var(--surface);
     border-color: var(--border);
+}
+
+:root[data-theme="dark"] .footerCard {
+    background: var(--surface);
 }
 
 :root[data-theme="dark"] .MuiCard-root {
