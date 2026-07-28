@@ -21,7 +21,7 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		let dail_session = props.session;
-		document.title = "Oireacthas Vote"
+		document.title = "Oireachtas Vote"
 		this._isMounted = false;
 		this._loadSeq = 0;
 
