@@ -37,7 +37,7 @@ const Map = () =>
 {
     const { state } = useContext(DailContext);
 
-    document.title = "Oireacthas Vote Map View";
+    document.title = "Oireachtas Vote Map View";
 
     const [hoveredConst, setHoveredConst] = useState("");
     const [selectedConst, setSelectedConst] = useState("");
